@@ -1944,7 +1944,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #cc13ff;
+  background: #aaba0a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3089,6 +3089,9 @@ img:hover {
   .post-body {
     text-align: justify;
   }
+}
+body {
+  background: url("/images/bjtu1.jpg");
 }
 .post {
   margin-top: 60px;
