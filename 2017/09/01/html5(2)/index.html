@@ -117,7 +117,7 @@
 <meta property="og:site_name" content="博客-彭">
 <meta property="og:description" content="html5-学习">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-01T07:23:10.000Z">
+<meta property="og:updated_time" content="2017-09-01T08:15:41.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="html5(2)-知识">
 <meta name="twitter:description" content="html5-学习">
@@ -374,23 +374,27 @@
 
       
         <h2 id="html5-学习"><a href="#html5-学习" class="headerlink" title="html5-学习"></a>html5-学习</h2><a id="more"></a>
-<p>HTML5概念<br>什么是HTML5<br>html5是新的超文本标记语言。<br>html5=新的标签+css3+新的javascript的api。<br>HTML5和HTML4有什么区别<br>A.    多了很多语义化的标签（有利于seo和开发者维护）<br>B.    新增了很多功能、视频标签video、画布标签、本地存储、地理位置、websocket等等……</p>
-<p>阶段：<br>1    初体验<br>2    掌握和理解它的原理<br>3    忘记-反复查文档-忘记-查文档<br>HTML5可以解决什么问题<br>A.    制定了更加统一和规范的标准<br>B.    各浏览器之间的兼容性低的问题<br>C.    文档结构不明确<br>D.    网站应用程序的功能受到了限制<br>语法<br>标签忽略大小写，建议小写<br>属性值：<br>html写法：<input type="checkbox" checked="checked"><br>html5写法：<input type="checkbox" checked><br>html5中增加布尔值，有属性为true，没有属性为false。<br>属性值可以省略引号 建议不要省略<br>语义化标签<br>常见的语义化的标签<br>标签名    释义    描述<br>header    头部标签    存放logo或者内容块的头部<br>nav    导航标签    存放导航的链接<br>section    区块标签（和div一样，div没有收录到html5的大纲算法当中）    和div一样的作用<br>article    文章标签    存放内容正文<br>header    存放标题<br>hgound    标题集合    header下存放多个标题<br>Section    区块标签    存放内容<br>aside    侧边标签    存放和内容信息没有绝对关系的信息<br>footer    尾部标签    存放区块底部信息和整个网页的底部信息<br>time    时间标签-行内元素    存放时间相关的信息<br>adress    地址标签    存放地址相关信息</p>
+<h3 id="HTML5概念"><a href="#HTML5概念" class="headerlink" title="HTML5概念"></a>HTML5概念</h3><p>什么是HTML5<br>html5是新的超文本标记语言。<br>html5=新的标签+css3+新的javascript的api。<br>HTML5和HTML4有什么区别<br>A.    多了很多语义化的标签（有利于seo和开发者维护）<br>B.    新增了很多功能、视频标签video、画布标签、本地存储、地理位置、websocket等等……</p>
+<p>阶段：<br>1    初体验<br>2    掌握和理解它的原理<br>3    忘记-反复查文档-忘记-查文档<br>HTML5可以解决什么问题<br>A.    制定了更加统一和规范的标准<br>B.    各浏览器之间的兼容性低的问题<br>C.    文档结构不明确<br>D.    网站应用程序的功能受到了限制<br>语法<br>标签忽略大小写，建议小写<br>属性值：</p>
+<h3 id="html写法："><a href="#html写法：" class="headerlink" title="html写法："></a>html写法：<input type="checkbox" checked="checked"></h3><p>html5写法：<input type="checkbox" checked><br>html5中增加布尔值，有属性为true，没有属性为false。<br>属性值可以省略引号 建议不要省略<br>语义化标签<br>常见的语义化的标签<br>标签名    释义    描述<br>header    头部标签    存放logo或者内容块的头部<br>nav    导航标签    存放导航的链接<br>section    区块标签（和div一样，div没有收录到html5的大纲算法当中）    和div一样的作用<br>article    文章标签    存放内容正文<br>header    存放标题<br>hgound    标题集合    header下存放多个标题<br>Section    区块标签    存放内容<br>aside    侧边标签    存放和内容信息没有绝对关系的信息<br>footer    尾部标签    存放区块底部信息和整个网页的底部信息<br>time    时间标签-行内元素    存放时间相关的信息<br>adress    地址标签    存放地址相关信息</p>
 <p>语义更强烈一点的微数据<br>概念：<br>使用某种特定的格式书写机器更容易抓取和分析的代码</p>
 <p>写好符合标准的微数据，搜索引擎是可以更加精确的生成对应的json格式</p>
-<p>Itemscope：标明是一个微数据项<br>Itemtype：标明数据项的类型-人<br>Itemprop：属性  值<br>Itemscope:<br>{<br>Itemtype:”data-………………”,<br>Itempropties:[<br>“name”:”王xx”,<br>“nickname”:”wungking”<br>]<br>}<br>兼容处理<br>不兼容html5的浏览器会将新的标签解析为行内元素 inline<br>低版本的ie（ie9以下）还是不识别标签（出问题），但是可以识别document.creatElement(‘tagName’)创建的元素，所以 最好将html5的新的标签都创建一遍，这样子就能识别了。<br>有专门的类库-叫做 html5shiv<br>条件注释<br>  <!--[if lte ie 8]>
+<p>Itemscope：标明是一个微数据项<br>Itemtype：标明数据项的类型-人<br>Itemprop：属性  值<br>Itemscope:<br>{<br>Itemtype:”data-………………”,<br>Itempropties:[<br>“name”:”王xx”,<br>“nickname”:”wungking”<br>]<br>}</p>
+<p>###　兼容处理<br>不兼容html5的浏览器会将新的标签解析为行内元素 inline<br>低版本的ie（ie9以下）还是不识别标签（出问题），但是可以识别document.creatElement(‘tagName’)创建的元素，所以 最好将html5的新的标签都创建一遍，这样子就能识别了。<br>有专门的类库-叫做 html5shiv<br>条件注释<br>  <!--[if lte ie 8]>
   <script src="js/html5shiv.min.js"></script>
-  <![endif]--><br>兼容性检测网站：<br><a href="http://html5test.com/index.html" target="_blank" rel="external">http://html5test.com/index.html</a><br>*WAI-ARIA<br>WAI-ARIA , 是Web Accessibility Initiative - Accessible Rich Internet Applications 的缩写，她主要解决的一个问题：让残障人士能无障碍地访问网页上的动态内容。<br>表单<br>输入类型<br>类型    使用示例    含义<br>email    <input type="email">    输入邮箱格式<br>tel    <input type="tel">    输入手机号码格式<br>url    <input type="url">    输入url格式<br>search    <input type="search">    搜索框（体现语义化）<br>number    <input type="number">    输入数字格式<br>range    <input type="range">    自由拖动滑块<br>color    <input type="color">    拾色器<br>time    <input type="time"><br>date    <input type="date"><br>datetime    <input type="datetime"><br>datetime-local    <input type=" datetime-local "><br>month    <input type="month"><br>week    <input type="week">    </p>
-<p>表单元素<br>元素    含义</p>
+  <![endif]--><br>兼容性检测网站：<br><a href="http://html5test.com/index.html" target="_blank" rel="external">http://html5test.com/index.html</a><br>*WAI-ARIA<br>WAI-ARIA , 是Web Accessibility Initiative - Accessible Rich Internet Applications 的缩写，她主要解决的一个问题：让残障人士能无障碍地访问网页上的动态内容。</p>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><p>输入类型<br>类型    使用示例    含义<br>email    <input type="email">    输入邮箱格式<br>tel    <input type="tel">    输入手机号码格式<br>url    <input type="url">    输入url格式<br>search    <input type="search">    搜索框（体现语义化）<br>number    <input type="number">    输入数字格式<br>range    <input type="range">    自由拖动滑块<br>color    <input type="color">    拾色器<br>time    <input type="time"><br>date    <input type="date"><br>datetime    <input type="datetime"><br>datetime-local    <input type=" datetime-local "><br>month    <input type="month"><br>week    <input type="week">    </p>
+<h3 id="表单元素"><a href="#表单元素" class="headerlink" title="表单元素"></a>表单元素</h3><p>元素    含义</p>
 <p><datalist>    数据列表</datalist></p>
 <p><keygen>    生成加密字符串</p>
 <p><output>    输出结果</output></p>
 <p><meter>    度量器</meter></p>
-<p><progress>    进度条<br>表单属性<br>属性    用法    含义<br>placeholder    <input type="text" placeholder="请输入用户名">    占位符<br>autofocus    <input type="text" autofocus>    自动获得焦点<br>multiple    <input type="file" multiple>    多文件上传<br>autocomplete    <input type="text" autocomplete="off">    自动完成<br>form    <input type="text" form="某表单ID"><br>novalidate    <form novalidate=""></form>    关闭验证<br>required    <input type="text" required>    必填项<br>pattern    <input type="text" pattern="\d">    自定义验证</progress></p>
-<p>表单事件<br>Dom操作拓展<br>新的：<br>  <li>新增的：document.querySelector()-根据css选择器获取目标元素-单个</li><br>  <li>新增的：document.querySelectorAll()-根据css选择器获取目标元素-数组</li></p>
+<p><progress>    进度条</progress></p>
+<h3 id="表单属性"><a href="#表单属性" class="headerlink" title="表单属性"></a>表单属性</h3><p>属性    用法    含义<br>placeholder    <input type="text" placeholder="请输入用户名">    占位符<br>autofocus    <input type="text" autofocus>    自动获得焦点<br>multiple    <input type="file" multiple>    多文件上传<br>autocomplete    <input type="text" autocomplete="off">    自动完成<br>form    <input type="text" form="某表单ID"><br>novalidate    <form novalidate=""></form>    关闭验证<br>required    <input type="text" required>    必填项<br>pattern    <input type="text" pattern="\d">    自定义验证</p>
+<h3 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h3><p>Dom操作拓展<br>新的：<br>  <li>新增的：document.querySelector()-根据css选择器获取目标元素-单个</li><br>  <li>新增的：document.querySelectorAll()-根据css选择器获取目标元素-数组</li></p>
 <p>获取dom元素的方式<br>    以前：<br>document.getElementById-根据id获取目标元素-单个document.getElementByTagName-根据id获取目标元素-单个document.getElementByClassName-根据类名获取目标元素-数组document.getElementByName-根据name属性获取目标元素-数组<br>    h5：<br>document.querySelector()-根据css选择器获取目标元素-单个<br>document.querySelectorAll()-根据css选择器获取目标元素-数组</p>
 <p>四种操作class的方式<br>    dom.classList.add()  – 给dom元素添加class<br>    dom.classList.remove() – 给dom移除class<br>    dom.classList.contains() – 判断dom元素是否包含某个class<br>    dom.classList.toggle() – 切换dom元素的class</p>
-<p>自定义属性<br>H5中，推荐自定义的属性写法：<br>data-* </p>
+<h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h3><p>H5中，推荐自定义的属性写法：<br>data-* </p>
 <p><div data-title="这个是单独的div"></div><br>在js中获取：<br>以前：dom.getAttribute(“title”)</p>
 <p>现在：dom.dataset.title</p>
 <p>多媒体标签<br>audio<br>播放声音<br>目前只支持3种格式<br>Video<br>视频标签<br>目前只支持三种视频格式：<br>例子：</p>
@@ -398,15 +402,15 @@
 
 <p>Video.js<br>地理位置<br>navigator.geolocation<br>navigator.geolocation.getCurrentPosition</p>
 <p>文件操作<br>Input type=”file”.onchange():选择了文件触发<br>FileReader对象<br>FileReader.readAsText()：将文件以文本的形式读入到FileReader对象中<br>FileReader.readAsDataUrl()：将图片以图片数据的形式读入到FileReader对象中（路径的形式是：普通的base64）。<br>FileReader.result：存放文件读入的数据<br>FileReader.onload():文件读取完毕之后触发<br>本地存储<br>名称    是否可以跨页面    是否持久化（关闭浏览器还存在）    备注<br>SessionStorage    否    否    刷新当前页面还存在<br>Localstorage    是    是    只要不手动删除，一直都存在<br>Cookie    不可以    可以设置过期时间    一直沿用至今的本地存储技术</p>
-<p>Css3<br>CSS即层叠样式表（Cascading StyleSheet）。 在网页制作时采用层叠样式表技术，可以有效地对页面的布局、字体、颜色、背景和其它效果实现更加精确的控制。 只要对相应的代码做一些简单的修改，就可以改变同一页面的不同部分，或者页数不同的网页的外观和格式。CSS3是CSS技术的升级版本，CSS3语言开发是朝着模块化发展的。以前的规范作为一个模块实在是太庞大而且比较复杂，所以，把它分解为一些小的模块，更多新的模块也被加入进来。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。</p>
-<p>作用：可以很简单的就实现了以前很复杂的功能（如 边框圆角、边框图片、渐变、过渡、画布、动画等等。。十分强大）<br>手册<br>[]        表示全部可选项<br>||        表示或者<br>|        表示多选一<br>？    表示0个或者1个</p>
+<h3 id="Css3"><a href="#Css3" class="headerlink" title="Css3"></a>Css3</h3><p>CSS即层叠样式表（Cascading StyleSheet）。 在网页制作时采用层叠样式表技术，可以有效地对页面的布局、字体、颜色、背景和其它效果实现更加精确的控制。 只要对相应的代码做一些简单的修改，就可以改变同一页面的不同部分，或者页数不同的网页的外观和格式。CSS3是CSS技术的升级版本，CSS3语言开发是朝着模块化发展的。以前的规范作为一个模块实在是太庞大而且比较复杂，所以，把它分解为一些小的模块，更多新的模块也被加入进来。这些模块包括： 盒子模型、列表模块、超链接方式 、语言模块 、背景和边框 、文字特效 、多栏布局等。</p>
+<h3 id="作用：可以很简单的就实现了以前很复杂的功能（如-边框圆角、边框图片、渐变、过渡、画布、动画等等。。十分强大）"><a href="#作用：可以很简单的就实现了以前很复杂的功能（如-边框圆角、边框图片、渐变、过渡、画布、动画等等。。十分强大）" class="headerlink" title="作用：可以很简单的就实现了以前很复杂的功能（如 边框圆角、边框图片、渐变、过渡、画布、动画等等。。十分强大）"></a>作用：可以很简单的就实现了以前很复杂的功能（如 边框圆角、边框图片、渐变、过渡、画布、动画等等。。十分强大）</h3><p>手册<br>[]        表示全部可选项<br>||        表示或者<br>|        表示多选一<br>？    表示0个或者1个</p>
 <ul>
 <li>表示0个或者多个</li>
 </ul>
 <ul>
 <li>代表出现1次或以上。<br>{}        表示范围</li>
 </ul>
-<p>选择器<br>元素选择符（css2）<br>标签选择符</p>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>元素选择符（css2）<br>标签选择符</p>
 <p>ID选择符</p>
 <p>类选择符</p>
 <p>通配选择符</p>
@@ -689,7 +693,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#html5-学习"><span class="nav-number">1.</span> <span class="nav-text">html5-学习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#html5-学习"><span class="nav-number">1.</span> <span class="nav-text">html5-学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5概念"><span class="nav-number">1.1.</span> <span class="nav-text">HTML5概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html写法："><span class="nav-number">1.2.</span> <span class="nav-text">html写法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单"><span class="nav-number">1.3.</span> <span class="nav-text">表单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单元素"><span class="nav-number">1.4.</span> <span class="nav-text">表单元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单属性"><span class="nav-number">1.5.</span> <span class="nav-text">表单属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表单事件"><span class="nav-number">1.6.</span> <span class="nav-text">表单事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义属性"><span class="nav-number">1.7.</span> <span class="nav-text">自定义属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Css3"><span class="nav-number">1.8.</span> <span class="nav-text">Css3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用：可以很简单的就实现了以前很复杂的功能（如-边框圆角、边框图片、渐变、过渡、画布、动画等等。。十分强大）"><span class="nav-number">1.9.</span> <span class="nav-text">作用：可以很简单的就实现了以前很复杂的功能（如 边框圆角、边框图片、渐变、过渡、画布、动画等等。。十分强大）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器"><span class="nav-number">1.10.</span> <span class="nav-text">选择器</span></a></li></ol></li></ol></div>
             
 
           </div>
