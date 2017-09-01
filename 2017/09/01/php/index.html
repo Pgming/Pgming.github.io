@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #bdf74d; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="PHP基础-知识">
+<meta name="keywords" content="PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP基础">
+<meta property="og:url" content="http://yoursite.com/2017/09/01/php/index.html">
+<meta property="og:site_name" content="博客-彭">
+<meta property="og:description" content="PHP基础-知识">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2017/09/01/php/%27.$value[%27src%27].%27">
+<meta property="og:updated_time" content="2017-09-01T08:06:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP基础">
+<meta name="twitter:description" content="PHP基础-知识">
+<meta name="twitter:image" content="http://yoursite.com/2017/09/01/php/%27.$value[%27src%27].%27">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/01/php/"/>
+
+
+
+
+
+
+  <title>PHP基础 | 博客-彭</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客-彭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">☆☆☆☆☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/01/php/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客-彭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">PHP基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T15:46:05+08:00">
+                2017-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP基础/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="PHP基础-知识"><a href="#PHP基础-知识" class="headerlink" title="PHP基础-知识"></a>PHP基础-知识</h2><a id="more"></a>
+<p>PHP基础</p>
+<h2 id="1-新建php模板"><a href="#1-新建php模板" class="headerlink" title="1.    新建php模板"></a>1.    新建php模板</h2><p>a)    进行模板添加界面：</p>
+<p>b)    创建新模板</p>
+<p>c)    重新打开webstorm，使用新模板创建文件</p>
+<h2 id="2-前期注意事项："><a href="#2-前期注意事项：" class="headerlink" title="2.    前期注意事项："></a>2.    前期注意事项：</h2><p>a)    文件名不能使用中文，否则在浏览器中查看的时候会有编译错误<br>b)    单引号和双引号都能描述字符串<br>c)    一条语句后必须添加分号，否则编译错误</p>
+<h2 id="3-变量："><a href="#3-变量：" class="headerlink" title="3.    变量："></a>3.    变量：</h2><p>a)    变量以$开头 字母/数字/下划线 不能以数字开头<br>b)    变量区分大小写<br>c)    示例：<br>//定义变量必须添加前缀$<br>$name=”张三”;<br>$Name=’李四’;<br>$age=20;</p>
+<p>//输出<br>echo $name;<br>echo ‘<br>‘; //换行<br>echo $Name;<br>echo ‘<br>‘;<br>echo $age;</p>
+<h2 id="4-数据类型："><a href="#4-数据类型：" class="headerlink" title="4.    数据类型："></a>4.    数据类型：</h2><p>a)    字符型、整型、浮点型、布尔型、数组、对象、NULL<br>/<em>1.定义字符串</em>/<br>$name=’中华人民共和国’;<br>echo $name;<br>echo ‘<br>‘;<br>/<em>2.定义整型</em>/<br>$age=20;<br>echo $age;<br>echo ‘<br>‘;<br>/<em>3.定义浮点型</em>/<br>$weight=130.5;<br>echo $weight;<br>echo ‘<br>‘;<br>/<em>4.定义布尔型:如果是false,则默认不会打印，输入的结果是1、0</em>/<br>$sex=true;<br>echo $sex;<br>echo ‘<br>‘; /<em>6.定义对象</em>/<br>class Person{<br>    public $name=’lili’;<br>    public $age=20;<br>};<br>//创建对象<br>$per=new Person;<br>//输出对象的某个属性值<br>echo $per-&gt;name;<br>//输出整个对象的复杂属性值<br>var_dump($per);<br>/<em>7.null:表示一种特殊的数据类型，表示空值，表示没有为该变量设置任何值，null和NULL是一样的</em>/<br>b)    单引号&amp;双引号区别<br>A.    当使用双引号定义字符串的时候，如果包含了其它的变量名，也会进行解析<br>B.    如果使用单引号，如果包含了其它的变量名，只是当成普通字符串进行处理<br>C.    示例：</p>
+<ol>
+<li>代码：<br>$name=’张三’;<br>//使用双引号定义字符串并输出<br>$str1=”姓名：$name”;<br>echo $str1;</li>
+</ol>
+<p>echo ‘<br>‘;<br>//使用单引号定义字符串并输出<br>$str2=’姓名：$name’;<br>echo $str2;</p>
+<ol>
+<li>结果：</li>
+</ol>
+<p>c)    索引数组、关联数组(了解)<br>/<em>定义数组  索引数组/关联数组</em>/<br>//1.定义索引数组<br>$arrIndex=array(“张三”,”李四”,”王五”,”赵六”);<br>/<em>根据索引输入数组中的元素</em>/<br>echo $arrIndex[1];<br>echo ‘<br>‘;<br>//2.定义关联数组<br>$arrRelation=array(<br>    ‘name’=&gt;’张三’,<br>    ‘age’=&gt;20,<br>    ‘sex’=&gt;true<br>);<br>/<em>php中，关联数组只能通过键值对的方式获取和输出</em>/<br>echo $arrRelation[‘age’];<br>echo ‘<br>‘;<br>/<em>定义深度数组—-二维数组</em>/<br>$arrDep=array(<br>    array(<br>        ‘name’=&gt;’jack’,<br>        ‘age’=&gt;20<br>    ),<br>    array(<br>        ‘name’=&gt;’rose’,<br>        ‘age’=&gt;18<br>    ),<br>    array(<br>        ‘name’=&gt;’tom’,<br>        ‘age’=&gt;16<br>    )<br>);<br>echo $arrDep[1][‘name’];<br>echo ‘<br>‘;</p>
+<h2 id="5-Php中的字符串拼接和几种输出方式："><a href="#5-Php中的字符串拼接和几种输出方式：" class="headerlink" title="5.    Php中的字符串拼接和几种输出方式："></a>5.    Php中的字符串拼接和几种输出方式：</h2><p>//1.拼接字符串使用点运算符<br>$name=’张三’;<br>echo ‘我的姓名叫：’.$name;</p>
+<p>//2.可以使用var_dump输出复杂类型<br>$arr=array(<br>    ‘name’=&gt;’张三’,<br>    ‘age’=&gt;20<br>);<br>var_dump($arr);</p>
+<p>//3.也可以使用print_r进行复杂类型数据的输出<br>print_r($arr);</p>
+<h2 id="6-Php的函数："><a href="#6-Php的函数：" class="headerlink" title="6.    Php的函数："></a>6.    Php的函数：</h2><p>//1.定义普通函数<br>function sayHi(){<br>    echo ‘向你问好’;<br>}<br>//调用函数<br>sayHi();<br>echo ‘<br>‘;<br>//2.带参的函数,参数还可以添加默认值，如果不传入参数，则使用默认值<br>function sayHiWithName($name=’jack’){<br>    echo $name.’向你问好’;<br>    echo ‘<br>‘;<br>}<br>//调用带参函数<br>sayHiWithName();<br>sayHiWithName(‘张三’);</p>
+<h2 id="7-Php的分支语句："><a href="#7-Php的分支语句：" class="headerlink" title="7.    Php的分支语句："></a>7.    Php的分支语句：</h2><p>a)    条件分支：if/if-else  switch-case.与js中的使用方式一致<br>$time=time();<br>echo date(‘yy-m-d’,$time);<br>echo ‘<br>‘;<br>$year=date(‘y’,$time);<br>echo $year;<br>echo ‘<br>‘;<br>if($year % 2==0){<br>    echo ‘是偶数年’;<br>}<br>else{<br>    echo ‘是奇数年’;<br>}<br>b)    循环分支：<br>//2.循环语句：for<br>$arrIndex=array(“张三”,”李四”,”王五”,”赵六”);<br>//获取数组的长度<br>$cnt=count($arrIndex);<br>for($i=0;$i&lt;$cnt;$i++){<br>    echo $arrIndex[$i].’   ‘;<br>}<br>//3.循环分支：foreach<br>foreach($arrIndex as $key=&gt;$value){<br>    echo $key.’  ‘.$value;<br>    //或者：<br>    /<em>echo $key.’  ‘.$arrIndex[$key];</em>/<br>    echo ‘<br>‘;<br>}</p>
+<h2 id="8-表单处理："><a href="#8-表单处理：" class="headerlink" title="8.    表单处理："></a>8.    表单处理：</h2><p>a)    说明：<br>    表单name属性的是用来提供给服务端接收所传递数据而设置的，如果没有设置name属性则无法提交数据<br>    表单action属性设置接收数据的处理程序<br>    表单method属性设置发送数据的方式<br>    当上传文件是需要设置 enctype=”multipart/form-data”，且只能post方式<br>    $_GET接收 get 传值<br>    $_POST接收 post 传值<br>    $_FILES接收文件上传<br>b)    表单代码：</p>
+<p><div class="container"><br>    <!--action:提交表单的地址
+    method:表单的提交方式，如果没有声明，则默认是get--><br>    <!--<form action="08-form.php" method="get">
+        用户名：<input type="text" name="userName"><br>
+        密码：<input type="password" name="userPwd"> <br>
+        <input type="submit" value="提交">
+    </form>--></div></p>
+<pre><code>&lt;form action=&quot;08-form.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+    用户名：&lt;input type=&quot;text&quot; name=&quot;userName&quot;&gt;&lt;br&gt;
+    密码：&lt;input type=&quot;password&quot; name=&quot;userPwd&quot;&gt; &lt;br&gt;
+    &lt;!--提交文件数据的时候，需要在form中添加对应的属性--&gt;
+    选择相片: &lt;input type=&quot;file&quot; name=&quot;photo&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;
+&lt;/form&gt;
+</code></pre><p><br>c)    Php代码：<br>/<em>$_GET接收 get 传值</em>/<br>/<em>$_POST接收 post 传值</em>/<br>/<em>$_FILES接收文件上传</em>/<br>/<em>echo $_GET;<br>var_dump($_GET);<br>print_r($_GET);</em>/</p>
+<p>echo $_POST;<br>var_dump($_POST);<br>print_r($_POST);</p>
+<p>var_dump($_FILES);<br>/<em>获取图片对象的某个属性</em>/<br>var_dump($_FILES[‘photo’][‘name’]);</p>
+<p>//将上传的图片移动到当前项目的图片文件夹中<br>move_uploaded_file($_FILES[‘photo’][‘tmp_name’],’../images/self.png’);</p>
+<h2 id="9-文件导入"><a href="#9-文件导入" class="headerlink" title="9.    文件导入"></a>9.    文件导入</h2><p>include：一般用来导入静态html文件<br>require：一般用于导入php文件</p>
+<h2 id="10-常用php函数："><a href="#10-常用php函数：" class="headerlink" title="10.    常用php函数："></a>10.    常用php函数：</h2><p>a)    Php中提供了很多内置的函数供我们使用，可以参阅php帮助文档，下面就列举出几个而已。<br>b)    in_array() ：是否在数组中<br>c)    count() ：计算数组长度<br>d)    array_key_exists ()：检测数组中是否存在key</p>
+<h2 id="11-php页面的动态渲染"><a href="#11-php页面的动态渲染" class="headerlink" title="11.     php页面的动态渲染"></a>11.     php页面的动态渲染</h2><p>a)    可以在php文件中直接输出html结构代码<br>b)    也可以在php文件中输出变量，做到动态的渲染结果<br>c)    注意：当是一个html文件的时候，php代码是不会执行的，会被当成注释来处理，如果文件类型是php,那么就可以解析满足php语法的语句<br>d)    示例：<br>&lt;?php<br>    //动态输出数组的数据<br>    $arr=array(<br>        array(<br>            ‘name’=&gt;’商品分类’,<br>            ‘src’=&gt;’../images/nav0.png’<br>        ),<br>        array(<br>            ‘name’=&gt;’商品分类’,<br>            ‘src’=&gt;’../images/nav1.png’<br>        ),<br>        array(<br>            ‘name’=&gt;’商品分类’,<br>            ‘src’=&gt;’../images/nav2.png’<br>        )<br>    );<br>    //读取数据，转换为html结构<br>    $htmlStr=’<ul>‘;<br>    foreach($arr as $key=&gt;$value){<br>        $htmlStr.=’<li>‘;<br>        $htmlStr.=’<img src="'.$value['src'].'">‘;<br>        $htmlStr.=’<p>‘.$value[‘name’].’</p>‘;<br>        $htmlStr.=’</li>‘;<br>    }<br>    $htmlStr.=’</ul>‘;<br>    echo $htmlStr;<br>?&gt;</p>
+<h2 id="12-案例：模拟登录："><a href="#12-案例：模拟登录：" class="headerlink" title="12.    案例：模拟登录："></a>12.    案例：模拟登录：</h2><p>&lt;?php<br>    header(‘Content-Type:text/html;charset=utf-8’);</p>
+<pre><code>//模拟服务器端数据
+$arr=array(
+    &apos;userName&apos;=&gt;&apos;admin&apos;,
+    &apos;userPwd&apos;=&gt;&apos;111&apos;
+);
+
+//获取用户的表单输入数据
+$userName=$_POST[&apos;userName&apos;];
+$userPwd=$_POST[&apos;userPwd&apos;];
+
+//判断
+if($arr[&apos;userName&apos;] == $userName &amp;&amp; $arr[&apos;userPwd&apos;] == $userPwd){
+    echo &apos;登录成功&apos;;
+    header(&apos;refresh:1;url=http://www.baidu.com&apos;);
+}
+else{
+     echo &apos;登录失败&apos;;
+     header(&apos;refresh:1;url=03-login.html&apos;);
+}
+</code></pre><p>?&gt;</p>
+<h2 id="13：网络传输协议"><a href="#13：网络传输协议" class="headerlink" title="13：网络传输协议"></a>13：网络传输协议</h2><p>指服务器和客户端间进行通信时的约束和规范，客户端与服务端的数据交互并不是杂乱无章的，需要遵照（基于）一定的规范进行</p>
+<h3 id="1-常见协议"><a href="#1-常见协议" class="headerlink" title="1.    常见协议"></a>1.    常见协议</h3><p>a)    HTTP、HTTPS 超文本传输协议<br>b)    FTP 文件传输协议<br>c)    SMTP 简单邮件传输协议</p>
+<h3 id="2-HTTP协议"><a href="#2-HTTP协议" class="headerlink" title="2.    HTTP协议"></a>2.    HTTP协议</h3><p>即超文本传输协议，网站是基于HTTP协议的，例如网站的图片、CSS、JS等都是基于HTTP协议进行传输的。HTTP协议是由从客户机到服务器的请求(Request)和从服务器到客户机的响应(Response)进行了约束和规范</p>
+<p>常用请求方法 POST、GET、PUT、DELETE</p>
+<h3 id="3-请求-请求报文：request-response"><a href="#3-请求-请求报文：request-response" class="headerlink" title="3.    请求-请求报文：request //response"></a>3.    请求-请求报文：request //response</h3><p>请求由客户端发起，其规范格式为：请求行、请求头、请求主体。如：</p>
+<p>b)    请求报文行: 由请求方式、请求URL和协议版本构成</p>
+<p>c)    请求报文头<br>    Host：localhost请求的主机<br>    Cache-Control：max-age=0控制缓存(no-cache| no-store)<br>    Accept：<em>/</em> 接受的文档MIME类型<br>    User-Agent：向访问网站提供你所使用的浏览器类型、操作系统及版本、CPU 类型、浏览器渲染引擎、浏览器语言、浏览器插件等信息的标识. 浏览器UA 字串的标准格式为： 浏览器标识 (操作系统标识; 加密等级标识; 浏览器语言) 渲染引擎标识 版本信息<br>    Referer：从哪个URL跳转过来的<br>    Accept-Encoding：可接受的压缩格式<br>d)    请求报文体：即传递给服务端的数据<br>注：当以post形式提交表单的时候，请求头里会设置<br>Content-Type: application/x-www-form-urlencoded，而当以get形式请求时不需要这种设置</p>
+<h3 id="4-响应-响应报文-："><a href="#4-响应-响应报文-：" class="headerlink" title="4.    响应-响应报文 ："></a>4.    响应-响应报文 ：</h3><p>响应由服务器发出，其规范格式为：状态行、响应头、响应主体</p>
+<p>a)    状态行：由协议版本号、状态码和状态信息构成<br>b)    响应头：<br>    Date：响应时间<br>    Server：服务器信息<br>    Content-Length：响应主体长度<br>    Content-Type：响应资源的MIME类型<br>c)    响应主体：即服务端返回给客户端的内容<br>d)    状态码：</p>
+<p>常见的有200代表成功、304文档未修改、403没有权限、404未找到，500 服务器错误<br>说明：客户端与服务器在进行数据传输的时候都是以字节形式进行的，可以理解成是以文本形式传输，这时浏览器就需要明确知道该怎么样来解析这些文本形式的数据，MIME就是明确告知浏览器该如何来处理</p>
+<h2 id="14：AJAX编程："><a href="#14：AJAX编程：" class="headerlink" title="14：AJAX编程："></a>14：AJAX编程：</h2><p>即 Asynchronous Javascript And XML，AJAX 不是一门的新的语言，而是对现有持术的综合利用。本质是在HTTP协议的基础上以异步的方式与服务器进行通信。</p>
+<h3 id="1-异步：指某段程序执行时不会阻塞其它程序执行，其表现形式为程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。其优势在于不阻塞程序的执行，从而提升整体执行效率。XMLHttpRequest可以以异步方式的处理程序。"><a href="#1-异步：指某段程序执行时不会阻塞其它程序执行，其表现形式为程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。其优势在于不阻塞程序的执行，从而提升整体执行效率。XMLHttpRequest可以以异步方式的处理程序。" class="headerlink" title="1.    异步：指某段程序执行时不会阻塞其它程序执行，其表现形式为程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。其优势在于不阻塞程序的执行，从而提升整体执行效率。XMLHttpRequest可以以异步方式的处理程序。"></a>1.    异步：指某段程序执行时不会阻塞其它程序执行，其表现形式为程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。其优势在于不阻塞程序的执行，从而提升整体执行效率。XMLHttpRequest可以以异步方式的处理程序。</h3><h3 id="2-XMLHttpRequest说明"><a href="#2-XMLHttpRequest说明" class="headerlink" title="2.    XMLHttpRequest说明"></a>2.    XMLHttpRequest说明</h3><p>a)    作用：浏览器内建对象，用于在后台与服务器通信(交换数据) ，由此我们便可实现对网页的部分更新，而不是刷新整个页面</p>
+<h3 id="3-请求："><a href="#3-请求：" class="headerlink" title="3.    请求："></a>3.    请求：</h3><p>一个简单的请求组成(以post为例)：var xhr=new XMLHttpRequest();</p>
+<h4 id="1-请求行"><a href="#1-请求行" class="headerlink" title="1.    请求行"></a>1.    请求行</h4><h2 id="xhr-open-‘post’-’05-XMLHTTPRequest-test-php’-—-post"><a href="#xhr-open-‘post’-’05-XMLHTTPRequest-test-php’-—-post" class="headerlink" title="xhr.open(‘post’,’05-XMLHTTPRequest-test.php’);—-post"></a>xhr.open(‘post’,’05-XMLHTTPRequest-test.php’);—-post</h2><p>xhr.open(‘get’,’05-XMLHTTPRequest-test.php? name=rose&amp;age=20’);—get</p>
+<h4 id="2-请求头"><a href="#2-请求头" class="headerlink" title="2.    请求头"></a>2.    请求头</h4><p>xhr.setRequestHeader(‘Content-Type’,’application/x-www-form-urlencoded’);–post<br>get:no —get</p>
+<h4 id="3-请求体"><a href="#3-请求体" class="headerlink" title="3.    请求体"></a>3.    请求体</h4><p>xhr.send(null); —get<br>xhr.send(“name=rose&amp;age=20”);—post</p>
+<h4 id="4-Get和post请求的区别"><a href="#4-Get和post请求的区别" class="headerlink" title="4.    Get和post请求的区别"></a>4.    Get和post请求的区别</h4><p>    Get不需要设置请求头<br>    Get的数据传递通过url进行传递，而post在send方法中传递</p>
+<h3 id="4-响应"><a href="#4-响应" class="headerlink" title="4.    响应"></a>4.    响应</h3><p>HTTP响应是由服务端发出的，作为客户端更应关心的是响应的结果。由于服务器做出响应需要时间（比如网速慢等原因），所以我们需要监听服务器响应的状态，然后才能进行处理</p>
+<h4 id="1-onreadystatechange是Javascript的事件的一种，其意义在于监听XMLHttpRequest的状态"><a href="#1-onreadystatechange是Javascript的事件的一种，其意义在于监听XMLHttpRequest的状态" class="headerlink" title="1.    onreadystatechange是Javascript的事件的一种，其意义在于监听XMLHttpRequest的状态"></a>1.    onreadystatechange是Javascript的事件的一种，其意义在于监听XMLHttpRequest的状态</h4><h4 id="2-readyState：响应状态，返回XMLHTTP请求的当前状态"><a href="#2-readyState：响应状态，返回XMLHTTP请求的当前状态" class="headerlink" title="2.    readyState：响应状态，返回XMLHTTP请求的当前状态"></a>2.    readyState：响应状态，返回XMLHTTP请求的当前状态</h4><p>readyState 状态    状态说明<br>(0)未初始化    此阶段确认XMLHttpRequest对象是否创建，并为调用open()方法进行为初始化作好准备。值为0表示对象已经存在，否则浏览器会报错－－对象不存在。<br>(1)载入    此阶段对XMLHttpRequest对象进行初始化，即调用open()方法，根据参数(method,url,true)完成对象状态的设置。并调用send()方法开始向服务端发送请求。值为1表示正在向服务端发送请求。<br>(2)载入完成    此阶段接收服务器端的原始响应数据。但获得的还只是服务端响应的原始数据，并不能直接在客户端使用。值为2表示已经接收完全部响应数据。并为下一阶段对数据解析作好准备。<br>(3)交互    此阶段解析接收到的服务器端响应数据。即根据服务器端响应头部返回的MIME类型把数据转换成能通过responseBody、responseText或responseXML属性存取的格式，为在客户端调用作好准备。状态3表示正在解析数据。<br>(4)完成    此阶段确认全部数据都已经解析为客户端可用的格式，解析已经完成。值为4表示数据解析完毕，可以通过XMLHttpRequest对象的相应属性取得数据。</p>
+<h4 id="3-status：响应码-常用响应码"><a href="#3-status：响应码-常用响应码" class="headerlink" title="3.    status：响应码-常用响应码"></a>3.    status：响应码-常用响应码</h4><p>    HTTP: Status 200 – 服务器成功返回网页<br>    HTTP: Status 404 – 请求的网页不存在<br>    HTTP: Status 503 – 服务不可用</p>
+<h3 id="5-简单案例"><a href="#5-简单案例" class="headerlink" title="5.    简单案例"></a>5.    简单案例</h3><p><script><br>    //1.模拟get请求<br>   /<em> /!</em>创建异步请求对象<em>!/<br>   var xhr=new XMLHttpRequest();<br>    /!</em>创建请求  1.请求方式   2.请求目标<em>!/<br>    xhr.open(‘get’,’05-XMLHTTPRequest-test.php?name=jack&amp;age=20’);<br>    /!</em>发送请求<em>!/<br>    xhr.send(null);</em>/</p>
+<pre><code>//2.模拟post请求
+var xhr=new XMLHttpRequest();
+xhr.open(&apos;post&apos;,&apos;05-XMLHTTPRequest-test.php&apos;); 
+/*post请求设置请求头*/
+xhr.setRequestHeader(&apos;Content-Type&apos;,&apos;application/x-www-form-urlencoded&apos;);
+xhr.send(&apos;name=rose&amp;age=20&apos;); 
+</code></pre><p>   /<em>监听状态改变事件</em>/<br>    xhr.onreadystatechange=function(){<br>        /<em>status：响应码</em>/<br>        //console.log(“4”+xhr.status+”  “+xhr.readyState);<br>        /<em>readyState:响应状态</em>/<br>        //console.log(“4.”+xhr.readyState);<br>        /<em>判断响应状态</em>/<br>        if(xhr.readyState==4 &amp;&amp; xhr.status==200){<br>            console.log(xhr.responseText);<br>        }<br>    }<br>    console.log(“之后的打印”);<br></script></p>
+<h3 id="6-GET和POST请求方式的差异"><a href="#6-GET和POST请求方式的差异" class="headerlink" title="6.    GET和POST请求方式的差异"></a>6.    GET和POST请求方式的差异</h3><p>a)    GET没有请求主体，使用xhr.send(null)<br>b)    GET可以通过在请求URL上添加请求参数<br>c)    POST可以通过xhr.send(‘name=itcast&amp;age=10’)<br>d)    POST需要设置</p>
+<p>e)    GET效率更好（应用多）<br>f)    GET大小限制约4K，POST则没有限制</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+     
+     <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" <i class="fa fa-tag"></i> PHP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/01/笔记(1)/" rel="next" title="笔记(1)">
+                <i class="fa fa-chevron-left"></i> 笔记(1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="光明" />
+          
+            <p class="site-author-name" itemprop="name">光明</p>
+            <p class="site-description motion-element" itemprop="description">激进小IT</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/pgm0908/" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP基础-知识"><span class="nav-number">1.</span> <span class="nav-text">PHP基础-知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-新建php模板"><span class="nav-number">2.</span> <span class="nav-text">1.    新建php模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-前期注意事项："><span class="nav-number">3.</span> <span class="nav-text">2.    前期注意事项：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-变量："><span class="nav-number">4.</span> <span class="nav-text">3.    变量：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-数据类型："><span class="nav-number">5.</span> <span class="nav-text">4.    数据类型：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Php中的字符串拼接和几种输出方式："><span class="nav-number">6.</span> <span class="nav-text">5.    Php中的字符串拼接和几种输出方式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Php的函数："><span class="nav-number">7.</span> <span class="nav-text">6.    Php的函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Php的分支语句："><span class="nav-number">8.</span> <span class="nav-text">7.    Php的分支语句：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-表单处理："><span class="nav-number">9.</span> <span class="nav-text">8.    表单处理：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-文件导入"><span class="nav-number">10.</span> <span class="nav-text">9.    文件导入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-常用php函数："><span class="nav-number">11.</span> <span class="nav-text">10.    常用php函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-php页面的动态渲染"><span class="nav-number">12.</span> <span class="nav-text">11.     php页面的动态渲染</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-案例：模拟登录："><span class="nav-number">13.</span> <span class="nav-text">12.    案例：模拟登录：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13：网络传输协议"><span class="nav-number">14.</span> <span class="nav-text">13：网络传输协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-常见协议"><span class="nav-number">14.1.</span> <span class="nav-text">1.    常见协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-HTTP协议"><span class="nav-number">14.2.</span> <span class="nav-text">2.    HTTP协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-请求-请求报文：request-response"><span class="nav-number">14.3.</span> <span class="nav-text">3.    请求-请求报文：request //response</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-响应-响应报文-："><span class="nav-number">14.4.</span> <span class="nav-text">4.    响应-响应报文 ：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14：AJAX编程："><span class="nav-number">15.</span> <span class="nav-text">14：AJAX编程：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-异步：指某段程序执行时不会阻塞其它程序执行，其表现形式为程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。其优势在于不阻塞程序的执行，从而提升整体执行效率。XMLHttpRequest可以以异步方式的处理程序。"><span class="nav-number">15.1.</span> <span class="nav-text">1.    异步：指某段程序执行时不会阻塞其它程序执行，其表现形式为程序的执行顺序不依赖程序本身的书写顺序，相反则为同步。其优势在于不阻塞程序的执行，从而提升整体执行效率。XMLHttpRequest可以以异步方式的处理程序。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-XMLHttpRequest说明"><span class="nav-number">15.2.</span> <span class="nav-text">2.    XMLHttpRequest说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-请求："><span class="nav-number">15.3.</span> <span class="nav-text">3.    请求：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-请求行"><span class="nav-number">15.3.1.</span> <span class="nav-text">1.    请求行</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xhr-open-‘post’-’05-XMLHTTPRequest-test-php’-—-post"><span class="nav-number">16.</span> <span class="nav-text">xhr.open(‘post’,’05-XMLHTTPRequest-test.php’);—-post</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-请求头"><span class="nav-number">16.0.1.</span> <span class="nav-text">2.    请求头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-请求体"><span class="nav-number">16.0.2.</span> <span class="nav-text">3.    请求体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Get和post请求的区别"><span class="nav-number">16.0.3.</span> <span class="nav-text">4.    Get和post请求的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-响应"><span class="nav-number">16.1.</span> <span class="nav-text">4.    响应</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-onreadystatechange是Javascript的事件的一种，其意义在于监听XMLHttpRequest的状态"><span class="nav-number">16.1.1.</span> <span class="nav-text">1.    onreadystatechange是Javascript的事件的一种，其意义在于监听XMLHttpRequest的状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-readyState：响应状态，返回XMLHTTP请求的当前状态"><span class="nav-number">16.1.2.</span> <span class="nav-text">2.    readyState：响应状态，返回XMLHTTP请求的当前状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-status：响应码-常用响应码"><span class="nav-number">16.1.3.</span> <span class="nav-text">3.    status：响应码-常用响应码</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-简单案例"><span class="nav-number">16.2.</span> <span class="nav-text">5.    简单案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-GET和POST请求方式的差异"><span class="nav-number">16.3.</span> <span class="nav-text">6.    GET和POST请求方式的差异</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">光明</span>
+
+  
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共14.5k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+ 
+</body>
+</html>
