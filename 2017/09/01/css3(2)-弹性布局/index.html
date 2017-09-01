@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #bdf74d; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css3," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="弹性布局(伸缩布局)">
+<meta name="keywords" content="css3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3(2)弹性布局(伸缩布局)">
+<meta property="og:url" content="http://yoursite.com/2017/09/01/css3(2)-弹性布局/index.html">
+<meta property="og:site_name" content="博客-彭">
+<meta property="og:description" content="弹性布局(伸缩布局)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/h5c3/flex01.png">
+<meta property="og:updated_time" content="2017-09-01T07:22:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3(2)弹性布局(伸缩布局)">
+<meta name="twitter:description" content="弹性布局(伸缩布局)">
+<meta name="twitter:image" content="http://yoursite.com/images/h5c3/flex01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/01/css3(2)-弹性布局/"/>
+
+
+
+
+
+
+  <title>css3(2)弹性布局(伸缩布局) | 博客-彭</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客-彭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">☆☆☆☆☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/01/css3(2)-弹性布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客-彭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css3(2)弹性布局(伸缩布局)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T14:47:20+08:00">
+                2017-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/h5c3学习资料/" itemprop="url" rel="index">
+                    <span itemprop="name">h5c3学习资料</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="弹性布局-伸缩布局"><a href="#弹性布局-伸缩布局" class="headerlink" title="弹性布局(伸缩布局)"></a>弹性布局(伸缩布局)</h1><a id="more"></a>
+<blockquote>
+<p>布局：其实就是调整元素在水平和垂直方向上的布局方式。</p>
+</blockquote>
+<p>CSS3在布局方面做了非常大的改进，使得我们对块级元素的布局排列变得十分灵活，适应性非常强，其强大的伸缩性，在响应式开中可以发挥极大的作用。</p>
+<p>【演示：01-伸缩布局初体验.html】</p>
+<p>当给一个盒子设置了display：flex之后，这个盒子就有了<strong><em>主轴</em></strong> 和<strong><em>侧轴</em></strong> 的概念。<br>主轴：Flex容器的主轴主要用来配置Flex项目，默认是水平方向<br>侧轴：与主轴垂直的轴称作侧轴，默认是垂直方向的<br>方向：默认<strong><em>主轴从左向右</em></strong> ，默认<strong><em>侧轴从上到下</em></strong> </p>
+<p><img src="/images/h5c3/flex01.png" alt="images"></p>
+<h2 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h2><blockquote>
+<p>flex-diretion主要是用来调整主轴的方向的，默认是水平方向</p>
+<p>了解即可，一般来说，很少调整主轴的方向。</p>
+</blockquote>
+<p>可选值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">row：主轴方向为水平向右</div><div class="line">column：主轴方向为竖直向下</div><div class="line">row-reverse:主轴方向为水平向左</div><div class="line">column-reverse:主轴方向是竖直向上。</div></pre></td></tr></table></figure></p>
+<h2 id="justify-content-重点"><a href="#justify-content-重点" class="headerlink" title="justify-content(重点)"></a>justify-content(重点)</h2><blockquote>
+<p>justify-content主要用来设置<strong><em>主轴方向的对齐方式</em></strong> ，可选的值有：</p>
+</blockquote>
+<p>可选值：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">flex-start: 弹性盒子元素将向起始位置对齐</div><div class="line">flex-end: 弹性盒子元素将向结束位置对齐。</div><div class="line">center: 弹性盒子元素将向行中间位置对齐</div><div class="line">space-around: 弹性盒子元素会平均地分布在行里</div><div class="line">space-between:第一个贴左边，最后一个贴右边，其他盒子均分，保证每个盒子之间的空隙是相等的。</div></pre></td></tr></table></figure></p>
+<h2 id="align-items-重点"><a href="#align-items-重点" class="headerlink" title="align-items(重点)"></a>align-items(重点)</h2><blockquote>
+<p>align-items用于调整<strong><em>侧轴的对其方式</em></strong> ，可选的值有：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">flex-start： 元素在侧轴的起始位置对其。 </div><div class="line">flex-end： 元素在侧轴的结束位置对其。</div><div class="line">center： 元素在侧轴上居中对其。</div><div class="line">stretch： 元素的高度会被拉伸到最大（不能给死高度）。</div></pre></td></tr></table></figure>
+<h2 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h2><blockquote>
+<p>flex-wrap属性控制flex容器是单行或者多行,默认不换行</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nowrap： 不换行（默认），会压缩子盒子的宽度。</div><div class="line">wrap： 当宽度不够的时候，会换行。</div></pre></td></tr></table></figure>
+<h2 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h2><blockquote>
+<p>align-content用来设置多行的flex容器的排列方式。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">flex-start： 各行向侧轴的起始位置堆叠。 </div><div class="line">flex-end： 各行向弹性盒容器的结束位置堆叠。</div><div class="line">center： 各行向弹性盒容器的中间位置堆叠。</div><div class="line">space-between： 各行在侧轴中平均分布。 </div><div class="line">space-around： 第一行贴上边，最后一个行贴下边,其他行在弹性盒容器中平均分布。 </div><div class="line">stretch：拉伸，不设置高度的情况下。</div></pre></td></tr></table></figure>
+<p>align-items与align-content的区别<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">align-items调整的是侧轴的对其方式，不换行一般用align-items</div><div class="line">align-content:必须是多行才生效，如果单行，没有效果。换行了就用align-content。</div></pre></td></tr></table></figure></p>
+<h2 id="flex属性"><a href="#flex属性" class="headerlink" title="flex属性"></a>flex属性</h2><blockquote>
+<p><strong><em>上述讲的属性都是给父盒子设置的，接下来的几个属性是给子盒子设置的。</em></strong> </p>
+<p>flex属性用来设置子盒子如何分配空间</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">flex:<span class="number">1</span></div></pre></td></tr></table></figure>
+<h2 id="order属性"><a href="#order属性" class="headerlink" title="order属性"></a>order属性</h2><blockquote>
+<p>order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">order:<span class="number">1</span>;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h2><blockquote>
+<p>align-self也是用于设置在侧轴的位置，但是align-self给子元素设置，优先级比align-items的优先级高。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">取值与align-items的取值一样。</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>【01-弹性布局之导航条.html】</p>
+<p>【02-弹性布局之常见的流式布局.html】</p>
+<p>阮一峰的博客<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html</a></p>
+<h1 id="携程旅行网"><a href="#携程旅行网" class="headerlink" title="携程旅行网"></a>携程旅行网</h1><blockquote>
+<p>flex布局的应用。</p>
+</blockquote>
+<h1 id="360浏览器"><a href="#360浏览器" class="headerlink" title="360浏览器"></a>360浏览器</h1><h2 id="fullpage的使用"><a href="#fullpage的使用" class="headerlink" title="fullpage的使用"></a>fullpage的使用</h2><blockquote>
+<p>fullPage.js 是一个基于 jQuery 的插件，它能够很方便、很轻松的制作出全屏网站。</p>
+</blockquote>
+<p>参考文档 <a href="http://www.dowebok.com/77.html" target="_blank" rel="external">http://www.dowebok.com/77.html</a></p>
+<p>下载地址 <a href="http://www.dowebok.com/77.html" target="_blank" rel="external">https://github.com/alvarotrigo/fullPage.js</a></p>
+<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><ol>
+<li>引入jQuery文件，因为fullpage是jquery插件</li>
+<li>引入fullpage的js文件，<strong><em>不要引入fullpage的css文件，不然容易样式冲突。</em></strong> </li>
+<li>页面结构</li>
+<li>编写js代码</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 页面结构 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--每一个class为section的div都是一屏,section这个类是固定的--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>我是内容1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>我是内容2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>我是内容3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"section"</span>&gt;</span>我是内容4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//编写js代码</span></div><div class="line">$(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">"#box"</span>).fullpage();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="鼠标滚动事件-了解"><a href="#鼠标滚动事件-了解" class="headerlink" title="鼠标滚动事件(了解)"></a>鼠标滚动事件(了解)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> count = <span class="number">0</span>;</div><div class="line">        <span class="built_in">document</span>.onmousewheel = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">            <span class="comment">/*鼠标滚动的量 下滚是负 上滚是正*/</span></div><div class="line">            <span class="keyword">if</span>(e.wheelDelta &lt; <span class="number">0</span>)&#123;</div><div class="line">                count ++;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                count --;</div><div class="line">            &#125;</div><div class="line">            <span class="built_in">console</span>.log(count);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h3><table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><em>sectionsColor</em></strong></td>
+<td>设置每一个section的背景颜色</td>
+</tr>
+<tr>
+<td>controlArrows</td>
+<td>定义是否使用箭头来控制幻灯片，默认true</td>
+</tr>
+<tr>
+<td>verticalCentered</td>
+<td>设定每一个section的内容是否垂直居中，默认true，</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>设定字体是否随着窗口缩放而缩放，默认false，一般不修改</td>
+</tr>
+<tr>
+<td><strong><em>scrollingSpeed</em></strong></td>
+<td>设置滚动的速度，默认700毫秒</td>
+</tr>
+<tr>
+<td>easing</td>
+<td>设置动画的方式，默认是easeInOutCubic,如果想要修改此页，需要引入jquery.easing.js</td>
+</tr>
+<tr>
+<td>css3</td>
+<td>是否使用css3 transform来实现滚动效果，默认true，不用修改，CSS3的动画效率比较js高。</td>
+</tr>
+<tr>
+<td>loopTop</td>
+<td>滚动到顶部后是否连续滚动到底部，默认false</td>
+</tr>
+<tr>
+<td>loopBottom</td>
+<td>滚动到底部后是否连续滚动到顶部，默认false</td>
+</tr>
+<tr>
+<td>loopHorizontal</td>
+<td>设置幻灯片是否循环滚动，默认true</td>
+</tr>
+<tr>
+<td><strong><em>continuousVertical</em></strong></td>
+<td>是否循环滚动，默认为false，如果设置为true，则页面会循环滚动，不会出现loopTop与loopBottom那样的跳动。</td>
+</tr>
+<tr>
+<td>autoScrolling</td>
+<td>是否使用插件的滚动方式，默认true，如果选择false，会出现浏览器子代的滚动条，将不会按页滚动，按照滚动进行滚动。</td>
+</tr>
+<tr>
+<td>scrollBar</td>
+<td>是否包含滚动条，默认false，如果设置为true，那么浏览器自定的滚动条会出现，这个时候，页面滚动还是按页滚动，但是浏览器也能滚动。不建议开启，不然会不同步。</td>
+</tr>
+<tr>
+<td>paddingTop/paddingBottom</td>
+<td>给每一个section设置一个paddingTop或者paddingBottom,默认值为0，如果需要给页面设置一个固定定位的头部菜单或者底部菜单的时候，可以使用这两个选项。</td>
+</tr>
+<tr>
+<td>keyboardScrolling</td>
+<td>是否可以使用键盘方向键导航，默认true</td>
+</tr>
+<tr>
+<td><strong><em>navigation</em></strong></td>
+<td>是否显示导航，默认为false，设置为true，会显示小圆点，作为导航</td>
+</tr>
+<tr>
+<td>navigationPositon</td>
+<td>导航小圆点的位置，设置left或者right，默认是right</td>
+</tr>
+<tr>
+<td>navigationTooltips</td>
+<td>小圆点的提示信息，鼠标一上去能看到提示信息</td>
+</tr>
+<tr>
+<td>showActiveTooltip</td>
+<td>是否显示当前页面的导航的tooltip信息，默认是false</td>
+</tr>
+<tr>
+<td>slidesNavigation</td>
+<td>是否显示横向幻灯片的导航，默认为false</td>
+</tr>
+<tr>
+<td>slidesNavPosition</td>
+<td>设置横向幻灯片的位置，top或者bottom，默认bottom</td>
+</tr>
+<tr>
+<td>sectionSelector</td>
+<td>section的选择器，默认是.section</td>
+</tr>
+<tr>
+<td>slideSelector</td>
+<td>slide的选择器，默认是.slide</td>
+</tr>
+</tbody>
+</table>
+<h3 id="常用回调函数"><a href="#常用回调函数" class="headerlink" title="常用回调函数"></a>常用回调函数</h3><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>afterLoad(anchorLink, index)</td>
+<td>滚动到某一个section,当滚动结束后，会触发一次这个回调函数，anchorLink是锚链接的名称，index从1开始计算</td>
+</tr>
+<tr>
+<td>onLeave(index,nextIndex,diretion)</td>
+<td>当我们离开一个section时，会触发这个函数，index是离开的页面的序号，从1开始计算。  nextIndex是滚动到的页面的序号，direction是往上还是往下滚动，值是up或者down.  return false可以取消滚动</td>
+</tr>
+<tr>
+<td>afterResize()</td>
+<td>窗口大小发生改变后会触发的回调函数</td>
+</tr>
+<tr>
+<td>afterSlideLoad(anchor,index,  slideAnchor,slideIndex)</td>
+<td>页面滚动到某一个幻灯片的时候会触发这个回调函数</td>
+</tr>
+<tr>
+<td>afterSlideLeave(anchor,index,slideIndex,  diretion,nextSlideIndex)</td>
+<td>当离开某一个幻灯片的时候会触发一次这个回调函数。</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+     
+     <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css3/" <i class="fa fa-tag"></i> css3</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/01/html5(2)/" rel="next" title="html5(2)-知识">
+                <i class="fa fa-chevron-left"></i> html5(2)-知识
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/01/笔记(1)/" rel="prev" title="笔记(1)">
+                笔记(1) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="光明" />
+          
+            <p class="site-author-name" itemprop="name">光明</p>
+            <p class="site-description motion-element" itemprop="description">激进小IT</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/pgm0908/" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#弹性布局-伸缩布局"><span class="nav-number">1.</span> <span class="nav-text">弹性布局(伸缩布局)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-direction"><span class="nav-number">1.1.</span> <span class="nav-text">flex-direction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#justify-content-重点"><span class="nav-number">1.2.</span> <span class="nav-text">justify-content(重点)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-items-重点"><span class="nav-number">1.3.</span> <span class="nav-text">align-items(重点)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex-wrap"><span class="nav-number">1.4.</span> <span class="nav-text">flex-wrap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-content"><span class="nav-number">1.5.</span> <span class="nav-text">align-content</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#flex属性"><span class="nav-number">1.6.</span> <span class="nav-text">flex属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#order属性"><span class="nav-number">1.7.</span> <span class="nav-text">order属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#align-self"><span class="nav-number">1.8.</span> <span class="nav-text">align-self</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#携程旅行网"><span class="nav-number">2.</span> <span class="nav-text">携程旅行网</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#360浏览器"><span class="nav-number">3.</span> <span class="nav-text">360浏览器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#fullpage的使用"><span class="nav-number">3.1.</span> <span class="nav-text">fullpage的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本使用"><span class="nav-number">3.1.1.</span> <span class="nav-text">基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#鼠标滚动事件-了解"><span class="nav-number">3.1.2.</span> <span class="nav-text">鼠标滚动事件(了解)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用参数"><span class="nav-number">3.1.3.</span> <span class="nav-text">常用参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用回调函数"><span class="nav-number">3.1.4.</span> <span class="nav-text">常用回调函数</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">光明</span>
+
+  
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共11.4k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+ 
+</body>
+</html>
