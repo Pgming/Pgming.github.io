@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #bdf74d; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="js知识总结(构造函数和原型)">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js(2)知识小总结">
+<meta property="og:url" content="http://yoursite.com/2017/09/02/js(2)/index.html">
+<meta property="og:site_name" content="博客-彭">
+<meta property="og:description" content="js知识总结(构造函数和原型)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-02T00:46:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js(2)知识小总结">
+<meta name="twitter:description" content="js知识总结(构造函数和原型)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/02/js(2)/"/>
+
+
+
+
+
+
+  <title>js(2)知识小总结 | 博客-彭</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客-彭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">☆☆☆☆☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/02/js(2)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客-彭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js(2)知识小总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-02T08:25:03+08:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="js知识总结-构造函数和原型"><a href="#js知识总结-构造函数和原型" class="headerlink" title="js知识总结(构造函数和原型)"></a>js知识总结(构造函数和原型)</h1><a id="more"></a>
+<p>一：回顾</p>
+<h2 id="二：创建对象的几种方式："><a href="#二：创建对象的几种方式：" class="headerlink" title="二：创建对象的几种方式："></a>二：创建对象的几种方式：</h2><h3 id="1-使用字面量的方式"><a href="#1-使用字面量的方式" class="headerlink" title="1.    使用字面量的方式"></a>1.    使用字面量的方式</h3><p>a)    通过对象字面量创建对象的时候本质是在调用new Object<br>b)    通过数组字面量创建对象的进修本质是在调用new Array<br>c)    通过正则字面量创建对象的时候本质是在调用new RegExp<br>d)    代码示例：<br>var obj={<br>    key:value<br>}</p>
+<h3 id="2-使用函数封装"><a href="#2-使用函数封装" class="headerlink" title="2.    使用函数封装"></a>2.    使用函数封装</h3><p>var createPerson=function(name,age){<br>    var obj=new Object();<br>    obj.name=name;<br>    obj.age=age;<br>    return obj;<br>}<br>var jack=createPerson(‘jack’,20);</p>
+<h3 id="3-使用自定义构造函数"><a href="#3-使用自定义构造函数" class="headerlink" title="3.    使用自定义构造函数"></a>3.    使用自定义构造函数</h3><p>function  Person(name,age){<br>    this.name=name;<br>    this.age=age;<br>}<br>var per1=new Person(‘jack’,20);</p>
+<h2 id="三：构造函数介绍："><a href="#三：构造函数介绍：" class="headerlink" title="三：构造函数介绍："></a>三：构造函数介绍：</h2><h3 id="1-什么是构造函数：构造函数是用来初始化对象的"><a href="#1-什么是构造函数：构造函数是用来初始化对象的" class="headerlink" title="1.    什么是构造函数：构造函数是用来初始化对象的"></a>1.    什么是构造函数：构造函数是用来初始化对象的</h3><h3 id="2-构造函数的特征："><a href="#2-构造函数的特征：" class="headerlink" title="2.    构造函数的特征："></a>2.    构造函数的特征：</h3><p>a)    首字母大写–规范<br>b)    构造函数一般和new关键字一起使用<br>c)    构造函数不需要手动的写返回值</p>
+<h3 id="3-构造函数的执行过程："><a href="#3-构造函数的执行过程：" class="headerlink" title="3.    构造函数的执行过程："></a>3.    构造函数的执行过程：</h3><p>a)    通过new关键字创建对象<br>b)    调用构造函数将构造函数中的this指向创建出来的对象<br>c)    在构造函数内部，通过this对对象新增属性和方法–初始化操作<br>d)    自动返回创建好的对象</p>
+<h3 id="4-注意事项"><a href="#4-注意事项" class="headerlink" title="4.    注意事项"></a>4.    注意事项</h3><p>a)    如果在构造函数中写了return语句<br>i.    如果返回了简单数据类型，不会对构造函数的返回值造成影响，依然是构造函数中创建的对象<br>ii.    如果返回了复杂数据类型，则会返回该复杂数据类型<br>b)    如果像调用普通函数一样调用构造函数<br>i.    函数中的this会指向window对象，通过this添加的所有属性和方法会添加到window对象以上<br>ii.    如果函数中没有return语句，则返回undefined</p>
+<h2 id="四：传统构造函数存在的问题："><a href="#四：传统构造函数存在的问题：" class="headerlink" title="四：传统构造函数存在的问题："></a>四：传统构造函数存在的问题：</h2><pre><code>公共方法
+function sayHi(){
+    console.log(&quot;你们好！&quot;);
+}
+function Person(name,age){
+    this.name=name;
+    this.age=age;
+    this.sayhi=sayHi;
+}
+
+var per1=new Person(&apos;jack&apos;,20);
+per1.sayhi();
+var per2=new Person(&apos;rose&apos;,18);
+per1.sayhi();
+
+每一次创建对象都会将对象中的声明的属性都重新创建一次，造成浪费
+var isEqual=per1.sayhi()===per2.sayhi(); 得到false
+console.log(isEqual);
+解决问题的第一种方式：提取公共方法--将函数的定义放到构造函数以外，那么在调用构造函数的时候，不会去 重复的创建，而是直接调用定义好的函数(地址的引用)，这样就解决了资源浪费的问题
+新的问题：
+全局变量污染
+代码结构混乱
+</code></pre><h2 id="五：原型："><a href="#五：原型：" class="headerlink" title="五：原型："></a>五：原型：</h2><h3 id="1-什么是原型：构造函数在创建出来的时候，系统会默认帮这个构造函数创建并且关联一个空的对象，-这个对象就是原型"><a href="#1-什么是原型：构造函数在创建出来的时候，系统会默认帮这个构造函数创建并且关联一个空的对象，-这个对象就是原型" class="headerlink" title="1.    什么是原型：构造函数在创建出来的时候，系统会默认帮这个构造函数创建并且关联一个空的对象， 这个对象就是原型"></a>1.    什么是原型：构造函数在创建出来的时候，系统会默认帮这个构造函数创建并且关联一个空的对象， 这个对象就是原型</h3><h3 id="2-原型的作用：通过和原型关联的构造函数所创建出来的所有对象，都会共享原型中声明的属性和方法—-相当于后台语言中的父类"><a href="#2-原型的作用：通过和原型关联的构造函数所创建出来的所有对象，都会共享原型中声明的属性和方法—-相当于后台语言中的父类" class="headerlink" title="2.    原型的作用：通过和原型关联的构造函数所创建出来的所有对象，都会共享原型中声明的属性和方法—(相当于后台语言中的父类)"></a>2.    原型的作用：通过和原型关联的构造函数所创建出来的所有对象，都会共享原型中声明的属性和方法—(相当于后台语言中的父类)</h3><h3 id="3-如何访问原型：可以通过构造函数名称-protoType获取原型。如：Person-prototype"><a href="#3-如何访问原型：可以通过构造函数名称-protoType获取原型。如：Person-prototype" class="headerlink" title="3.    如何访问原型：可以通过构造函数名称.protoType获取原型。如：Person.prototype"></a>3.    如何访问原型：可以通过构造函数名称.protoType获取原型。如：Person.prototype</h3><h3 id="4-如何在原型中添加属性和方法："><a href="#4-如何在原型中添加属性和方法：" class="headerlink" title="4.    如何在原型中添加属性和方法："></a>4.    如何在原型中添加属性和方法：</h3><p>a)    利用对象的动态特性为原型添加属性和方法 。具体可以通过类型.protoType来添加属性和方法,如:<br>Person.prototype.address=’广州’;<br>console.log(per.address);</p>
+<p>b)    直接为构造函数的原型属性protoType赋值一个新的对象<br>Person.prototype={<br>    gender:’male’,<br>    phone:’12345’<br>}<br>var per2=new Person();<br>console.log(per2.phone);</p>
+<h2 id="六：使用原型注意事项："><a href="#六：使用原型注意事项：" class="headerlink" title="六：使用原型注意事项："></a>六：使用原型注意事项：</h2><h3 id="1-原型的成员需要先添加再使用"><a href="#1-原型的成员需要先添加再使用" class="headerlink" title="1.原型的成员需要先添加再使用"></a>1.原型的成员需要先添加再使用</h3><h3 id="2-公共的成员才可以放到原型中，不同对象的不同的属性应该放在各自对象内"><a href="#2-公共的成员才可以放到原型中，不同对象的不同的属性应该放在各自对象内" class="headerlink" title="2.    公共的成员才可以放到原型中，不同对象的不同的属性应该放在各自对象内"></a>2.    公共的成员才可以放到原型中，不同对象的不同的属性应该放在各自对象内</h3><h3 id="3-在获取某些成员的时候，如果当前对象中没有，才会去原型中获取"><a href="#3-在获取某些成员的时候，如果当前对象中没有，才会去原型中获取" class="headerlink" title="3.    在获取某些成员的时候，如果当前对象中没有，才会去原型中获取"></a>3.    在获取某些成员的时候，如果当前对象中没有，才会去原型中获取</h3><h3 id="4-在使用对象设置属性的值的时候，只会在对象自身进行查找，如果有，就进行修改，如果没有就会新增"><a href="#4-在使用对象设置属性的值的时候，只会在对象自身进行查找，如果有，就进行修改，如果没有就会新增" class="headerlink" title="4.    在使用对象设置属性的值的时候，只会在对象自身进行查找，如果有，就进行修改，如果没有就会新增"></a>4.    在使用对象设置属性的值的时候，只会在对象自身进行查找，如果有，就进行修改，如果没有就会新增</h3><h3 id="5-在给构造函数的原型属性protoType赋值一个新的对象，会造成赋值前后创建的对象所指向的原型不一样，所以建议先赋值新对象之后再通过构造函数创建对象"><a href="#5-在给构造函数的原型属性protoType赋值一个新的对象，会造成赋值前后创建的对象所指向的原型不一样，所以建议先赋值新对象之后再通过构造函数创建对象" class="headerlink" title="5.    在给构造函数的原型属性protoType赋值一个新的对象，会造成赋值前后创建的对象所指向的原型不一样，所以建议先赋值新对象之后再通过构造函数创建对象"></a>5.    在给构造函数的原型属性protoType赋值一个新的对象，会造成赋值前后创建的对象所指向的原型不一样，所以建议先赋值新对象之后再通过构造函数创建对象</h3><h2 id="七：proto属性的介绍"><a href="#七：proto属性的介绍" class="headerlink" title="七：proto属性的介绍"></a>七：<strong>proto</strong>属性的介绍</h2><pre><code>function  Person(name,age){
+    this.name=name;
+    this.age=age;
+}
+var p=new Person(&apos;jack&apos;,20);
+console.log(Person.prototype);
+__proto__是一个非标准的属性，不同浏览器会有兼容的问题，所以不推荐在工作和项目中使用，只在自己调试代码的时候使用
+console.log(p.__proto__);
+console.log(Person.prototype === p.__proto__);
+</code></pre><h2 id="八：constructor属性："><a href="#八：constructor属性：" class="headerlink" title="八：constructor属性："></a>八：constructor属性：</h2><pre><code>function  Person(){
+
+}
+constructor:指向和原型对应的构造函数
+console.log(Person.prototype.constructor);
+console.log(Person.prototype.constructor === Person); //true
+</code></pre><p>注意：当构造函数.protoType重新赋值为一个新的时候，新的对象中需要手动新增constructor属性，让原型可以正常的和构造关联起来，但是constructor属性不是必须要修改的内容，如果没有重新指向，对使用也不会有影响，但是一般情况下，都推荐改成正常的指向。</p>
+<h2 id="九：面向对象的三大特性：封装，继承，多态"><a href="#九：面向对象的三大特性：封装，继承，多态" class="headerlink" title="九：面向对象的三大特性：封装，继承，多态"></a>九：面向对象的三大特性：封装，继承，多态</h2><ol>
+<li>封装：将功能封装在对象中，对象会提供外部使用的接口，外界在使用的时候，只需要考虑如何调用接口，而不需要考虑内部的具体实现。</li>
+<li>继承：js中的某些对象没有一些需要的属性和方法，但是另外的对象有，那么拿过来使用，就是继承</li>
+<li>多态：js中没有多态，多态一般是体现在强类型的编程语言中。<h2 id="十：js中继承的实现方式"><a href="#十：js中继承的实现方式" class="headerlink" title="十：js中继承的实现方式"></a>十：js中继承的实现方式</h2><h3 id="1-混入式-max-in-继承：通过循环将一个对象中的所有属性和方法混入到另外一个对象中："><a href="#1-混入式-max-in-继承：通过循环将一个对象中的所有属性和方法混入到另外一个对象中：" class="headerlink" title="1.    混入式(max-in)继承：通过循环将一个对象中的所有属性和方法混入到另外一个对象中："></a>1.    混入式(max-in)继承：通过循环将一个对象中的所有属性和方法混入到另外一个对象中：</h3>####　1.实现继承的第一种方式:混入式继承<br>var me={<br>work:function(){<br>  console.log(‘打工’);<br>}<br>};<br>var mayun={<br>money:9999999999,<br>car:’QQ’,<br>manager:function(){<br>  console.log(‘管理阿里巴巴。。。’);<br>}<br>}<br>遍历，让me对象拥有mayun对象的所有属性<br>for(var key in mayun){<br>me[key]=mayun[key];<br>}<br>console.log(me);</li>
+</ol>
+<p>####　2.    使用原型实现继承:<br>function Person(){<br>    this.name=’人类’;<br>    this.age=’20’;<br>    this.sayHi=function(){<br>        console.log(‘向你问好’);<br>    }<br>}<br>function Painter(){<br>    this.name=’画家’;<br>    this.age=’50’;<br>    this.canPaint=function(){<br>        console.log(‘我会画画’);<br>    }<br>}<br>var per=new Person();<br>var paint=new Painter();<br>function Student(){</p>
+<p>}<br>2.1 修改构造函数的protoType属性来设置原型，但是原型只有一个，所以这种方式无法指定多种原型，后面指定的原型会覆盖前面指定的原型<em>/<br>/</em>Student.prototype=per;<br>var stu=new Student();<br>console.log(stu);</p>
+<p>2.2 利用混入的方式给原型添加属性和方法<br>for(var key in per){<br>    Student.prototype[key]=per[key];<br>}<br>for(var key in paint){<br>    Student.prototype[key]=paint[key];<br>}<br>var stu=new Student();<br>console.log(stu);</p>
+<h2 id="十一：经典的实现继承的方式"><a href="#十一：经典的实现继承的方式" class="headerlink" title="十一：经典的实现继承的方式"></a>十一：经典的实现继承的方式</h2><p>1．    Object.createy()：<br>2．    解决兼容问题：<br>    var source={<br>        name:’jack’,<br>        age:20<br>    }<br>    解决经典继承方式的兼容<br>    function myCreate(){<br>        判断浏览器是否支持经典继承方式<br>        if(Object.create){<br>            var son=Object.create(source);<br>            return son;<br>        }<br>        else{<br>            function UserDefine(){}<br>            UserDefine.prototype=source;<br>            var son=new UserDefine();<br>            return son;<br>        }<br>    }</p>
+<h2 id="十二：继承的使用—扩展内置对象"><a href="#十二：继承的使用—扩展内置对象" class="headerlink" title="十二：继承的使用—扩展内置对象"></a>十二：继承的使用—扩展内置对象</h2><ol>
+<li>如何安全的扩展内置对象–不能直接为系统的内置对象扩展属性和方法，因为它是共用的<br>1.创建自定义的构造函数<br>2.实现原型继承，如继承自一个数组对象<br>3.为自定义的构造函数的原型扩展属性和方法<br>4.通过自定义的构造函数创建出的对象，既拥有系统数组的属性和方法，又拥有自定义的属性和方法<br>5.自定义的类型不会对其它的类型产生影响</li>
+<li><p>示例：</p>
+<p>使用js内置对象<br>var arr1=new Array();<br>为系统的内置对象添加一些自定义属性或方法<br>Array.prototype.sayHi=function(){<br>  console.log(‘我是第一个对象’);<br>}<br>arr1.sayHi();</p>
+<p>创建第二个对象<br>var arr2=new Array();<br>为第二个对象添加自定义的属性或方法<br>Array.prototype.sayHi=function(){<br>  console.log(‘我是第二个对象’);<br>}<br>arr2.sayHi();<br>但是，如果再用第一个对象来进行属性或方法的调用，则发现覆盖<br>arr1.sayHi();</p>
+<p>解决：创建自定义数组，为当前数组添加独立的属性或方法，而不是去修改共享的内置对象，否则修改一个，其它使用的时候也发生改变<br>function  MyArray(){}<br>让自定义的类型是一个数组–拥有数组的属性和方法<br>MyArray.prototype=[];<br>MyArray.prototype.sayHi=function(){<br>  console.log(‘对象1向你问好’);<br>}<br>使用自定义类型创建对象<br>var arr3=new MyArray();<br>arr3.push(1,2,3,4,5);<br>console.log(arr3);<br>arr3.sayHi();<br>arr2.sayHi();<br>arr1.sayHi();</p>
+</li>
+</ol>
+<h2 id="十三：原型链："><a href="#十三：原型链：" class="headerlink" title="十三：原型链："></a>十三：原型链：</h2><ol>
+<li>概念：对象都有原型，原型是一个对象，所以原型又有原型，这样就形成了一个原型链</li>
+<li>属性搜索原则：当使用对象去访问一个属性或者方法的时候<br>a)    先在对象自身中进行查找，如果找到就直接使用<br>b)    如果没有找到，就去对象的原型中进行查找，如果找到直接使用<br>c)    如果没有找到，就沿着原型链依次向上查找，直到找到null</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+     
+     <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" <i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/02/js(1)/" rel="next" title="js(1)知识小总结">
+                <i class="fa fa-chevron-left"></i> js(1)知识小总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/02/js(3)/" rel="prev" title="js(3)知识小总结">
+                js(3)知识小总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="光明" />
+          
+            <p class="site-author-name" itemprop="name">光明</p>
+            <p class="site-description motion-element" itemprop="description">激进小IT</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/pgm0908/" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js知识总结-构造函数和原型"><span class="nav-number">1.</span> <span class="nav-text">js知识总结(构造函数和原型)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二：创建对象的几种方式："><span class="nav-number">1.1.</span> <span class="nav-text">二：创建对象的几种方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-使用字面量的方式"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.    使用字面量的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用函数封装"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.    使用函数封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-使用自定义构造函数"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.    使用自定义构造函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三：构造函数介绍："><span class="nav-number">1.2.</span> <span class="nav-text">三：构造函数介绍：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是构造函数：构造函数是用来初始化对象的"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.    什么是构造函数：构造函数是用来初始化对象的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-构造函数的特征："><span class="nav-number">1.2.2.</span> <span class="nav-text">2.    构造函数的特征：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-构造函数的执行过程："><span class="nav-number">1.2.3.</span> <span class="nav-text">3.    构造函数的执行过程：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-注意事项"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.    注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四：传统构造函数存在的问题："><span class="nav-number">1.3.</span> <span class="nav-text">四：传统构造函数存在的问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五：原型："><span class="nav-number">1.4.</span> <span class="nav-text">五：原型：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是原型：构造函数在创建出来的时候，系统会默认帮这个构造函数创建并且关联一个空的对象，-这个对象就是原型"><span class="nav-number">1.4.1.</span> <span class="nav-text">1.    什么是原型：构造函数在创建出来的时候，系统会默认帮这个构造函数创建并且关联一个空的对象， 这个对象就是原型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-原型的作用：通过和原型关联的构造函数所创建出来的所有对象，都会共享原型中声明的属性和方法—-相当于后台语言中的父类"><span class="nav-number">1.4.2.</span> <span class="nav-text">2.    原型的作用：通过和原型关联的构造函数所创建出来的所有对象，都会共享原型中声明的属性和方法—(相当于后台语言中的父类)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-如何访问原型：可以通过构造函数名称-protoType获取原型。如：Person-prototype"><span class="nav-number">1.4.3.</span> <span class="nav-text">3.    如何访问原型：可以通过构造函数名称.protoType获取原型。如：Person.prototype</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-如何在原型中添加属性和方法："><span class="nav-number">1.4.4.</span> <span class="nav-text">4.    如何在原型中添加属性和方法：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六：使用原型注意事项："><span class="nav-number">1.5.</span> <span class="nav-text">六：使用原型注意事项：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-原型的成员需要先添加再使用"><span class="nav-number">1.5.1.</span> <span class="nav-text">1.原型的成员需要先添加再使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-公共的成员才可以放到原型中，不同对象的不同的属性应该放在各自对象内"><span class="nav-number">1.5.2.</span> <span class="nav-text">2.    公共的成员才可以放到原型中，不同对象的不同的属性应该放在各自对象内</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-在获取某些成员的时候，如果当前对象中没有，才会去原型中获取"><span class="nav-number">1.5.3.</span> <span class="nav-text">3.    在获取某些成员的时候，如果当前对象中没有，才会去原型中获取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-在使用对象设置属性的值的时候，只会在对象自身进行查找，如果有，就进行修改，如果没有就会新增"><span class="nav-number">1.5.4.</span> <span class="nav-text">4.    在使用对象设置属性的值的时候，只会在对象自身进行查找，如果有，就进行修改，如果没有就会新增</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-在给构造函数的原型属性protoType赋值一个新的对象，会造成赋值前后创建的对象所指向的原型不一样，所以建议先赋值新对象之后再通过构造函数创建对象"><span class="nav-number">1.5.5.</span> <span class="nav-text">5.    在给构造函数的原型属性protoType赋值一个新的对象，会造成赋值前后创建的对象所指向的原型不一样，所以建议先赋值新对象之后再通过构造函数创建对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七：proto属性的介绍"><span class="nav-number">1.6.</span> <span class="nav-text">七：proto属性的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#八：constructor属性："><span class="nav-number">1.7.</span> <span class="nav-text">八：constructor属性：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#九：面向对象的三大特性：封装，继承，多态"><span class="nav-number">1.8.</span> <span class="nav-text">九：面向对象的三大特性：封装，继承，多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十：js中继承的实现方式"><span class="nav-number">1.9.</span> <span class="nav-text">十：js中继承的实现方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-混入式-max-in-继承：通过循环将一个对象中的所有属性和方法混入到另外一个对象中："><span class="nav-number">1.9.1.</span> <span class="nav-text">1.    混入式(max-in)继承：通过循环将一个对象中的所有属性和方法混入到另外一个对象中：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十一：经典的实现继承的方式"><span class="nav-number">1.10.</span> <span class="nav-text">十一：经典的实现继承的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十二：继承的使用—扩展内置对象"><span class="nav-number">1.11.</span> <span class="nav-text">十二：继承的使用—扩展内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#十三：原型链："><span class="nav-number">1.12.</span> <span class="nav-text">十三：原型链：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">光明</span>
+
+  
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共23.5k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+ 
+</body>
+</html>

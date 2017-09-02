@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #bdf74d; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="js知识总结(递归、作用域和预解析)">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js(4)知识小总结">
+<meta property="og:url" content="http://yoursite.com/2017/09/02/js(4)/index.html">
+<meta property="og:site_name" content="博客-彭">
+<meta property="og:description" content="js知识总结(递归、作用域和预解析)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-02T01:20:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js(4)知识小总结">
+<meta name="twitter:description" content="js知识总结(递归、作用域和预解析)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/02/js(4)/"/>
+
+
+
+
+
+
+  <title>js(4)知识小总结 | 博客-彭</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客-彭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">☆☆☆☆☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/02/js(4)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客-彭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js(4)知识小总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-02T09:11:24+08:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="js知识总结-递归、作用域和预解析"><a href="#js知识总结-递归、作用域和预解析" class="headerlink" title="js知识总结(递归、作用域和预解析)"></a>js知识总结(递归、作用域和预解析)</h1><a id="more"></a>
+<p>一：回顾</p>
+<h2 id="二：静态成员和实例成员："><a href="#二：静态成员和实例成员：" class="headerlink" title="二：静态成员和实例成员："></a>二：静态成员和实例成员：</h2><ol>
+<li>静态成员：通过构造函数访问的成员  &gt;&gt;  函数名.成员</li>
+<li>实例成员：通过实例对象访问的成员  &gt;&gt;  实例对象.成员<h2 id="三：递归："><a href="#三：递归：" class="headerlink" title="三：递归："></a>三：递归：</h2></li>
+<li>两个前提：调用自己-有结束条件</li>
+<li><p>简单示例：</p>
+<p>查找元素的所有子元素：先找到直接子元素，再查找子元素的子元素<br>function getChilds(element){<br>  var list=[];<br>  var childs=element.children;<br>  for (var i = 0; i &lt; childs.length; i++) {</p>
+<pre><code>var child=childs[i];
+list.push(child);
+var subList=getChilds(child);
+将返回值拼接到原始的list中
+list=list.concat(subList);
+</code></pre><p>  }<br>  return list;<br>}</p>
+<p>window.onload=function(){<br>  var header=document.querySelector(“header”);<br>  var myList=getChilds(header);<br>  console.log(myList);<br>}</p>
+</li>
+</ol>
+<h2 id="四：作用域："><a href="#四：作用域：" class="headerlink" title="四：作用域："></a>四：作用域：</h2><ol>
+<li>概念：变量起作用的范围</li>
+<li>在js中，只有函数可以创建作用域</li>
+<li>词法作用域(静态作用域)：根据代码的书写结构去确定变量的作用范围，与调用没有关系。意味着在使用一个变量的时候，首先在自己的作用域中查找，如果没有就去上一级作用域中查找</li>
+<li>注意：js中没有块级作用域，意味着在if或者for中定义的变量在它们的外部也能够访问<h2 id="五：变量名提升："><a href="#五：变量名提升：" class="headerlink" title="五：变量名提升："></a>五：变量名提升：</h2></li>
+<li>js代码的执行过程包含：预解析和执行</li>
+<li>在代码的预解析阶段，js引擎会将所有的变量声明，以及函数声明提升到其所在的作用域的最顶端</li>
+<li>当函数和函数同名，都会进行提升，造成后面声明的函数覆盖前面的函数</li>
+<li>当函数和变量名同名的时候，只会提升函数，忽略变量的声明</li>
+<li>用表达式创建的函数不能进行提升，只有对应的变量名称能够进行提升</li>
+<li>条件式函数声明：就是在条件语句是声明的函数，在变量提升的时候会被当函数表达式来处理</li>
+<li><p>变量提升是分Script标签的。所有的全局的函数或者变量的声明，只会被提升到当前Script标签的最顶端</p>
+<h2 id="六：函数的作用域链："><a href="#六：函数的作用域链：" class="headerlink" title="六：函数的作用域链："></a>六：函数的作用域链：</h2><p>1.只有函数可以创建作用域<br>2.在函数中可以嵌套函数，这样就形成了作用域中嵌套另外一个作用域，这就形成了作用域链<br>3.作用域链中变量的搜索原则：<br>a.首先在当前使用变量的作用域中查找，如果找到就使用，否则查找上一级作用域<br>b.查找上一级作用域，如果找到就使用，否则再查找上一级作用域<br>c.如果没有，就一直沿着作用域往上找，直到找到全局的作用域为止<br>4.访问规则：由内至外<br>a.内层作用域可以访问外层作用域中的变量<br>b.外层作用域不能直接访问内层作用域中的变量*/</p>
+<p>var num;<br>function f1(){<br>  var num;<br>  function f2(){</p>
+<pre><code>console.log(num);
+</code></pre><p>  }<br>  num=123;<br>  f2();<br>}<br>num=234;<br>f1();</p>
+</li>
+</ol>
+<h2 id="七：Object-defineProperty"><a href="#七：Object-defineProperty" class="headerlink" title="七：Object.defineProperty"></a>七：Object.defineProperty</h2><ol>
+<li>作用：这个方法会直接在一个对象上定义一个新的属性或者修改一个已经存在的属性，并返回这个对象。</li>
+<li>语法：Object.defineProperty(obj,prop,descriptor)<br>a)    Obj:要添加属性或者修改属性的对象<br>b)    Prop:要修改或者添加的属性名称<br>c)    Descriptor:标记属性能否被删除，修改或者遍历。。。相当于配置属性的特性，它是一个对象</li>
+<li>代码示例：<br>var obj={};<br>第一个参数：需要添加属性的对象<br>第二个参数：属性名称<br>第三个参数：它是一个对象，用来配置当前属性的特性<br>writable:true:是否可以赋值，默认是false<br>configurable:设置属性是否可以被配置（如删除），默认为false<br>enumerable:设置属性能否被遍历，默认为false<br>value:设置当前属性的默认值<br>get:获取值 –只读属性<br>set:赋值，可以进行数据的合法性校验 –只写属性<br>Object.defineProperty(obj,’name’,{<br>  //writable:true,<br>  //configurable:true,<br>  enumerable:true,<br>  //value:’jack’,<br>  /<em>get、set不能和value和writable一起使用</em>/<br>  /<em>获取属性值</em>/<br>  get:function(){<pre><code>return obj._name;
+</code></pre>  },<br>  /<em>为属性赋值</em>/<br>  set:function(value){<pre><code>console.log(&apos;方法被调用了&apos;);
+/*这里一般可以做参数值的验证*/
+if(typeof value !=&quot;string&quot;){
+    throw &apos;请输入合法的用户名&apos;;
+}
+obj._name=value;
+</code></pre>  }<br>});<br>obj.name=10;<br>//delete  obj.name;<br>console.log(obj);<br>for(var key in obj){<br>  console.log(key);<br>}</li>
+<li>注意：get/set方法不能和value和writable属性一起使用。</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+     
+     <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" <i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/02/js(3)/" rel="next" title="js(3)知识小总结">
+                <i class="fa fa-chevron-left"></i> js(3)知识小总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/02/js(5)/" rel="prev" title="js(5)知识小总结">
+                js(5)知识小总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="光明" />
+          
+            <p class="site-author-name" itemprop="name">光明</p>
+            <p class="site-description motion-element" itemprop="description">激进小IT</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/pgm0908/" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js知识总结-递归、作用域和预解析"><span class="nav-number">1.</span> <span class="nav-text">js知识总结(递归、作用域和预解析)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二：静态成员和实例成员："><span class="nav-number">1.1.</span> <span class="nav-text">二：静态成员和实例成员：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三：递归："><span class="nav-number">1.2.</span> <span class="nav-text">三：递归：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四：作用域："><span class="nav-number">1.3.</span> <span class="nav-text">四：作用域：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五：变量名提升："><span class="nav-number">1.4.</span> <span class="nav-text">五：变量名提升：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六：函数的作用域链："><span class="nav-number">1.5.</span> <span class="nav-text">六：函数的作用域链：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七：Object-defineProperty"><span class="nav-number">1.6.</span> <span class="nav-text">七：Object.defineProperty</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">光明</span>
+
+  
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共23.5k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+ 
+</body>
+</html>

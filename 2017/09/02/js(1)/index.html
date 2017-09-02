@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #bdf74d; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="js基础知识总结">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js(1)知识小总结">
+<meta property="og:url" content="http://yoursite.com/2017/09/02/js(1)/index.html">
+<meta property="og:site_name" content="博客-彭">
+<meta property="og:description" content="js基础知识总结">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-02T00:23:19.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js(1)知识小总结">
+<meta name="twitter:description" content="js基础知识总结">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/02/js(1)/"/>
+
+
+
+
+
+
+  <title>js(1)知识小总结 | 博客-彭</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客-彭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">☆☆☆☆☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/02/js(1)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客-彭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">js(1)知识小总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-02T08:17:13+08:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="js基础知识总结"><a href="#js基础知识总结" class="headerlink" title="js基础知识总结"></a>js基础知识总结</h1><a id="more"></a>
+<h2 id="一：基础复习"><a href="#一：基础复习" class="headerlink" title="一：基础复习"></a>一：基础复习</h2><h3 id="1-Javascript组成："><a href="#1-Javascript组成：" class="headerlink" title="1.    Javascript组成："></a>1.    Javascript组成：</h3><p>a)    ECMAscript:规范了js的语法规范和语言使用标准<br>b)    DOM:文档对象模型，一套api,提供了一套操作页面元素相关的api<br>c)    BOM:browser object model-浏览器对象模型，提供一套用来操作浏览器相关信息的api</p>
+<h3 id="2-Js中常用的数据类型："><a href="#2-Js中常用的数据类型：" class="headerlink" title="2.    Js中常用的数据类型："></a>2.    Js中常用的数据类型：</h3><p>a)    简单数据类型：string number boolean<br>b)    复杂数据类型:Object function Array Date RegExp  Math…<br>c)    空类型：Null undefined</p>
+<h3 id="3-判断数据类型：typeof关键字，返回值的类型为string"><a href="#3-判断数据类型：typeof关键字，返回值的类型为string" class="headerlink" title="3.    判断数据类型：typeof关键字，返回值的类型为string"></a>3.    判断数据类型：typeof关键字，返回值的类型为string</h3><p>a)    string number boolean &gt; string number boolean<br>b)    对象/数组&gt;object<br>c)    function(){} &gt; function<br>d)    null &gt; object<br>e)    undefined &gt; undefined</p>
+<h3 id="4-相等和全等"><a href="#4-相等和全等" class="headerlink" title="4.    相等和全等"></a>4.    相等和全等</h3><p>a)    相等：只判断值是否相等<br>b)    全等：判断类型和值是否相等(先判断类型再判断值)</p>
+<h3 id="5-In关键字："><a href="#5-In关键字：" class="headerlink" title="5.    In关键字："></a>5.    In关键字：</h3><p>a)    For-in：遍历对象<br>b)    属性 in 对象：判断对象是否可以访问某个属性</p>
+<h3 id="6-值类型和引用类型"><a href="#6-值类型和引用类型" class="headerlink" title="6.    值类型和引用类型"></a>6.    值类型和引用类型</h3><p>a)    值类型：空间直接存储值<br>b)    引用类型：变量存储的是数据的地址，数据单独存储，变量存储的地址指向数据<br>c)    值类型和引用类型在赋值值的特点<br>i.    值类型的变量复制(参数传递)的时候是将值复制一份赋值给新的变量，修改其中一个不会影响另外的变量值<br>ii.    引用类型的变量复制(参数传递)是将存储的地址复制一份给新的变量，两个变量会指向同一个地址空间，修改其中一个另外的变量也会有相应的变化</p>
+<h3 id="7-逻辑中断"><a href="#7-逻辑中断" class="headerlink" title="7.    逻辑中断"></a>7.    逻辑中断</h3><p>a)    ||中断：如果表达式1的值为真，就返回表达式1，否则返回表达式2<br>b)    &amp;&amp;中断：如果表达式1为假，则返回表达式1的值，否则返回表达式2的值</p>
+<h3 id="8-Delete关键字的使用："><a href="#8-Delete关键字的使用：" class="headerlink" title="8.    Delete关键字的使用："></a>8.    Delete关键字的使用：</h3><p>a)    可以删除未使用var声明的变量<br>b)    可以删除对象的属性，删除之后属性值为undefined。注意：如果访问一个不存在的变量，则会报错，但是如果删除一个不存在的属性，则不会报错，只是会返回undefined。<br>c)    Delete关键字有返回值，但是不可靠，所以一般情况下不要使用这个返回值来进行相应的判断(通过Object.defineProperty方法添加的属性无法删除)<br>d)    使用delelte删除数组中的元素的时候，数组中的后面的元素的索引不会自动变化靠前，数组的长度也不会自动变化</p>
+<h3 id="9-Js中的循环语句：do-while-while-for-for-in"><a href="#9-Js中的循环语句：do-while-while-for-for-in" class="headerlink" title="9.    Js中的循环语句：do-while  while  for  for-in"></a>9.    Js中的循环语句：do-while  while  for  for-in</h3><h3 id="10-Break和continue"><a href="#10-Break和continue" class="headerlink" title="10.    Break和continue"></a>10.    Break和continue</h3><h2 id="二：对象的动态特性："><a href="#二：对象的动态特性：" class="headerlink" title="二：对象的动态特性："></a>二：对象的动态特性：</h2><pre><code>在对象创建完成之后，可以随时为对象添加任何属性和行为的特性—动态特性
+使用方式：
+</code></pre><ol>
+<li>点语法：对象.属性</li>
+<li>关联数组语法：对象[属性名称]<h2 id="三：DOM操作复习："><a href="#三：DOM操作复习：" class="headerlink" title="三：DOM操作复习："></a>三：DOM操作复习：</h2>增加：createElement   clone  appendChild  insertBefore   innerHTML<br>删除：removeChild   innerHTML<br>修改：innerHTML  setAttribute  style<br>查询：getElementById   getElementsByTagName   getElementsByClassName   querySelector   querySelectorAll<h2 id="四：异常处理：异常会导致异常出现后面的代码不能正常的执行"><a href="#四：异常处理：异常会导致异常出现后面的代码不能正常的执行" class="headerlink" title="四：异常处理：异常会导致异常出现后面的代码不能正常的执行"></a>四：异常处理：异常会导致异常出现后面的代码不能正常的执行</h2></li>
+<li>语法：<br>try{<br>可能会出错的代码<br>}catch(e){<br>捕获异常后的处理代码<br>}finally{<br>无论是否出错都会执行的代码，如释放资源<br>}</li>
+<li>e就是捕获到的异常信息</li>
+<li>抛出异常：throw，可以抛出提示信息字符串值，也可以抛出对象</li>
+<li>抛出的异常就是捕获的异常</li>
+<li>注意：<br>a)    死循环并不会报错，但是递归会报错<br>b)    语法错误并不会进行捕获，因为语法错误在代码运行前就已经出现了<br>c)    异常会导致后面的代码无法正常执行<br>d)    异常捕获处理的目的就是为了当异常出现后不会影响后面代码的执行<h2 id="五：调试工具的使用："><a href="#五：调试工具的使用：" class="headerlink" title="五：调试工具的使用："></a>五：调试工具的使用：</h2></li>
+<li>开启调试窗口</li>
+<li>介绍调试窗口<br>a)    指针: 可以选择页面中的元素<br>b)    手机: 模拟移动端界面，进行移动端页面的调试<br>c)    Elements: 查看页面 DOM 树<br>d)    Console: 控制台(注意, 控制台与该页面是一个整体, 在控制台中的任何操作, 会影响到页面)<br>e)    Source: 代码调试，可以设置断点</li>
+<li>调试工具的使用<br>a)    逐过程运行, 一次运行一个函数<br>b)    单步运行(逐步运行), 一次运行一句, 如果是函数, 进入函数体内运行<br>c)    继续运行. 从当前状态运行下去, 直到出现断点, 如果没有断点则运行结束</li>
+<li>利用 watch 监视窗口可以查看对象成员<br>六：面向对象的基本介绍：</li>
+<li>什么是对象：<br>a)    万物皆对象<br>b)    对象的特征和行为</li>
+<li>Js中的对象：<br>a)    无序的键值对的集合<br>b)    属性对应着特征<br>c)    函数方法对应着行为</li>
+<li><p>使用js模拟对象<br>var car={<br>  ‘brand’:’changcheng’,<br>  ‘price’:10000,<br>  ‘color’:’white’,<br>  行为<br>  run:function(){</p>
+<pre><code>console.log(&apos;我启动了。。。。开始动了。。。&apos;);
+</code></pre><p>  }<br>};</p>
+<p>抽象对象–名词提炼法<br>var xiaoMing={<br>  name:’小明’,<br>  ride:function(){</p>
+<pre><code>console.log(&apos;开车旅行&apos;);
+</code></pre><p>  }<br>};<br>var smallCar={<br>  brand:’BMW’,<br>  fly:function(){</p>
+<pre><code>console.log(&apos;水陆两用&apos;);
+</code></pre><p>  }<br>}<br>var dog={<br>  type:’big yellow dog’,<br>  name:’dahuang’,<br>  eat:function(){</p>
+<pre><code>console.log(&apos;就会吃&apos;);
+</code></pre><p>  }<br>};</p>
+</li>
+</ol>
+<h2 id="七：面向对象的编程："><a href="#七：面向对象的编程：" class="headerlink" title="七：面向对象的编程："></a>七：面向对象的编程：</h2><p>var myQuery={<br>    getELe:{<br>        获取元素<br>        getTags:function(tagName){<br>            return document.querySelectorAll(tagName);<br>        },<br>        getId:function(id){<br>            return document.getElementById(id);<br>        }<br>    },</p>
+<pre><code>setStyle:{
+    封装添加边框的函数
+    setBorder:function(elements){
+        for(var i=0;i&lt;elements.length;i++){
+            设置边框样式
+            elements[i].style.border=&quot;1px solid red&quot;;
+        }
+    },
+    setColor:function(colorName){
+        for(var i=0;i&lt;elements.length;i++){
+            设置边框样式
+            elements[i].style.color=colorName;
+        }
+    }
+},
+request:{
+    ajax:function(){},
+    get:function(){},
+    post:function(){}
+}
+</code></pre><p>}<br>到此：<br> 1.解决了全局变量污染<br> 2.解决了代码混乱</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+     
+     <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" <i class="fa fa-tag"></i> js</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/01/json/" rel="next" title="JSON基础">
+                <i class="fa fa-chevron-left"></i> JSON基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/02/js(2)/" rel="prev" title="js(2)知识小总结">
+                js(2)知识小总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="光明" />
+          
+            <p class="site-author-name" itemprop="name">光明</p>
+            <p class="site-description motion-element" itemprop="description">激进小IT</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/pgm0908/" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js基础知识总结"><span class="nav-number">1.</span> <span class="nav-text">js基础知识总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#一：基础复习"><span class="nav-number">1.1.</span> <span class="nav-text">一：基础复习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Javascript组成："><span class="nav-number">1.1.1.</span> <span class="nav-text">1.    Javascript组成：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Js中常用的数据类型："><span class="nav-number">1.1.2.</span> <span class="nav-text">2.    Js中常用的数据类型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-判断数据类型：typeof关键字，返回值的类型为string"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.    判断数据类型：typeof关键字，返回值的类型为string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-相等和全等"><span class="nav-number">1.1.4.</span> <span class="nav-text">4.    相等和全等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-In关键字："><span class="nav-number">1.1.5.</span> <span class="nav-text">5.    In关键字：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-值类型和引用类型"><span class="nav-number">1.1.6.</span> <span class="nav-text">6.    值类型和引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-逻辑中断"><span class="nav-number">1.1.7.</span> <span class="nav-text">7.    逻辑中断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Delete关键字的使用："><span class="nav-number">1.1.8.</span> <span class="nav-text">8.    Delete关键字的使用：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Js中的循环语句：do-while-while-for-for-in"><span class="nav-number">1.1.9.</span> <span class="nav-text">9.    Js中的循环语句：do-while  while  for  for-in</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-Break和continue"><span class="nav-number">1.1.10.</span> <span class="nav-text">10.    Break和continue</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二：对象的动态特性："><span class="nav-number">1.2.</span> <span class="nav-text">二：对象的动态特性：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三：DOM操作复习："><span class="nav-number">1.3.</span> <span class="nav-text">三：DOM操作复习：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四：异常处理：异常会导致异常出现后面的代码不能正常的执行"><span class="nav-number">1.4.</span> <span class="nav-text">四：异常处理：异常会导致异常出现后面的代码不能正常的执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五：调试工具的使用："><span class="nav-number">1.5.</span> <span class="nav-text">五：调试工具的使用：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七：面向对象的编程："><span class="nav-number">1.6.</span> <span class="nav-text">七：面向对象的编程：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">光明</span>
+
+  
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共23.5k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+ 
+</body>
+</html>
