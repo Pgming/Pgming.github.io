@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #bdf74d; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="浏览器兼容性汇总," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="浏览器兼容性汇总-javascript">
+<meta name="keywords" content="浏览器兼容性汇总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器兼容性汇总-javascript">
+<meta property="og:url" content="http://yoursite.com/2017/09/02/js浏览器兼容/index.html">
+<meta property="og:site_name" content="博客-彭">
+<meta property="og:description" content="浏览器兼容性汇总-javascript">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-02T12:06:02.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浏览器兼容性汇总-javascript">
+<meta name="twitter:description" content="浏览器兼容性汇总-javascript">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/02/js浏览器兼容/"/>
+
+
+
+
+
+
+  <title>浏览器兼容性汇总-javascript | 博客-彭</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客-彭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">☆☆☆☆☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/02/js浏览器兼容/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客-彭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">浏览器兼容性汇总-javascript</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-02T20:01:13+08:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/浏览器兼容性汇总/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器兼容性汇总</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="浏览器兼容性汇总-javascript"><a href="#浏览器兼容性汇总-javascript" class="headerlink" title="浏览器兼容性汇总-javascript"></a>浏览器兼容性汇总-javascript</h1><a id="more"></a>
+<h2 id="1-HTML对象获取问题"><a href="#1-HTML对象获取问题" class="headerlink" title="1.    HTML对象获取问题"></a>1.    HTML对象获取问题</h2><p>FireFox：document.getElementById(“idName”);<br>ie:document.idname或者document.getElementById(“idName”).<br>解决办法：统一使用document.getElementById(“idName”);</p>
+<h2 id="2-const问题"><a href="#2-const问题" class="headerlink" title="2.    const问题"></a>2.    const问题</h2><p>说明:Firefox下,可以使用const关键字或var关键字来定义常量;<br>IE下,只能使用var关键字来定义常量.<br>解决方法：统一使用var关键字来定义常量.</p>
+<h2 id="3-event-x与event-y问题"><a href="#3-event-x与event-y问题" class="headerlink" title="3.    event.x与event.y问题"></a>3.    event.x与event.y问题</h2><p>说明:IE下,event对象有x,y属性,但是没有pageX,pageY属性;<br>Firefox下,event对象有pageX,pageY属性,但是没有x,y属性.<br>解决方法：使用mX(mX   =   event.x   ?   event.x   :   event.pageX;)来代替IE下的event.x或者Firefox下的event.pageX. </p>
+<h2 id="4-window-location-href问题"><a href="#4-window-location-href问题" class="headerlink" title="4.    window.location.href问题"></a>4.    window.location.href问题</h2><p>说明:IE或者Firefox2.0.x下,可以使用window.location或window.location.href;<br>Firefox1.5.x下,只能使用window.location.<br>解决方法：使用window.location来代替window.location.href.</p>
+<h2 id="5-frame问题"><a href="#5-frame问题" class="headerlink" title="5.    frame问题"></a>5.    frame问题</h2><p>以下面的frame为例：<br>frame   src=”xxx.html”   id=”frameId”   name=”frameName”   /&gt;<br>(1)访问frame对象:<br>IE:使用window.frameId或者window.frameName来访问这个frame对象.   frameId和frameName可以同名。<br>Firefox:只能使用window.frameName来访问这个frame对象.<br>另外，在IE和Firefox中都可以使用window.document.getElementById(“frameId”)来访问这个frame对象.<br>(2)切换frame内容:<br>在 IE和Firefox中都可以使用window.document.getElementById(“testFrame”).src   =   “xxx.html”或window.frameName.location   =   “xxx.html”来切换frame的内容.<br>如果需要将frame中的参数传回父窗口(注意不是opener,而是parent   frame)，可以在frame中使用parent来访问父窗口。例如：parent.document.form1.filename.value=”Aqing”;</p>
+<h2 id="6-模态和非模态窗口问题"><a href="#6-模态和非模态窗口问题" class="headerlink" title="6.    模态和非模态窗口问题"></a>6.    模态和非模态窗口问题</h2><p>说明:IE下,可以通过showModalDialog和showModelessDialog打开模态和非模态窗口;Firefox下则不能.<br>解决方法：直接使用window.open(pageURL,name,parameters)方式打开新窗口。<br>如果需要将子窗口中的参数传递回父窗口,可以在子窗口中使用window.opener来访问父窗口.<br>例如：var   parWin   =   window.opener;   parWin.document.getElementById(“Aqing”).value   =   “Aqing”; </p>
+<h2 id="7-firefox与IE的父元素-parentElement-的区别"><a href="#7-firefox与IE的父元素-parentElement-的区别" class="headerlink" title="7.    firefox与IE的父元素(parentElement)的区别"></a>7.    firefox与IE的父元素(parentElement)的区别</h2><p>IE：obj.parentElement<br>firefox：obj.parentNode<br>解决方法:   因为firefox与IE都支持DOM,因此使用obj.parentNode是不错选择.</p>
+<h2 id="8-document-formName-item-”itemName”-问题"><a href="#8-document-formName-item-”itemName”-问题" class="headerlink" title="8.    document.formName.item(”itemName”) 问题"></a>8.    document.formName.item(”itemName”) 问题</h2><p>问题说明：IE下，可以使用document.formName.item(”itemName”) 或document.formName.elements [“elementName”]；Firefox 下，只能使用document.formName.elements[“elementName”]。<br>解决方法：统一使用document.formName.elements[“elementName”]。</p>
+<h2 id="9-集合类对象问题"><a href="#9-集合类对象问题" class="headerlink" title="9.    集合类对象问题"></a>9.    集合类对象问题</h2><p>问题说明：IE下，可以使用 () 或 [] 获取集合类对象；Firefox下，只能使用 [ ]获取集合类对象。<br>解决方法：统一使用 [] 获取集合类对象。</p>
+<h2 id="10-自定义属性问题"><a href="#10-自定义属性问题" class="headerlink" title="10.    自定义属性问题"></a>10.    自定义属性问题</h2><p>问题说明：IE下，可以使用获取常规属性的方法来获取自定义属性，也可以使用getAttribute() 获取自定义属性；Firefox下，只能使用getAttribute() 获取自定义属性。<br>解决方法：统一通过getAttribute() 获取自定义属性。</p>
+<h2 id="11-input-type属性问题"><a href="#11-input-type属性问题" class="headerlink" title="11.    input.type属性问题"></a>11.    input.type属性问题</h2><p>问题说明：IE下input.type属性为只读；但是Firefox下input.type属性为读写。<br>解决办法：不修改input.type属性。如果必须要修改，可以先隐藏原来的input，然后在同样的位置再插入一个新的input元素。</p>
+<h2 id="12-event-srcElement问题"><a href="#12-event-srcElement问题" class="headerlink" title="12.    event.srcElement问题"></a>12.    event.srcElement问题</h2><p>问题说明：IE下，even对象有srcElement属性，但是没有target属性；Firefox下，even对象有target属性，但是没有srcElement属性。<br>解决方法：使用srcObj = event.srcElement ?event.srcElement : event.target;<br>如果考虑第8条问题，就改用myEvent代替event即可。</p>
+<h2 id="13-body载入问题"><a href="#13-body载入问题" class="headerlink" title="13.    body载入问题"></a>13.    body载入问题</h2><p>问题说明：Firefox的body对象在body标签没有被浏览器完全读入之前就存在；而IE的body对象则必须在body标签被浏览器完全读入之后才存在。<br>[注] 这个问题尚未实际验证，待验证后再来修改。<br>[注] 经验证，IE6、Opera9以及FireFox2中不存在上述问题，单纯的JS脚本可以访问在脚本之前已经载入的所有对象和元素，即使这个元素还没有载入完成。</p>
+<h2 id="14-事件委托方法"><a href="#14-事件委托方法" class="headerlink" title="14.    事件委托方法"></a>14.    事件委托方法</h2><p>问题说明：IE下，使用document.body.onload = inject; 其中function inject()在这之前已被实现；在Firefox下，使用document.body.onload = inject();<br>解决方法：统一使用document.body.onload=new Function(’inject()’); 或者document.body.onload = function(){/<em> 这里是代码 </em>/}<br>[注意] Function和function的区别。</p>
+<h2 id="15-Table操作问题"><a href="#15-Table操作问题" class="headerlink" title="15.    Table操作问题"></a>15.    Table操作问题</h2><p>问题说明：ie、firefox以及其它浏览器对于 table 标签的操作都各不相同，在ie中不允许对table和tr的innerHTML赋值，使用js增加一个tr时，使用appendChild方法也不管用。<br>解决方法：//向table追加一个空行：<br>var row = otable.insertRow(-1);var cell = document.createElement(“td”);cell.innerHTML = “”;cell.className = “XXXX”;row.appendChild(cell);[注] 由于俺很少使用JS直接操作表格，这个问题没有遇见过。建议使用JS框架集来操作table，如JQuery。</p>
+<h2 id="16-对象宽高赋值问题"><a href="#16-对象宽高赋值问题" class="headerlink" title="16.    对象宽高赋值问题"></a>16.    对象宽高赋值问题</h2><p>问题说明：FireFox中类似obj.style.height = imgObj.height的语句无效</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+     
+     <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/浏览器兼容性汇总/" <i class="fa fa-tag"></i> 浏览器兼容性汇总</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/02/移动web(2)/" rel="next" title="移动端web开发常见问题">
+                <i class="fa fa-chevron-left"></i> 移动端web开发常见问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/02/css浏览器兼容/" rel="prev" title="浏览器兼容性汇总-css">
+                浏览器兼容性汇总-css <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="光明" />
+          
+            <p class="site-author-name" itemprop="name">光明</p>
+            <p class="site-description motion-element" itemprop="description">激进小IT</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/pgm0908/" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器兼容性汇总-javascript"><span class="nav-number">1.</span> <span class="nav-text">浏览器兼容性汇总-javascript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-HTML对象获取问题"><span class="nav-number">1.1.</span> <span class="nav-text">1.    HTML对象获取问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-const问题"><span class="nav-number">1.2.</span> <span class="nav-text">2.    const问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-event-x与event-y问题"><span class="nav-number">1.3.</span> <span class="nav-text">3.    event.x与event.y问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-window-location-href问题"><span class="nav-number">1.4.</span> <span class="nav-text">4.    window.location.href问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-frame问题"><span class="nav-number">1.5.</span> <span class="nav-text">5.    frame问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-模态和非模态窗口问题"><span class="nav-number">1.6.</span> <span class="nav-text">6.    模态和非模态窗口问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-firefox与IE的父元素-parentElement-的区别"><span class="nav-number">1.7.</span> <span class="nav-text">7.    firefox与IE的父元素(parentElement)的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-document-formName-item-”itemName”-问题"><span class="nav-number">1.8.</span> <span class="nav-text">8.    document.formName.item(”itemName”) 问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-集合类对象问题"><span class="nav-number">1.9.</span> <span class="nav-text">9.    集合类对象问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-自定义属性问题"><span class="nav-number">1.10.</span> <span class="nav-text">10.    自定义属性问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-input-type属性问题"><span class="nav-number">1.11.</span> <span class="nav-text">11.    input.type属性问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-event-srcElement问题"><span class="nav-number">1.12.</span> <span class="nav-text">12.    event.srcElement问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-body载入问题"><span class="nav-number">1.13.</span> <span class="nav-text">13.    body载入问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-事件委托方法"><span class="nav-number">1.14.</span> <span class="nav-text">14.    事件委托方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-Table操作问题"><span class="nav-number">1.15.</span> <span class="nav-text">15.    Table操作问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-对象宽高赋值问题"><span class="nav-number">1.16.</span> <span class="nav-text">16.    对象宽高赋值问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">光明</span>
+
+  
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共38.9k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+ 
+</body>
+</html>

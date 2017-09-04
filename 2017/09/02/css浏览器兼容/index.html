@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #bdf74d; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="浏览器兼容性汇总," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="浏览器兼容性汇总-css">
+<meta name="keywords" content="浏览器兼容性汇总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器兼容性汇总-css">
+<meta property="og:url" content="http://yoursite.com/2017/09/02/css浏览器兼容/index.html">
+<meta property="og:site_name" content="博客-彭">
+<meta property="og:description" content="浏览器兼容性汇总-css">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-02T12:10:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浏览器兼容性汇总-css">
+<meta name="twitter:description" content="浏览器兼容性汇总-css">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/02/css浏览器兼容/"/>
+
+
+
+
+
+
+  <title>浏览器兼容性汇总-css | 博客-彭</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客-彭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">☆☆☆☆☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/02/css浏览器兼容/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客-彭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">浏览器兼容性汇总-css</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-02T20:06:49+08:00">
+                2017-09-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/浏览器兼容性汇总/" itemprop="url" rel="index">
+                    <span itemprop="name">浏览器兼容性汇总</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="浏览器兼容性汇总-css"><a href="#浏览器兼容性汇总-css" class="headerlink" title="浏览器兼容性汇总-css"></a>浏览器兼容性汇总-css</h1><a id="more"></a>
+<h2 id="1-cursor-hand-VS-cursor-pointer"><a href="#1-cursor-hand-VS-cursor-pointer" class="headerlink" title="1.    cursor:hand   VS   cursor:pointer"></a>1.    cursor:hand   VS   cursor:pointer</h2><p>firefox不支持hand，但ie支持pointer<br>解决方法:   统一使用pointer</p>
+<h2 id="2-innerText在IE中能正常工作，但在FireFox中却不行"><a href="#2-innerText在IE中能正常工作，但在FireFox中却不行" class="headerlink" title="2.    innerText在IE中能正常工作，但在FireFox中却不行."></a>2.    innerText在IE中能正常工作，但在FireFox中却不行.</h2><p>需用textContent。<br>解决方法:<br>if(navigator.appName.indexOf(“Explorer”)   &gt;   -1){<br>        document.getElementById(‘element’).innerText   =   “my   text”;<br>}   else{<br>        document.getElementById(‘element’).textContent   =   “my   text”;<br>}</p>
+<h2 id="3-CSS透明"><a href="#3-CSS透明" class="headerlink" title="3.    CSS透明"></a>3.    CSS透明</h2><p>IE：filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=60)。<br>FF：opacity:0.6。</p>
+<h2 id="4-css中的width和padding"><a href="#4-css中的width和padding" class="headerlink" title="4.    css中的width和padding"></a>4.    css中的width和padding</h2><p>在IE7和FF中width宽度不包括padding，在Ie6中包括padding.</p>
+<h2 id="5-FF和IEBOX模型解释不一致导致相差2px"><a href="#5-FF和IEBOX模型解释不一致导致相差2px" class="headerlink" title="5.    FF和IEBOX模型解释不一致导致相差2px"></a>5.    FF和IEBOX模型解释不一致导致相差2px</h2><p>box.style{width:100;border 1px;}<br>ie理解为box.width = 100<br>ff理解为box.width = 100 + 1*2 = 102  //加上边框2px<br>解决方法：div{margin:30px!important;margin:28px;}<br>注意这两个margin的顺序一定不能写反， IE不能识别!important这个属性，但别的浏览器可以识别。所以在IE下其实解释成这样：div{maring:30px;margin:28px}<br>重复定义的话按照最后一个来执行，所以不可以只写margin:XXpx!important;</p>
+<h2 id="6-IE5-和IE6的BOX解释不一致"><a href="#6-IE5-和IE6的BOX解释不一致" class="headerlink" title="6.    IE5 和IE6的BOX解释不一致"></a>6.    IE5 和IE6的BOX解释不一致</h2><p>IE5下div{width:300px;margin:0 10px 0 10px;}<br>div 的宽度会被解释为300px-10px(右填充)-10px(左填充)，最终div的宽度为280px，而在IE6和其他浏览器上宽度则是以 300px+10px(右填充)+10px(左填充)=320px来计算的。这时我们可以做如下修改 div{width:300px!important;width /**/:340px;margin:0 10px 0 10px}</p>
+<h2 id="7-ul和ol列表缩进问题"><a href="#7-ul和ol列表缩进问题" class="headerlink" title="7.    ul和ol列表缩进问题"></a>7.    ul和ol列表缩进问题</h2><p>消除ul、ol等列表的缩进时，样式应写成：list-style:none;margin:0px;padding:0px;<br>经验证，在IE中，设置margin:0px可以去除列表的上下左右缩进、空白以及列表编号或圆点，设置padding对样式没有影响；在 Firefox 中，设置margin:0px仅仅可以去除上下的空白，设置padding:0px后仅仅可以去掉左右缩进，还必须设置list- style:none才能去除列表编号或圆点。也就是说，在IE中仅仅设置margin:0px即可达到最终效果，而在Firefox中必须同时设置margin:0px、 padding:0px以及list-style:none三项才能达到最终效果。</p>
+<h2 id="8-元素水平居中问题"><a href="#8-元素水平居中问题" class="headerlink" title="8.    元素水平居中问题"></a>8.    元素水平居中问题</h2><p>FF: margin:0 auto;<br>IE: 父级{ text-align:center; }</p>
+<h2 id="9-Div的垂直居中问题"><a href="#9-Div的垂直居中问题" class="headerlink" title="9.    Div的垂直居中问题"></a>9.    Div的垂直居中问题</h2><p>vertical-align:middle; 将行距增加到和整个DIV一样高：line-height:200px; 然后插入文字，就垂直居中了。缺点是要控制内容不要换行。</p>
+<h2 id="10-margin加倍的问题"><a href="#10-margin加倍的问题" class="headerlink" title="10.    margin加倍的问题"></a>10.    margin加倍的问题</h2><p>设置为float的div在ie下设置的margin会加倍。这是一个ie6都存在的bug。解决方案是在这个div里面加上display:inline;<br>例如：<br>div id=”imfloat”&gt;<br>相应的css为</p>
+<p>#imfloat{<br>float:left;<br>margin:5px;/<em>IE下理解为10px</em>/<br>display:inline;/<em>IE下再理解为5px</em>/}</p>
+<h2 id="11-IE与宽度和高度的问题"><a href="#11-IE与宽度和高度的问题" class="headerlink" title="11.    IE与宽度和高度的问题"></a>11.    IE与宽度和高度的问题</h2><p>IE不认得min-这个定义，但实际上它把正常的width和height当作有min的情况来使。这样问题就大了，如果只用宽度和高度，正常的浏览器里这两个值就不会变，如果只用min-width和min-height的话，IE下面根本等于没有设置宽度和高度。<br>比如要设置背景图片，这个宽度是比较重要的。要解决这个问题，可以这样：</p>
+<p>#box{ width: 80px; height: 35px;}html&gt;body #box{ width: auto; height: auto; min-width: 80px; min-height: 35px;}</p>
+<h2 id="12-页面的最小宽度"><a href="#12-页面的最小宽度" class="headerlink" title="12.    页面的最小宽度"></a>12.    页面的最小宽度</h2><p>如上一个问题，IE不识别min，要实现最小宽度，可用下面的方法：</p>
+<p>#container{ min-width: 600px; width:expression(document.body.clientWidth＜ 600? “600px”: “auto” );}<br>第一个min-width是正常的；但第2行的width使用了Javascript，这只有IE才认得，这也会让你的HTML文档不太正规。它实际上通过Javascript的判断来实现最小宽度。</p>
+<h2 id="13-DIV浮动IE文本产生3象素的bug"><a href="#13-DIV浮动IE文本产生3象素的bug" class="headerlink" title="13.    DIV浮动IE文本产生3象素的bug"></a>13.    DIV浮动IE文本产生3象素的bug</h2><p>左边对象浮动，右边采用外补丁的左边距来定位，右边对象内的文本会离左边有3px的间距. </p>
+<p>#box{ float:left; width:800px;} </p>
+<p>#left{ float:left; width:50%;} </p>
+<p>#right{ width:50%;}<br>*html #left{ margin-right:-3px; //这句是关键}<br>div id=”box”&gt;<br>div id=”left”&gt;＜/div&gt;<br>div id=”right”&gt;＜/div&gt;<br>/div&gt;</p>
+<h2 id="14-IE捉迷藏的问题"><a href="#14-IE捉迷藏的问题" class="headerlink" title="14.    IE捉迷藏的问题"></a>14.    IE捉迷藏的问题</h2><p>当div应用复杂的时候每个栏中又有一些链接，DIV等这个时候容易发生捉迷藏的问题。<br>有些内容显示不出来，当鼠标选择这个区域是发现内容确实在页面。<br>解决办法：对#layout使用line-height属性或者给#layout使用固定高和宽。页面结构尽量简单。</p>
+<h2 id="15-float的div闭合-清除浮动-自适应高度"><a href="#15-float的div闭合-清除浮动-自适应高度" class="headerlink" title="15.    float的div闭合;清除浮动;自适应高度"></a>15.    float的div闭合;清除浮动;自适应高度</h2><p>①    例如：＜div id=”floatA”&gt;＜div id=”floatB”&gt;＜div id=”NOTfloatC”&gt;<br>这里的NOTfloatC并不希望继续平移，而是希望往下排。(其中floatA、floatB的属性已经设置为float:left;)<br>这段代码在IE中毫无问题，问题出在FF。原因是NOTfloatC并非float标签，必须将float标签闭合。在＜div class=”floatB”&gt;＜div class=”NOTfloatC”&gt;之间加上＜div class=”clear”&gt;这个div一定要注意位置，而且必须与两个具有float属性的div同级，之间不能存在嵌套关系，否则会产生异常。并且将clear这种样式定义为为如下即可：.clear{clear:both;}<br>②作为外部 wrapper 的 div 不要定死高度,为了让高度能自适应，要在wrapper里面加上overflow:hidden; 当包含float的box的时候，高度自适应在IE下无效，这时候应该触发IE的layout私有属性(万恶的IE啊！)用zoom:1;可以做到，这样就达到了兼容。<br>例如某一个wrapper如下定义：<br>.colwrapper{overflow:hidden; zoom:1; margin:5px auto;}<br>③对于排版,我们用得最多的css描述可能就是float:left.有的时候我们需要在n栏的float div后面做一个统一的背景,譬如:<br>div id=”page”&gt;<br>div id=”left”&gt;＜/div&gt;<br>div id=”center”&gt;＜/div&gt;<br>div id=”right”&gt;＜/div&gt;<br>/div&gt;<br>比如我们要将page的背景设置成蓝色,以达到所有三栏的背景颜色是蓝色的目的,但是我们会发现随着left center right的向下拉长,而page居然保存高度不变,问题来了,原因在于page不是float属性,而我们的page由于要居中,不能设置成float,所以我们应该这样解决：<br>div id=”page”&gt;<br>div id=”bg” style=”float:left;width:100%”&gt;<br>div id=”left”&gt;＜/div&gt;<br>div id=”center”&gt;＜/div&gt;<br>div id=”right”&gt;＜/div&gt;<br>/div&gt;<br>/div&gt;<br>再嵌入一个float left而宽度是100%的DIV解决之。<br>④万能float 闭合(非常重要!)<br>关于 clear float 的原理可参见 [How To Clear Floats Without Structural Markup],将以下代码加入Global CSS 中,给需要闭合的div加上class=”clearfix” 即可,屡试不爽。<br>/<em> Clear Fix </em>/<br>.clearfix:after { content:”.”; display:block; height:0; clear:both; visibility:hidden; }<br>.clearfix { display:inline-block; }<br>/<em> Hide from IE Mac </em>/<br>.clearfix {display:block;}<br>/<em> End hide from IE Mac </em>/<br>/<em> end of clearfix </em>/<br>或者这样设置：.hackbox{ display:table; //将对象作为块元素级的表格显示}</p>
+<h2 id="16-高度不适应"><a href="#16-高度不适应" class="headerlink" title="16.    高度不适应"></a>16.    高度不适应</h2><p>高度不适应是当内层对象的高度发生变化时外层高度不能自动进行调节，特别是当内层对象使用margin 或padding时。<br>例：</p>
+<p>#box {background-color:#eee; } </p>
+<p>#box p {margin-top: 20px;margin-bottom: 20px; text-align:center; }<br>div id=”box”&gt;<br>p&gt;p对象中的内容＜/p&gt;<br>/div&gt;<br>解决技巧：在P对象上下各加2个空的div对象CSS代码{height:0px;overflow:hidden;}或者为DIV加上border属性。</p>
+<h2 id="17-IE6下图片下有空隙产生"><a href="#17-IE6下图片下有空隙产生" class="headerlink" title="17.    IE6下图片下有空隙产生"></a>17.    IE6下图片下有空隙产生</h2><p>解决这个BUG的技巧有很多,可以是改变html的排版,或者设置img为display:block或者设置vertical-align属性为vertical-align:top/bottom/middle/text-bottom 都可以解决.</p>
+<h2 id="18-对齐文本与文本输入框"><a href="#18-对齐文本与文本输入框" class="headerlink" title="18.    对齐文本与文本输入框"></a>18.    对齐文本与文本输入框</h2><p>加上vertical-align:middle;<br>style type=”text/css”&gt;</p>
+<p>input {<br>width:200px;<br>height:30px;<br>border:1px solid red;<br>vertical-align:middle;<br>} </p>
+<p>/style&gt;<br>经验证，在IE下任一版本都不适用，而ff、opera、safari、chrome均OK！</p>
+<h2 id="19-LI中内容超过长度后以省略号显示"><a href="#19-LI中内容超过长度后以省略号显示" class="headerlink" title="19.    LI中内容超过长度后以省略号显示"></a>19.    LI中内容超过长度后以省略号显示</h2><p>此技巧适用与IE、Opera、safari、chrom浏览器，FF暂不支持。<br>style type=”text/css”&gt;</p>
+<p>li {<br>width:200px;<br>white-space:nowrap;<br>text-overflow:ellipsis;<br>-o-text-overflow:ellipsis;<br>overflow: hidden;<br>}</p>
+<p>/style&gt;</p>
+<h2 id="20-为什么web标准中IE无法设置滚动条颜色了"><a href="#20-为什么web标准中IE无法设置滚动条颜色了" class="headerlink" title="20.    为什么web标准中IE无法设置滚动条颜色了"></a>20.    为什么web标准中IE无法设置滚动条颜色了</h2><p>解决办法是将body换成html<br>&lt;!DOCTYPE html PUBLIC “-//W3C//DTD XHTML 1.0 Strict//EN” “<a href="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;" target="_blank" rel="external">http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;</a><br>meta http-equiv=”Content-Type” content=”text/html; charset=gb2312” /&gt;<br>style type=”text/css”&gt;</p>
+<p>html {<br>scrollbar-face-color:#f6f6f6;<br>scrollbar-highlight-color:#fff;<br>scrollbar-shadow-color:#eeeeee;<br>scrollbar-3dlight-color:#eeeeee;<br>scrollbar-arrow-color:#000;<br>scrollbar-track-color:#fff;<br>scrollbar-darkshadow-color:#fff;<br>} </p>
+<p>＜/style&gt;</p>
+<h2 id="21-为什么无法定义1px左右高度的容器"><a href="#21-为什么无法定义1px左右高度的容器" class="headerlink" title="21.    为什么无法定义1px左右高度的容器"></a>21.    为什么无法定义1px左右高度的容器</h2><p>IE6下这个问题是因为默认的行高造成的,解决的技巧也有很多：<br>例如:overflow:hidden　 zoom:0.08 　 line-height:1px<br>16.怎么样才能让层显示在FLASH之上呢<br>解决的办法是给FLASH设置透明<br>param name=”wmode” value=”transparent” /&gt;</p>
+<h2 id="22-链接-a标签-的边框与背景"><a href="#22-链接-a标签-的边框与背景" class="headerlink" title="22.    链接(a标签)的边框与背景"></a>22.    链接(a标签)的边框与背景</h2><p>a链接加边框和背景色，需设置 display: block, 同时设置 float: left 保证不换行。参照menubar, 给 a 和menubar设置高度是为了避免底边显示错位, 若不设 height, 可以在menubar中插入一个空格。</p>
+<h2 id="23-超链接访问过后hover样式就不出现的问题"><a href="#23-超链接访问过后hover样式就不出现的问题" class="headerlink" title="23.    超链接访问过后hover样式就不出现的问题"></a>23.    超链接访问过后hover样式就不出现的问题</h2><p>被点击访问过的超链接样式不在具有hover和active了,很多人应该都遇到过这个问题,解决技巧是改变CSS属性的排列顺序: L-V-H-A<br>Code:<br>style type=”text/css”&gt;<br><!--
+a:link {} 
+a:visited {} 
+a:hover {} 
+a:active {} 
+--><br>/style&gt;</p>
+<h2 id="24-FORM标签"><a href="#24-FORM标签" class="headerlink" title="24.    FORM标签"></a>24.    FORM标签</h2><p>这个标签在IE中,将会自动margin一些边距,而在FF中margin则是0,因此,如果想显示一致,所以最好在css中指定margin和 padding,针对上面两个问题,我的css中一般首先都使用这样的样式ul,form{margin:0;padding:0;}。</p>
+<h2 id="25-属性选择器-这个不能算是兼容-是隐藏css的一个bug"><a href="#25-属性选择器-这个不能算是兼容-是隐藏css的一个bug" class="headerlink" title="25.    属性选择器(这个不能算是兼容,是隐藏css的一个bug)"></a>25.    属性选择器(这个不能算是兼容,是隐藏css的一个bug)</h2><p>p[id]{}div[id]{}<br>这个对于IE6.0和IE6.0以下的版本都隐藏,FF和OPera作用.属性选择器和子选择器还是有区别的,子选择器的范围从形式来说缩小了,属性选择器的范围比较大,如p[id]中,所有p标签中有id的都是同样式的.</p>
+<h2 id="26-为什么FF下文本无法撑开容器的高度"><a href="#26-为什么FF下文本无法撑开容器的高度" class="headerlink" title="26.    为什么FF下文本无法撑开容器的高度"></a>26.    为什么FF下文本无法撑开容器的高度</h2><p>标准浏览器中固定高度值的容器是不会象IE6里那样被撑开的,那我又想固定高度,又想能被撑开需要怎样设置呢？办法就是去掉height设置min-height:200px; 这里为了照顾不认识min-height的IE6 可以这样定义:<br>{<br>height:auto!important;<br>height:200px;<br>min-height:200px;<br>} </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+     
+     <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/浏览器兼容性汇总/" <i class="fa fa-tag"></i> 浏览器兼容性汇总</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/02/js浏览器兼容/" rel="next" title="浏览器兼容性汇总-javascript">
+                <i class="fa fa-chevron-left"></i> 浏览器兼容性汇总-javascript
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="光明" />
+          
+            <p class="site-author-name" itemprop="name">光明</p>
+            <p class="site-description motion-element" itemprop="description">激进小IT</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/pgm0908/" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器兼容性汇总-css"><span class="nav-number">1.</span> <span class="nav-text">浏览器兼容性汇总-css</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-cursor-hand-VS-cursor-pointer"><span class="nav-number">1.1.</span> <span class="nav-text">1.    cursor:hand   VS   cursor:pointer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-innerText在IE中能正常工作，但在FireFox中却不行"><span class="nav-number">1.2.</span> <span class="nav-text">2.    innerText在IE中能正常工作，但在FireFox中却不行.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-CSS透明"><span class="nav-number">1.3.</span> <span class="nav-text">3.    CSS透明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-css中的width和padding"><span class="nav-number">1.4.</span> <span class="nav-text">4.    css中的width和padding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-FF和IEBOX模型解释不一致导致相差2px"><span class="nav-number">1.5.</span> <span class="nav-text">5.    FF和IEBOX模型解释不一致导致相差2px</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-IE5-和IE6的BOX解释不一致"><span class="nav-number">1.6.</span> <span class="nav-text">6.    IE5 和IE6的BOX解释不一致</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-ul和ol列表缩进问题"><span class="nav-number">1.7.</span> <span class="nav-text">7.    ul和ol列表缩进问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-元素水平居中问题"><span class="nav-number">1.8.</span> <span class="nav-text">8.    元素水平居中问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Div的垂直居中问题"><span class="nav-number">1.9.</span> <span class="nav-text">9.    Div的垂直居中问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-margin加倍的问题"><span class="nav-number">1.10.</span> <span class="nav-text">10.    margin加倍的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-IE与宽度和高度的问题"><span class="nav-number">1.11.</span> <span class="nav-text">11.    IE与宽度和高度的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-页面的最小宽度"><span class="nav-number">1.12.</span> <span class="nav-text">12.    页面的最小宽度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-DIV浮动IE文本产生3象素的bug"><span class="nav-number">1.13.</span> <span class="nav-text">13.    DIV浮动IE文本产生3象素的bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-IE捉迷藏的问题"><span class="nav-number">1.14.</span> <span class="nav-text">14.    IE捉迷藏的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-float的div闭合-清除浮动-自适应高度"><span class="nav-number">1.15.</span> <span class="nav-text">15.    float的div闭合;清除浮动;自适应高度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-高度不适应"><span class="nav-number">1.16.</span> <span class="nav-text">16.    高度不适应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-IE6下图片下有空隙产生"><span class="nav-number">1.17.</span> <span class="nav-text">17.    IE6下图片下有空隙产生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-对齐文本与文本输入框"><span class="nav-number">1.18.</span> <span class="nav-text">18.    对齐文本与文本输入框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-LI中内容超过长度后以省略号显示"><span class="nav-number">1.19.</span> <span class="nav-text">19.    LI中内容超过长度后以省略号显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-为什么web标准中IE无法设置滚动条颜色了"><span class="nav-number">1.20.</span> <span class="nav-text">20.    为什么web标准中IE无法设置滚动条颜色了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-为什么无法定义1px左右高度的容器"><span class="nav-number">1.21.</span> <span class="nav-text">21.    为什么无法定义1px左右高度的容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22-链接-a标签-的边框与背景"><span class="nav-number">1.22.</span> <span class="nav-text">22.    链接(a标签)的边框与背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#23-超链接访问过后hover样式就不出现的问题"><span class="nav-number">1.23.</span> <span class="nav-text">23.    超链接访问过后hover样式就不出现的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#24-FORM标签"><span class="nav-number">1.24.</span> <span class="nav-text">24.    FORM标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#25-属性选择器-这个不能算是兼容-是隐藏css的一个bug"><span class="nav-number">1.25.</span> <span class="nav-text">25.    属性选择器(这个不能算是兼容,是隐藏css的一个bug)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#26-为什么FF下文本无法撑开容器的高度"><span class="nav-number">1.26.</span> <span class="nav-text">26.    为什么FF下文本无法撑开容器的高度</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">光明</span>
+
+  
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共38.9k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+ 
+</body>
+</html>
