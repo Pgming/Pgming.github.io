@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #bdf74d; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="canvas," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="canvas基础篇知识点">
+<meta name="keywords" content="canvas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas基础篇">
+<meta property="og:url" content="http://yoursite.com/2017/09/04/canvas基础/index.html">
+<meta property="og:site_name" content="博客-彭">
+<meta property="og:description" content="canvas基础篇知识点">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-06_015256.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-06_025322.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-06_023133.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-06_134021.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-06_135624.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-06_140228.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-08_124829.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-08_130548.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-08_131353.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-08_132309.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-08_134700.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-08_135332.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-09_121247.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-09_122426.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-09_130716.png">
+<meta property="og:image" content="http://yoursite.com/images/canvas/2016-08-09_132957.png">
+<meta property="og:updated_time" content="2017-09-04T10:38:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas基础篇">
+<meta name="twitter:description" content="canvas基础篇知识点">
+<meta name="twitter:image" content="http://yoursite.com/images/canvas/2016-08-06_015256.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/04/canvas基础/"/>
+
+
+
+
+
+
+  <title>canvas基础篇 | 博客-彭</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客-彭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">☆☆☆☆☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/04/canvas基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客-彭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">canvas基础篇</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-04T18:03:17+08:00">
+                2017-09-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/canvas/" itemprop="url" rel="index">
+                    <span itemprop="name">canvas</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="canvas基础篇知识点"><a href="#canvas基础篇知识点" class="headerlink" title="canvas基础篇知识点"></a>canvas基础篇知识点</h1><a id="more"></a>
+<h2 id="什么是-Canvas"><a href="#什么是-Canvas" class="headerlink" title="什么是 Canvas"></a>什么是 Canvas</h2><p>canvas 是 HTML5 提供的一个用于展示绘图效果的标签. canvas 原意画布, 帆布. 在 HTML 页面中用于展示绘图效果. 最早 canvas 是苹果提出的一个方案, 今天已经在大多数浏览器中实现.</p>
+<p>canvas 英 [‘kænvəs]  美 [‘kænvəs]   帆布 画布</p>
+<h2 id="canvas-的基本用法"><a href="#canvas-的基本用法" class="headerlink" title="canvas 的基本用法"></a>canvas 的基本用法</h2><h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><pre><code>&lt;canvas&gt;&lt;/canvas&gt;
+</code></pre><p>使用 canvas 标签, 即可在页面中开辟一格区域. 可以设置其 width 和 height 设置该区域的尺寸.<br>默认 canvas 的宽高为 300 和 150.<br>不要使用 CSS 的方式设置宽高, 应该使用 HTML 属性.<br>如果浏览器不支持 canvas 标签, 那么就会将其解释为 div 标签. 因此常常在 canvas 中嵌入文本, 以提示用户浏览器的能力.<br>canvas 的兼容性非常强, 只要支持该标签的, 基本功能都一样, 因此不用考虑兼容性问题.<br>canvas 本身不能绘图. 是使用 JavaScript 来完成绘图. canvas 对象提供了各种绘图用的 api.<br>canvas 的使用领域</p>
+<p>canvas 的使用领域很多:</p>
+<p>游戏<br>可视化数据(重点)<br>banner 广告<br>多媒体<br>未来<br>模拟仿真<br>远程操作<br>图形编辑</p>
+<h2 id="我们的课程目标"><a href="#我们的课程目标" class="headerlink" title="我们的课程目标"></a>我们的课程目标</h2><p>不是为了做游戏<br>学会使用基本的 canvas api, 使用 canvas 可以完成简单的绘图<br>实现数据的可视化</p>
+<h3 id="基本绘图"><a href="#基本绘图" class="headerlink" title="基本绘图"></a>基本绘图</h3><p>1.2.1. 基本绘图方法</p>
+<p>绘图步骤</p>
+<p>获得 canvas 对象.<br>调用 getContext 方法, 提供字符串参数 ‘2d’.<br>该方法返回 CanvasRenderingContext2D 类型的对象. 该对象提供基本的绘图命令.<br>使用 CanvasRenderingContext2D 对象提供的方法进行绘图.<br>基本绘图命令<br>设置开始绘图的位置: context.moveTo( x, y ).<br>设置直线到的位置: context.lineTo( x, y ).<br>描边绘制: context.stroke().<br>填充绘制: context.fill().<br>闭合路径: context.closePath().<br>01-绘制基本线</p>
+<pre><code>var canvas = document.createElement( &apos;canvas&apos; );
+canvas.width = 500;
+canvas.height = 400;
+canvas.style.border = &apos;1px dashed red&apos;;
+document.body.appendChild( canvas );
+// 获得 CanvasRenderingContext2D 对象
+var context = canvas.getContext( &apos;2d&apos; );
+// 设置 起点
+context.moveTo( 0, 0 );
+// 绘制直线
+context.lineTo( 500, 400 );
+// 设置 起点
+context.moveTo( 0, 400 );
+// 绘制直线
+context.lineTo( 500, 0 );
+// 描边显示效果
+context.stroke();
+</code></pre><p>运行结果为<br><img src="/images/canvas/2016-08-06_015256.png" alt="images"></p>
+<p>1.2.1.1. 计算机直角坐标系<br><img src="/images/canvas/2016-08-06_025322.png" alt="images"></p>
+<p>1.2.1.2. 代码分析</p>
+<p>需要绘图就需要有 canvas 标签, 该标签用于展示图像.<br>canvas 的宽高不要使用 CSS 来设置, 会有拉伸的问题. 应该直接使用属性设置.<br>但是 canvas 只是展示图像的标签, 它没有绘图的能力. 需要使用 canvas 的上下文工具来实现绘图.<br>使用 canvas.getContext( ‘2d’ ) 可以获得绘图工具, 该工具是 CanvasRenderingContext2D 类型的对象.<br>需要绘图, 首选设置绘图的起点.<br>使用 canvas 绘图, 需要主要的是他主张先描点, 再连线绘制效果.<br>因此需要首先设置起点, 然后在起点的基础上描述其他需要的点.<br>使用 CanvasRenderingContext2D.moveTo( x, y ) 方法设置起点.<br>其中 x, y 表示的是在坐标系中的位置.<br>使用 CanvasRenderingContext2D.lineTo( x, y ) 来描述绘制直线的下一个点. 依次类推可以描述多个点.<br>描点结束后, 需要使用 CanvasRenderingContext2D.stroke() 方法来连线. 开可以显示出效果.<br>1.2.1.3. getContext 方法</p>
+<p>语法: Canvas.getContext( typeStr )</p>
+<p>描述:</p>
+<p>该方法用于绘制上下文工具.<br>如果是绘制平面图形使用 ‘2d’ 作为参数, 如果绘制立体图形使用 ‘webgl’.<br>使用 ‘2d’ 返回 CanvasRenderingContext2D 类型的对象.<br>使用 ‘webgl’ 返回 WebGLRenderingContext 类型的对象.<br>1.2.1.4. moveTo 方法</p>
+<p>语法: CanvasRenderingContext2D.moveTo( x, y )</p>
+<p>描述:</p>
+<p>该方法用于设置绘制起点.<br>其中参数 x, y 表示在坐标系中的位置, 分别是 x 坐标与 y 坐标.<br>1.2.1.5. lineTo 方法</p>
+<p>语法: CanvasRenderingContext2D.lineTo( x, y )</p>
+<p>描述:</p>
+<p>该方法用于设置需要绘制直线的另一个点. 最终描边后会连线当前点和方法参数描述的点.<br>其中参数 x, y 表示在坐标系中的位置, 分别是 x 坐标与 y 坐标.<br>1.2.1.6. stroke 方法</p>
+<p>语法: CanvasRenderingContext2D.stroke()</p>
+<p>描述: 该方法用于连线, 将描述的所有点按照指定顺序连接起来.</p>
+<p>1.2.1.7. 结论</p>
+<p>绘图先要获得上下文, 即绘图工具<br>绘图需要设置开始的坐标<br>绘图是先描点, 然后一个一个依次连线<br>依次绘图只能绘制单一样式( 色彩等 )<br>1.2.2. 直线图形</p>
+<p>分别绘制下面的案例:<br><img src="/images/canvas/2016-08-06_023133.png" alt="images"></p>
+<p>绘制直线计算坐标.<br>描边调用 CanvasRenderingContext2D.stroke() 方法.<br>填充使用 CanvasRenderingContext2D.fill() 方法.<br>1.2.2.1. fill 方法</p>
+<p>语法: CanvasRenderingContext2D.fill()</p>
+<p>描述: 该方法会按照描绘的点的路径来填充图形. 默认是黑色.</p>
+<p>1.2.3. 非零环绕原则</p>
+<p>绘制下面的图<br><img src="/images/canvas/2016-08-06_134021.png" alt="images"></p>
+<p>填充满足非零环绕数原则</p>
+<p>说明:</p>
+<p>在 canvas 中使用各种方法描点实际上描述的是一个称为路径( path )的东西.<br>在 canvas 绘图中, 所有描述的东西都是路径, 只有最后填充或描边的时候才会显示出效果.<br>每一个路径都是一个状态.<br>练习: 绘制下面图形<br><img src="/images/canvas/2016-08-06_135624.png" alt="images"></p>
+<p>1.2.4. 闭合路径</p>
+<p>1.2.4.1. closePath 方法</p>
+<p>语法: CanvasRenderingContext2D.closePath()</p>
+<p>描述: 使用该方法可以将最后一个描点与最开始的描点自动连接起来.</p>
+<p>案例</p>
+<pre><code>...
+ctx.moveTo( 100, 100 );
+ctx.lineTo( 300, 100 );
+ctx.lineTo( 300, 200 );
+ctx.closePath();
+ctx.stroke();
+</code></pre><p>结果为:<br><img src="/images/canvas/2016-08-06_140228.png" alt="images"></p>
+<p>练习: 使用 closePath 改写非零环绕的案例.</p>
+<p>1.2.5. 路径的概念</p>
+<p>路径就是一次绘图<br>类比使用油漆刷墙面<br>首先打底色, 绝对不会一次性使用多个色彩<br>一定是先画完某一个色彩再考虑另一个色彩<br>除非需要自己创作才会考虑墙面绘画<br>路径就好比一桶油漆和一把刷子, 一次性描点绘制. 如果重新更换油漆, 那么是绘制另一个区域.<br>如果需要开启新的绘制, 那么使用 CanvasRenderingContext2D.beginPath() 方法.</p>
+<p>示例</p>
+<p>如果需要在一个区域内绘制描边的图形和填充的图形. 例如<br><img src="/images/canvas/2016-08-08_124829.png" alt="images"></p>
+<p>1.2.6. 线型相关属性</p>
+<p>设置描边与填充不一定只能使用黑色的细线. 可以利用一些属性设置其效果</p>
+<p>CanvasRenderingContext2D.lineWidth 设置线宽.<br>CanvasRenderingContext2D.lineCap 设置线末端类型.<br>CanvasRenderingContext2D.lineJoin 设置相交线的拐点.<br>CanvasRenderingContext2D.getLineDash() 获得线段样式数组.<br>CanvasRenderingContext2D.setLineDash() 设置线段样式.<br>CanvasRenderingContext2D.lineDashOffset 绘制线段偏移量.<br>1.2.6.1. 设置线宽</p>
+<p>语法: CanvasRenderingContext2D.lineWidth = number</p>
+<p>描述: 设置线宽.</p>
+<p>案例</p>
+<pre><code>...
+ctx.moveTo( 100, 100 );
+ctx.lineTo( 300, 100 );
+ctx.stroke();
+
+ctx.beginPath();
+ctx.lineWidth = 10;
+ctx.moveTo( 100, 250 );
+ctx.lineTo( 300, 250 );
+ctx.stroke();
+</code></pre><p>效果<br><img src="/images/canvas/2016-08-08_130548.png" alt="images"></p>
+<p>1.2.6.2. 设置线末端类型</p>
+<p>语法: CanvasRenderingContext2D.lineCap = value</p>
+<p>描述:</p>
+<p>设置线型末端的样式, 可取值为: ‘butt’( 默认 ), ‘round’, ‘square’.<br>‘butt’ 表示两端使用方形结束.<br>‘round’ 表示两端使用圆角结束.<br>‘square’ 表示突出的圆角结束.<br>案例</p>
+<pre><code>...
+ctx.lineWidth = 10;
+ctx.moveTo( 100, 100 );
+ctx.lineTo( 300, 100 );
+ctx.stroke();
+
+ctx.beginPath();
+ctx.lineCap =  &apos;round&apos;;
+ctx.moveTo( 100, 130 );
+ctx.lineTo( 300, 130 );
+ctx.stroke();
+
+ctx.beginPath();
+ctx.lineCap =  &apos;square&apos;;
+ctx.moveTo( 100, 160 );
+ctx.lineTo( 300, 160 );
+ctx.stroke();
+</code></pre><p>效果<br><img src="/images/canvas/2016-08-08_131353.png" alt="images"></p>
+<p>1.2.6.3. 设置相交线的拐点</p>
+<p>语法: CanvasRenderingContext2D.lineJoin = value</p>
+<p>描述:</p>
+<p>设置两条直线的拐点描述方式. 可以取值 ‘round’, ‘bevel’, ‘miter’(默认)<br>‘round’ 使用圆角连接.<br>‘bevel’ 使用平切连接.<br>‘miter’ 使用直角转.<br>案例</p>
+<pre><code>...
+ctx.lineWidth = 10;
+ctx.lineJoin = &apos;round&apos;;
+ctx.moveTo( 100, 100 );
+ctx.lineTo( 200, 200 );
+ctx.lineTo( 300, 100 );
+ctx.stroke();
+
+ctx.beginPath();
+ctx.lineJoin = &apos;bevel&apos;;
+ctx.moveTo( 100, 150 );
+ctx.lineTo( 200, 250 );
+ctx.lineTo( 300, 150 );
+ctx.stroke();
+
+ctx.beginPath();
+ctx.lineJoin = &apos;miter&apos;;
+ctx.moveTo( 100, 200 );
+ctx.lineTo( 200, 300 );
+ctx.lineTo( 300, 200 );
+ctx.stroke();
+</code></pre><p>效果<br><img src="/images/canvas/2016-08-08_132309.png" alt="images"></p>
+<p>1.2.6.4. 虚线</p>
+<p>语法:</p>
+<p>CanvasRenderingContext2D.lineDashOffset = number<br>CanvasRenderingContext2D.getLineDash()<br>CanvasRenderingContext2D.setLineDash()<br>描述:</p>
+<p>lineDashOffset用于设置开始绘制虚线的偏移量. 数字的正负表示左右偏移.<br>getLineDash() 与 setLineDash() 方法使用数组描述实线与虚线的长度.<br>演示</p>
+<pre><code>...
+ctx.moveTo( 100, 90 );
+ctx.lineTo( 100, 110 );
+ctx.moveTo( 300, 90 );
+ctx.lineTo( 300, 110 );
+
+ctx.moveTo( 100, 140 );
+ctx.lineTo( 100, 160 );
+ctx.moveTo( 300, 140 );
+ctx.lineTo( 300, 160 );
+
+ctx.moveTo( 100, 190 );
+ctx.lineTo( 100, 210 );
+ctx.moveTo( 300, 190 );
+ctx.lineTo( 300, 210 );
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo( 100, 100 );
+ctx.lineTo( 300, 100 );
+ctx.stroke();
+
+ctx.beginPath();
+ctx.setLineDash( [ 5, 5 ] );
+ctx.moveTo( 100, 150 );
+ctx.lineTo( 300, 150 );
+ctx.stroke();
+
+ctx.beginPath();
+ctx.lineDashOffset = -2;
+ctx.moveTo( 100, 200 );
+ctx.lineTo( 300, 200 );
+ctx.stroke();
+</code></pre><p>效果<br><img src="/images/canvas/2016-08-08_134700.png" alt="images"></p>
+<p>1.2.6.5. 填充与描边样式</p>
+<p>语法:</p>
+<p>CanvasRenderingContext2D.strokeStyle = value<br>CanvasRenderingContext2D.fillStyle = value<br>描述:</p>
+<p>strokeStyle 可以设置描边颜色, 与 CSS 的语法一样<br>fillStyle 设置填充颜色, 与 CSS 语法一样<br>这两个属性还可以设置渐变对象.<br>案例</p>
+<pre><code>for (var i=0;i&lt;6;i++){
+    for (var j=0;j&lt;6;j++){
+        ctx.strokeStyle = &apos;rgb(0,&apos; + Math.floor(255-42.5*i) + &apos;,&apos; + 
+                        Math.floor(255-42.5*j) + &apos;)&apos;;
+        ctx.beginPath();
+        ctx.arc(12.5+j*25,12.5+i*25,10,0,Math.PI*2,true);
+        ctx.stroke();
+    }
+}
+</code></pre><p>效果<br><img src="/images/canvas/2016-08-08_135332.png" alt="images"></p>
+<p>1.3. 实例练习</p>
+<p>1.3.1. 绘制坐标网格</p>
+<p>绘制下面的效果<br><img src="/images/canvas/2016-08-09_121247.png" alt="images"></p>
+<p>1.3.2. 绘制坐标系</p>
+<p>绘制下面的效果<br><img src="/images/canvas/2016-08-09_122426.png" alt="images"></p>
+<p>1.3.3. 绘制坐标点</p>
+<p>绘制下面的效果<br><img src="/images/canvas/2016-08-09_130716.png" alt="images"></p>
+<p>1.3.4. 绘制折线图<br><img src="/images/canvas/2016-08-09_132957.png" alt="images"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+     
+     <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/canvas/" <i class="fa fa-tag"></i> canvas</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/02/css浏览器兼容/" rel="next" title="浏览器兼容性汇总-css">
+                <i class="fa fa-chevron-left"></i> 浏览器兼容性汇总-css
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/04/canvasz中级篇/" rel="prev" title="canvas中级篇">
+                canvas中级篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="光明" />
+          
+            <p class="site-author-name" itemprop="name">光明</p>
+            <p class="site-description motion-element" itemprop="description">激进小IT</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/pgm0908/" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#canvas基础篇知识点"><span class="nav-number">1.</span> <span class="nav-text">canvas基础篇知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Canvas"><span class="nav-number">1.1.</span> <span class="nav-text">什么是 Canvas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#canvas-的基本用法"><span class="nav-number">1.2.</span> <span class="nav-text">canvas 的基本用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本语法"><span class="nav-number">1.2.1.</span> <span class="nav-text">基本语法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们的课程目标"><span class="nav-number">1.3.</span> <span class="nav-text">我们的课程目标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本绘图"><span class="nav-number">1.3.1.</span> <span class="nav-text">基本绘图</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">光明</span>
+
+  
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共48.0k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+ 
+</body>
+</html>
