@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #bdf74d; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="笔记," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="知识笔记">
+<meta name="keywords" content="笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记(2)">
+<meta property="og:url" content="http://yoursite.com/2017/09/05/笔记(2)/index.html">
+<meta property="og:site_name" content="博客-彭">
+<meta property="og:description" content="知识笔记">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-05T01:07:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="笔记(2)">
+<meta name="twitter:description" content="知识笔记">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/05/笔记(2)/"/>
+
+
+
+
+
+
+  <title>笔记(2) | 博客-彭</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客-彭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">☆☆☆☆☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/05/笔记(2)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客-彭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">笔记(2)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-05T09:06:21+08:00">
+                2017-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="知识笔记"><a href="#知识笔记" class="headerlink" title="知识笔记"></a>知识笔记</h1><a id="more"></a>
+<h1 id="1-前端的开发方式"><a href="#1-前端的开发方式" class="headerlink" title="1.前端的开发方式"></a>1.前端的开发方式</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">1. 后端渲染(后端直出)</div><div class="line">           所有的数据都是来源于后台</div><div class="line">           由后台拼接html结构，发送给浏览器端，由浏览器渲染对应的样式</div><div class="line">           后台是可以执行html代码的，而html代码是无法执行php代码，会将php代码给注释掉</div><div class="line">2. 前端渲染</div><div class="line">          前端渲染页面结构，如果用到了数据，则会向后台发送ajax请求，请求数据，</div><div class="line">          把请求来的数据，渲染到对应的页面中</div><div class="line"></div><div class="line">3. 混合式的开发      现在用的比较多的一种开发方式</div><div class="line">          既有前端渲染的方式，也有后端渲染的方式</div><div class="line">          对于每个页面当都共有的部分，可以使用后端渲染的方式</div><div class="line">          对于 当前页面独有的部分,则是由当前页面自己来渲染</div></pre></td></tr></table></figure>
+<h1 id="2-网站访问的原理"><a href="#2-网站访问的原理" class="headerlink" title="2.网站访问的原理"></a>2.网站访问的原理</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. 当我们在浏览器时里面输入网址的时候，浏览器会优先到我们当前计算机的c:/window/System32/drivers/etc/hosts文件	 中，查找有没有此域名或是网址对应的IP地址，如果有，则以当前的IP地址所指向的服务器为主。</div><div class="line">2. 如果没有的话，则会到网络上就近的DNS服务器去查找此域名对应的IP地址，近而找到此IP对应的服务器。</div><div class="line">3. 每一台计算机都有一个自己的私有IP地址，127.0.0.1.如果安装了apache服务器的话，此IP地址默认就指向c:/wamp/www文	件夹下面的index.php,如果没有index.php的话，则默认的去找index.html，如果都没有的话，则会将当前文件夹下面的	</div><div class="line">    所有的文件显示出来，供你选择。</div></pre></td></tr></table></figure>
+<h1 id="3-配置自己本地的项目"><a href="#3-配置自己本地的项目" class="headerlink" title="3.配置自己本地的项目"></a>3.配置自己本地的项目</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">配置自己本地的项目：</div><div class="line"><span class="number">1.</span> 在C:\wamp\bin\apache\Apache2<span class="number">.2</span><span class="number">.21</span>\conf 下面找到httpd.conf,修改如下内容：</div><div class="line">	#DocumentRoot "c:/wamp/www/"    将原来的删除 掉或是注销</div><div class="line">	DocumentRoot <span class="string">"F:/myCode"</span>		重新指向一个新的目录  在<span class="number">179</span>行左右</div><div class="line">    </div><div class="line">    #&lt;Directory "c:/wamp/www/"&gt;    将文件夹的指向注销掉 </div><div class="line">	&lt;Directory <span class="string">"F:/myCode"</span>&gt;		   将新创建的文件夹设置一下，在<span class="number">206</span>行左右</div><div class="line">	</div><div class="line">	# Virtual hosts			再开启虚拟目录     在468行左右</div><div class="line">	Include conf/extra/httpd-vhosts.conf     将这行代码前面的#去掉</div><div class="line"><span class="number">2.</span> 到C:\wamp\bin\apache\Apache2<span class="number">.2</span><span class="number">.21</span>\conf\extra的下面，找到httpd-vhosts.conf，添加如下内容：</div><div class="line">	&lt;VirtualHost *:<span class="number">80</span>&gt;</div><div class="line">    	DocumentRoot <span class="string">"c:/wamp/www/jd"</span>      <span class="comment">// 将启动的根目录指向此文件夹</span></div><div class="line">    	ServerName jd.com</div><div class="line">    	ServerAlias www.jd.com</div><div class="line">    	ErrorLog <span class="string">"logs/dummy-host.example.com-error.log"</span></div><div class="line">    	CustomLog <span class="string">"logs/dummy-host.example.com-access.log"</span> common</div><div class="line">	&lt;<span class="regexp">/VirtualHost&gt;</span></div><div class="line"><span class="regexp">	</span></div><div class="line"><span class="regexp">	&lt;VirtualHost *:80&gt;</span></div><div class="line"><span class="regexp">    	DocumentRoot "c:/</span>wamp/www/mi<span class="string">"</span></div><div class="line"><span class="string">    	ServerName mi.com</span></div><div class="line"><span class="string">    	ServerAlias www.mi.com</span></div><div class="line"><span class="string">    	ErrorLog "</span>logs/dummy-host.example.com-error.log<span class="string">"</span></div><div class="line"><span class="string">    	CustomLog "</span>logs/dummy-host.example.com-access.log<span class="string">" common</span></div><div class="line"><span class="string">	&lt;/VirtualHost&gt;</span></div><div class="line"><span class="string">3. 在C:\Windows\System32\drivers\etc 找到hosts文件，添加域名的指向</span></div><div class="line"><span class="string">	</span></div><div class="line"><span class="string">		127.0.0.1			baidu.com</span></div><div class="line"><span class="string">		127.0.0.1			www.baidu.com</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">		127.0.0.1 			jd.com</span></div><div class="line"><span class="string">		127.0.0.1			www.jd.com</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">		127.0.0.1			taobao.com</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">		127.0.0.1			mi.com</span></div><div class="line"><span class="string">		127.0.0.1			www.mi.com</span></div><div class="line"><span class="string">4. 使用特定的域名就可以访问到特定的项目文件了。</span></div></pre></td></tr></table></figure>
+<h1 id="4-使用其它盘的文件夹做为根目录"><a href="#4-使用其它盘的文件夹做为根目录" class="headerlink" title="4.使用其它盘的文件夹做为根目录"></a>4.使用其它盘的文件夹做为根目录</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> 在C:\wamp\bin\apache\Apache2<span class="number">.2</span><span class="number">.21</span>\conf 下面找到httpd.conf,修改如下内容：</div><div class="line">	#DocumentRoot "c:/wamp/www/"     这是原来的启动文件夹 原来的根目录</div><div class="line">	DocumentRoot <span class="string">"d:/roots"</span>			这是现在的启动文件夹 现在的根目录</div><div class="line"><span class="number">2.</span> &lt;Directory /&gt;</div><div class="line">    Options FollowSymLinks</div><div class="line">    AllowOverride None</div><div class="line">    Order deny,allow</div><div class="line">    #Deny from all</div><div class="line">	Allow <span class="keyword">from</span> all      开启权限</div><div class="line">  &lt;<span class="regexp">/Directory&gt;</span></div><div class="line"><span class="regexp">3. 在207行左右，修改如下内容：</span></div><div class="line"><span class="regexp">	#&lt;Directory "c:/</span>wamp/www/<span class="string">"&gt;     将此行代码删除掉或是注释掉</span></div><div class="line"><span class="string">	&lt;Directory "</span>d:<span class="regexp">/roots"&gt;</span></div><div class="line"><span class="regexp">	</span></div><div class="line"><span class="regexp">3. 以后所有的项目文件夹都需要放置在d:/</span>roots文件夹下面</div><div class="line"><span class="number">4.</span> 其它的配置同上，需要设置hosts文件中的域名和IP的映射，还需要在httpd-vhosts.conf进行虚拟主机的设置</div></pre></td></tr></table></figure>
+<h1 id="5-设置入口导航"><a href="#5-设置入口导航" class="headerlink" title="5.设置入口导航"></a>5.设置入口导航</h1><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span> 在浏览器里输入studyit.com其实就是访问此根目录下面的index.php或是index.html</div><div class="line"><span class="number">2.</span> 在浏览器里面输入studyit.com与studyit.com/index.php的效果是一样的,也是查找此根目录下面的index.php</div><div class="line"><span class="number">3.</span> 因此要想实现在地址栏中输入不同的地址可以访问不同网站的效果的话，需要设置一个入口路由</div><div class="line">  	因此需要新建一个index.php，在此文件内根据用户输入的内容，加载不同的页面返回给浏览器</div><div class="line"><span class="number">4.</span> 在index.php文件里面，是可以执行html代码的</div></pre></td></tr></table></figure>
+<p>#6.获取地址栏中index.php后面的信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"> &lt;?php</div><div class="line">  header(&quot;Content-type:text/html;charset=utf-8&quot;);</div><div class="line"></div><div class="line">//   echo &apos;这是一个后台语言中的输出信息。。。&apos;;</div><div class="line">// 后台语言是可以加载可是解析html代码 的，可以通过include将html代码引入过来</div><div class="line">//		include  &apos;/views/dashboard/index.html&apos;;</div><div class="line">//		include  &apos;/views/dashboard/login.html&apos;;</div><div class="line">//		include  &apos;/views/teacher/list.html&apos;;</div><div class="line">//		include  &apos;/views/user/list.html&apos;;</div><div class="line"></div><div class="line">	//	$_SERVER 可以获取有关服务器的一切信息，其中就包括用户的访问网址</div><div class="line">	//  index.php后面的地址信息，是存在于PATH_INFO这个属性当中的</div><div class="line">		//echo $_SERVER[&apos;PATH_INFO&apos;];</div><div class="line"></div><div class="line">			//var_dump($_SERVER);</div><div class="line"></div><div class="line">    $path = $_SERVER[&quot;PATH_INFO&quot;];   ///views/dashboard/index</div><div class="line"></div><div class="line">    include $path.&quot;.html&quot;;  // 获取用户输入的内容再拼接上.html页面，就可以返回给浏览器供浏览器渲染了</div><div class="line"></div><div class="line">    // 此时的index.php就相当于是一个入口路由或是一个路由导航</div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+<h1 id="7-通过用户输入的不同域名访问不同的页面"><a href="#7-通过用户输入的不同域名访问不同的页面" class="headerlink" title="7.通过用户输入的不同域名访问不同的页面"></a>7.通过用户输入的不同域名访问不同的页面</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">$path = &apos;&apos;;</div><div class="line">  if(array_key_exists(&apos;PATH_INFO&apos;,$_SERVER))&#123;</div><div class="line">  // 判断某个数组当中是否有某个属性  array_key_exists()</div><div class="line">  	// 用户输入的内容里面有index.php后面的信息的时候，可以用如下的方式进行判断</div><div class="line">  	 $path = $_SERVER[&quot;PATH_INFO&quot;];   //   /views/dashboard/index</div><div class="line">   		// string.substr   &quot;abc&quot;.slice(1)</div><div class="line">   		 $path = substr($path,1);    // js中的切割字符串是split() 而PHP中切割字符中是用explode()</div><div class="line"></div><div class="line">   		$arr = explode(&apos;/&apos;,$path);</div><div class="line"></div><div class="line">   		if(count($arr) ==2)&#123;  // dashboar/index  也就是数组中有两个内容的时候</div><div class="line">   			$path = &apos;/views/&apos;.$path;</div><div class="line">   		&#125;else if(count($arr)==1)&#123; // index</div><div class="line">   		    $path = &apos;/views/dashboard/&apos;.$path;</div><div class="line">   		&#125;</div><div class="line">  &#125;else &#123;</div><div class="line">  			$path = &apos;/views/dashboard/index&apos;;</div><div class="line">  &#125;</div><div class="line">	//var_dump($arr);</div><div class="line"></div><div class="line">	 // count()</div><div class="line"></div><div class="line">   include  $path.&quot;.html&quot;;  // 获取用户输入的内容再拼接上.html页面，就可以返回给浏览器供浏览器渲染了</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+     
+     <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/笔记/" <i class="fa fa-tag"></i> 笔记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/05/shell/" rel="next" title="Shell">
+                <i class="fa fa-chevron-left"></i> Shell
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/05/后台管理系统项目(1)/" rel="prev" title="后台管理系统项目总结(1)">
+                后台管理系统项目总结(1) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="光明" />
+          
+            <p class="site-author-name" itemprop="name">光明</p>
+            <p class="site-description motion-element" itemprop="description">激进小IT</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/pgm0908/" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#知识笔记"><span class="nav-number">1.</span> <span class="nav-text">知识笔记</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-前端的开发方式"><span class="nav-number">2.</span> <span class="nav-text">1.前端的开发方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-网站访问的原理"><span class="nav-number">3.</span> <span class="nav-text">2.网站访问的原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-配置自己本地的项目"><span class="nav-number">4.</span> <span class="nav-text">3.配置自己本地的项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-使用其它盘的文件夹做为根目录"><span class="nav-number">5.</span> <span class="nav-text">4.使用其它盘的文件夹做为根目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-设置入口导航"><span class="nav-number">6.</span> <span class="nav-text">5.设置入口导航</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-通过用户输入的不同域名访问不同的页面"><span class="nav-number">7.</span> <span class="nav-text">7.通过用户输入的不同域名访问不同的页面</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">光明</span>
+
+  
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共70.8k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+ 
+</body>
+</html>

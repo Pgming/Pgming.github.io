@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #bdf74d; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="后台管理系统项目," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="后台管理系统项目总结(3)">
+<meta name="keywords" content="后台管理系统项目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="后台管理系统项目总结(3)">
+<meta property="og:url" content="http://yoursite.com/2017/09/05/后台管理系统项目(3)/index.html">
+<meta property="og:site_name" content="博客-彭">
+<meta property="og:description" content="后台管理系统项目总结(3)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-05T01:34:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="后台管理系统项目总结(3)">
+<meta name="twitter:description" content="后台管理系统项目总结(3)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/05/后台管理系统项目(3)/"/>
+
+
+
+
+
+
+  <title>后台管理系统项目总结(3) | 博客-彭</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客-彭</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">☆☆☆☆☆</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/05/后台管理系统项目(3)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="光明">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客-彭">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">后台管理系统项目总结(3)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-05T09:33:11+08:00">
+                2017-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/后台管理系统项目/" itemprop="url" rel="index">
+                    <span itemprop="name">后台管理系统项目</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="后台管理系统项目总结-3"><a href="#后台管理系统项目总结-3" class="headerlink" title="后台管理系统项目总结(3)"></a>后台管理系统项目总结(3)</h1><a id="more"></a>
+<h1 id="1-课程管理之添加功能"><a href="#1-课程管理之添加功能" class="headerlink" title="1.课程管理之添加功能"></a>1.课程管理之添加功能</h1><ul>
+<li>1.修改aside.html中课程添加的链接</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="tag">&lt;<span class="name">li</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/course/create"</span>&gt;</span></div><div class="line">         课程添加</div><div class="line">      <span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>2.将course/course_add.html更名为create.html</li>
+<li>3.修改add.html中的文件引入</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/css.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/aside.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/head.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/script.html'</span><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>4.在js文件夹下新建一个course文件夹，并新建create.js模块</li>
+<li>5.当单击按钮的时候，要把添加的课程内容提交到服务器</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">define([<span class="string">'jquery'</span>,<span class="string">'form'</span>],<span class="function"><span class="keyword">function</span> (<span class="params">$</span>)</span>&#123;</div><div class="line">     <span class="comment">// alert(123);</span></div><div class="line">  <span class="comment">//将当前添加的课程名称内容，提交给服务器的数据库</span></div><div class="line">  $(<span class="string">'#btnCreate'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'form'</span>).ajaxSubmit(&#123;</div><div class="line">      url:<span class="string">'/api/course/create'</span>,</div><div class="line">      type:<span class="string">'post'</span>,</div><div class="line">      success:<span class="function"><span class="keyword">function</span> (<span class="params">info</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(info.code==<span class="number">200</span>)&#123;</div><div class="line">          alert(<span class="string">'提交成功'</span>);</div><div class="line">          location.href=<span class="string">'/course/basic?cs_id='</span>+info.result.cs_id;</div><div class="line">        &#125;</div><div class="line">      &#125;<span class="comment">//success</span></div><div class="line">    &#125;)<span class="comment">//ajaxSubmit</span></div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//阻止默认的刷新 行为</span></div><div class="line">  &#125;)<span class="comment">//on</span></div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="2-课程管理之显示课程基本信息"><a href="#2-课程管理之显示课程基本信息" class="headerlink" title="2.课程管理之显示课程基本信息"></a>2.课程管理之显示课程基本信息</h1><ul>
+<li>1.将course文件夹中的course_step1.html更名为basic.html</li>
+<li>2.修改此文件下面的文件引入</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/css.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/aside.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/head.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/script.html'</span><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>3.在js/course文件下创建basic.js模块</li>
+<li>4.根据地址栏中的cs_id到服务器获取数据，并渲染模板,还要添加富文本编辑器</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">define([<span class="string">'utils'</span>,<span class="string">'jquery'</span>,<span class="string">'template'</span>,<span class="string">'ckeditor'</span>,<span class="string">'form'</span>],<span class="function"><span class="keyword">function</span> (<span class="params">obj,$,template,CKEDITOR,form</span>)</span>&#123;</div><div class="line">   <span class="comment">//要根据传过来的id，获取当前的所有的信息，渲染到当前页面上来</span></div><div class="line">    <span class="keyword">var</span> id = obj.queryString().cs_id;</div><div class="line">    $.ajax(&#123;</div><div class="line">      url:<span class="string">'/api/course/basic'</span>,</div><div class="line">      type:<span class="string">'get'</span>,</div><div class="line">      data:&#123;</div><div class="line">        cs_id:id</div><div class="line">      &#125;,</div><div class="line">      success:<span class="function"><span class="keyword">function</span> (<span class="params">info</span>)</span>&#123;</div><div class="line">          <span class="keyword">if</span>(info.code==<span class="number">200</span>)&#123;</div><div class="line">            <span class="keyword">var</span> htmlStr = template(<span class="string">'cs_basic_tpl'</span>,info.result);</div><div class="line">            $(<span class="string">'.steps'</span>).html(htmlStr);</div><div class="line"></div><div class="line">            <span class="comment">//添加富文本编辑器</span></div><div class="line">            CKEDITOR.replace(<span class="string">'cs_brief'</span>);</div><div class="line">          &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;);<span class="comment">//ajax</span></div></pre></td></tr></table></figure>
+<ul>
+<li>5.页面中的模板信息如下：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/template"</span> id=<span class="string">"cs_basic_tpl"</span>&gt;</div><div class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"brief"</span>&gt;</div><div class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumb"</span>&gt;</div><div class="line">                &lt;img src=<span class="string">"&#123;&#123;cs_cover&#125;&#125;"</span> alt=<span class="string">""</span>&gt;</div><div class="line">            &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">            &lt;dl class="info"&gt;</span></div><div class="line"><span class="regexp">                &lt;dt&gt;&#123;&#123;cs_name&#125;&#125;&lt;/</span>dt&gt;</div><div class="line">            &lt;<span class="regexp">/dl&gt;</span></div><div class="line"><span class="regexp">        &lt;/</span>div&gt;</div><div class="line">        &lt;!-- 步聚 --&gt;</div><div class="line">        &lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"forwards list-unstyled"</span>&gt;</div><div class="line">            &lt;li&gt;</div><div class="line">                &lt;a href=<span class="string">"/course/basic"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"active"</span>&gt;</div><div class="line">                    &lt;b&gt;<span class="number">1</span>&lt;<span class="regexp">/b&gt;</span></div><div class="line"><span class="regexp">                    基本信息</span></div><div class="line"><span class="regexp">                &lt;/</span>a&gt;</div><div class="line">            &lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">            &lt;li&gt;</span></div><div class="line"><span class="regexp">                &lt;a href="/</span>course/pic<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;b&gt;2&lt;/b&gt;</span></div><div class="line"><span class="string">                    课程图片</span></div><div class="line"><span class="string">                &lt;/a&gt;</span></div><div class="line"><span class="string">            &lt;/li&gt;</span></div><div class="line"><span class="string">            &lt;li&gt;</span></div><div class="line"><span class="string">                &lt;a href="</span>./course_add_step3.html<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;b&gt;3&lt;/b&gt;</span></div><div class="line"><span class="string">                    课时管理</span></div><div class="line"><span class="string">                &lt;/a&gt;</span></div><div class="line"><span class="string">            &lt;/li&gt;</span></div><div class="line"><span class="string">        &lt;/ul&gt;</span></div><div class="line"><span class="string">        &lt;!-- 基本信息 --&gt;</span></div><div class="line"><span class="string">        &lt;div class="</span>content<span class="string">"&gt;</span></div><div class="line"><span class="string">            &lt;!-- 标题 --&gt;</span></div><div class="line"><span class="string">            &lt;div class="</span>title<span class="string">"&gt;</span></div><div class="line"><span class="string">                &lt;h5&gt;基本信息 &lt;small&gt;BASIC INFORMATION&lt;/small&gt;&lt;/h5&gt;</span></div><div class="line"><span class="string">            &lt;/div&gt;</span></div><div class="line"><span class="string">            &lt;form action="</span><span class="string">" class="</span>basic form-horizontal<span class="string">"&gt;</span></div><div class="line"><span class="string">                &lt;input type="</span>hidden<span class="string">" name="</span>cs_id<span class="string">" value="</span>&#123;&#123;cs_id&#125;&#125;<span class="string">"&gt;</span></div><div class="line"><span class="string">                &lt;div class="</span>form-group<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;label for="</span><span class="string">" class="</span>col-md<span class="number">-2</span> control-label<span class="string">"&gt;标题&lt;/label&gt;</span></div><div class="line"><span class="string">                    &lt;div class="</span>col-md<span class="number">-8</span><span class="string">"&gt;</span></div><div class="line"><span class="string">                        &lt;input type="</span>text<span class="string">" name="</span>cs_name<span class="string">" class="</span>form-control input-sm<span class="string">" value="</span>&#123;&#123;cs_name&#125;&#125;<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;div class="</span>form-group<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;label for="</span><span class="string">" class="</span>col-md<span class="number">-2</span> control-label<span class="string">"&gt;课程描述&lt;/label&gt;</span></div><div class="line"><span class="string">                    &lt;div class="</span>col-md<span class="number">-8</span> ckeditor<span class="string">"&gt;</span></div><div class="line"><span class="string">                        &lt;textarea name="</span>cs_brief<span class="string">" id="</span>cs_brief<span class="string">"  rows="</span><span class="number">15</span><span class="string">" class="</span>form-control input-sm<span class="string">"&gt;&#123;&#123;cs_brief&#125;&#125;&lt;/textarea&gt;</span></div><div class="line"><span class="string">                    &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;div class="</span>form-group<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;label for="</span><span class="string">" class="</span>col-md<span class="number">-2</span> control-label<span class="string">"&gt;讲师&lt;/label&gt;</span></div><div class="line"><span class="string">                    &lt;div class="</span>col-md<span class="number">-8</span><span class="string">"&gt;</span></div><div class="line"><span class="string">                        &lt;select name="</span>cs_tc_id<span class="string">"  class="</span>form-control input-sm<span class="string">"&gt;</span></div><div class="line"><span class="string">                            &#123;&#123;each teacher as v i&#125;&#125;</span></div><div class="line"><span class="string">                            &lt;option value="</span><span class="string">"&gt;&#123;&#123;v.tc_name&#125;&#125;&lt;/option&gt;</span></div><div class="line"><span class="string">                            &#123;&#123;/each&#125;&#125;</span></div><div class="line"><span class="string">                        &lt;/select&gt;</span></div><div class="line"><span class="string">                    &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;div class="</span>form-group<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;label for="</span><span class="string">" class="</span>col-md<span class="number">-2</span> control-label<span class="string">"&gt;分类&lt;/label&gt;</span></div><div class="line"><span class="string">                    &lt;div class="</span>col-md<span class="number">-8</span><span class="string">"&gt;</span></div><div class="line"><span class="string">                        &lt;select name="</span>cs_cg_id<span class="string">" class="</span>form-control input-sm<span class="string">"&gt;</span></div><div class="line"><span class="string">                            &lt;option value="</span><span class="string">"&gt;互联网&lt;/option&gt;</span></div><div class="line"><span class="string">                        &lt;/select&gt;</span></div><div class="line"><span class="string">                        &lt;select name="</span><span class="string">" class="</span>form-control input-sm<span class="string">"&gt;</span></div><div class="line"><span class="string">                            &lt;option value="</span><span class="string">"&gt;网页设计&lt;/option&gt;</span></div><div class="line"><span class="string">                        &lt;/select&gt;</span></div><div class="line"><span class="string">                    &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;div class="</span>form-group<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;label for="</span><span class="string">" class="</span>col-md<span class="number">-2</span> control-label<span class="string">"&gt;标签&lt;/label&gt;</span></div><div class="line"><span class="string">                    &lt;div class="</span>col-md<span class="number">-8</span><span class="string">"&gt;</span></div><div class="line"><span class="string">                        &lt;input type="</span>text<span class="string">" name="</span>cs_tags<span class="string">" value="</span>&#123;&#123;cs_tags&#125;&#125;<span class="string">" class="</span>form-control input-sm<span class="string">"&gt;</span></div><div class="line"><span class="string">                        &lt;p class="</span>help-block<span class="string">"&gt;将会应用于按标签搜索课程、相关课程的提取等&lt;/p&gt;</span></div><div class="line"><span class="string">                    &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;div class="</span>form-group<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;div class="</span>col-md<span class="number">-10</span><span class="string">"&gt;</span></div><div class="line"><span class="string">                        &lt;button id="</span>btnSave<span class="string">" class="</span>btn btn-success btn-sm pull-right<span class="string">"&gt;保 存&lt;/button&gt;</span></div><div class="line"><span class="string">                    &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;/div&gt;</span></div><div class="line"><span class="string">            &lt;/form&gt;</span></div><div class="line"><span class="string">        &lt;/div&gt;</span></div><div class="line"><span class="string">    &lt;/script&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>6.在basic.html页面中调用定义好的模块</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">     <span class="built_in">require</span>([<span class="string">'js/course/basic'</span>]);<span class="comment">//调用模块</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>7.页面信息填写完毕，单击按钮，向服务器提交数据，因此需要给保存按钮注册事件：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"> <span class="comment">// 给保存按钮注册事件</span></div><div class="line">$(<span class="string">'.steps'</span>).on(<span class="string">'click'</span>,<span class="string">'#btnSave'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="comment">// alert(123);</span></div><div class="line">  $(<span class="string">"#cs_brief"</span>).val(CKEDITOR.instances.cs_brief.getData());</div><div class="line">  $(<span class="string">'form'</span>).ajaxSubmit(&#123;</div><div class="line">    url:<span class="string">'/api/course/update/basic'</span>,</div><div class="line">    type:<span class="string">'post'</span>,</div><div class="line">    success:<span class="function"><span class="keyword">function</span> (<span class="params">info</span>)</span>&#123;</div><div class="line">       <span class="keyword">if</span>(info.code==<span class="number">200</span>)&#123;</div><div class="line">         alert(<span class="string">'保存成功，即将跳转到图片中心...'</span>);</div><div class="line">        location.href=<span class="string">'/course/pic?cs_id='</span>+info.result.cs_id;</div><div class="line">       &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">    <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//阻止默认的刷新行为</span></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="3-提取复用性的代码，封装成工具模块"><a href="#3-提取复用性的代码，封装成工具模块" class="headerlink" title="3.提取复用性的代码，封装成工具模块"></a>3.提取复用性的代码，封装成工具模块</h1><ul>
+<li>1.在js文件夹下面新建一个utils(实用工具的意思)文件夹，并创建utils.js模块</li>
+<li>2.把复用性的代码，放在此模块当中，代码 如下：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//现在是进行了模块化的开发，因此现在的这个与业务不相关的功能，也要封闭成一个模块，这就是一个工具模块</span></div><div class="line"><span class="comment">//专门用来获取?后面的id</span></div><div class="line">define(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> o = &#123;</div><div class="line">    queryString:<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="comment">// 获取当前url中的tc_id</span></div><div class="line">      <span class="keyword">var</span> search = location.search;<span class="comment">//  ?tc_id=14&amp;name=zhangsan&amp;age=20</span></div><div class="line">      search = search.slice(<span class="number">1</span>); <span class="comment">//第一个参数是从哪里开始截取，第二个参数是截取到哪里，如果不写默认是截取到最后</span></div><div class="line">      <span class="comment">// console.log(search);</span></div><div class="line">      <span class="keyword">var</span> searchArr = search.split(<span class="string">'&amp;'</span>);  <span class="comment">//searchArr是一个数组</span></div><div class="line">      <span class="comment">// console.log(searchArr);</span></div><div class="line">      <span class="keyword">var</span> obj = &#123;&#125;;  <span class="comment">//定义一个空对象 ，用来存储数据</span></div><div class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;searchArr.length;i++)&#123;</div><div class="line">        <span class="keyword">var</span> temp =  searchArr[i].split(<span class="string">'='</span>); <span class="comment">//temp也是一个数组</span></div><div class="line">        <span class="comment">// console.log(temp);</span></div><div class="line">        obj[temp[<span class="number">0</span>]] = temp[<span class="number">1</span>];</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> obj; <span class="comment">//要把对象返回值</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line">    <span class="keyword">return</span> o;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="4-课程图片"><a href="#4-课程图片" class="headerlink" title="4.课程图片"></a>4.课程图片</h1><p>1.将course_add_step2.html文件名修改为pic.html,并修改内部文件引用</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/css.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/aside.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/head.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/script.html'</span><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>2.在course文件夹里面，新建一个文件pic.js，定义模块，无论是单击课程图片，还是跳转过来，都要执行以下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">define([<span class="string">'jquery'</span>,<span class="string">'js/util'</span>,<span class="string">'template'</span>,<span class="string">'uploadify'</span>],<span class="function"><span class="keyword">function</span> (<span class="params">$,util,template,uploadify</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> cs_id = util.queryString().cs_id;</div><div class="line">    $.ajax(&#123;</div><div class="line">      url:<span class="string">'/api/course/picture'</span>,</div><div class="line">      type:<span class="string">'get'</span>,</div><div class="line">      data:&#123;<span class="attr">cs_id</span>:cs_id&#125;,</div><div class="line">      success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>)</span>&#123;</div><div class="line">         <span class="keyword">if</span>(data.code==<span class="number">200</span>)&#123;</div><div class="line">           <span class="comment">// alert('成功了...');</span></div><div class="line">           <span class="comment">// 把图片渲染一下</span></div><div class="line">           <span class="keyword">var</span> htmlStr = template(<span class="string">'cs_pic_tpl'</span>,data.result);</div><div class="line">           $(<span class="string">'.steps'</span>).html(htmlStr);</div><div class="line">         &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;);<span class="comment">//ajax</span></div><div class="line">   &#125;)</div></pre></td></tr></table></figure>
+<p>3.修改pic.html页面中的模板</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/template"</span> id=<span class="string">"cs_pic_tpl"</span>&gt;</div><div class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"brief"</span>&gt;</div><div class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumb"</span>&gt;</div><div class="line">                &#123;&#123;<span class="keyword">if</span> cs_cover&#125;&#125;</div><div class="line">                &lt;img src=<span class="string">"&#123;&#123;cs_cover&#125;&#125;"</span> alt=<span class="string">""</span>&gt;</div><div class="line">                &#123;&#123;/<span class="keyword">if</span>&#125;&#125;</div><div class="line">            &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">            &lt;dl class="info"&gt;</span></div><div class="line"><span class="regexp">                &lt;dt&gt;&#123;&#123;cs_name&#125;&#125;&lt;/</span>dt&gt;</div><div class="line">                &lt;dd&gt;讲师：&#123;&#123;tc_name&#125;&#125;&lt;<span class="regexp">/dd&gt;</span></div><div class="line"><span class="regexp">            &lt;/</span>dl&gt;</div><div class="line">        &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">        &lt;!-- 步聚 --&gt;</span></div><div class="line"><span class="regexp">        &lt;ul class="forwards list-unstyled"&gt;</span></div><div class="line"><span class="regexp">            &lt;li&gt;</span></div><div class="line"><span class="regexp">                &lt;a href="/</span>course/basic?cs_id=&#123;&#123;cs_id&#125;&#125;<span class="string">" class="</span>done<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;b class="</span>fa fa-check<span class="string">"&gt;&lt;/b&gt;</span></div><div class="line"><span class="string">                    基本信息</span></div><div class="line"><span class="string">                &lt;/a&gt;</span></div><div class="line"><span class="string">            &lt;/li&gt;</span></div><div class="line"><span class="string">            &lt;li&gt;</span></div><div class="line"><span class="string">                &lt;a href="</span>/course/pic?cs_id=&#123;&#123;cs_id&#125;&#125;<span class="string">" class="</span>active<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;b&gt;2&lt;/b&gt;</span></div><div class="line"><span class="string">                    课程图片</span></div><div class="line"><span class="string">                &lt;/a&gt;</span></div><div class="line"><span class="string">            &lt;/li&gt;</span></div><div class="line"><span class="string">            &lt;li&gt;</span></div><div class="line"><span class="string">                &lt;a href="</span>/course/lesson?cs_id=&#123;&#123;cs_id&#125;&#125;<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;b&gt;3&lt;/b&gt;</span></div><div class="line"><span class="string">                    课时管理</span></div><div class="line"><span class="string">                &lt;/a&gt;</span></div><div class="line"><span class="string">            &lt;/li&gt;</span></div><div class="line"><span class="string">        &lt;/ul&gt;</span></div><div class="line"><span class="string">        &lt;!-- 课程图片 --&gt;</span></div><div class="line"><span class="string">        &lt;div class="</span>content<span class="string">"&gt;</span></div><div class="line"><span class="string">            &lt;!-- 标题 --&gt;</span></div><div class="line"><span class="string">            &lt;div class="</span>title<span class="string">"&gt;</span></div><div class="line"><span class="string">                &lt;h5&gt;课程图片 &lt;small&gt;COURSE PICTURE&lt;/small&gt;&lt;/h5&gt;</span></div><div class="line"><span class="string">            &lt;/div&gt;</span></div><div class="line"><span class="string">            &lt;!-- 上传图片 --&gt;</span></div><div class="line"><span class="string">            &lt;div class="</span>picture col-md-offset<span class="number">-2</span><span class="string">"&gt;</span></div><div class="line"><span class="string">                &lt;div class="</span>preview<span class="string">"&gt;</span></div><div class="line"><span class="string">                    &#123;&#123;if cs_cover_origin&#125;&#125;</span></div><div class="line"><span class="string">                    &lt;img src="</span>&#123;&#123;cs_cover_origin&#125;&#125;<span class="string">" alt="</span><span class="string">"&gt;</span></div><div class="line"><span class="string">                    &#123;&#123;else&#125;&#125;</span></div><div class="line"><span class="string">                    &lt;img src="</span>/views/public/images/course.png<span class="string">" alt="</span><span class="string">"&gt;</span></div><div class="line"><span class="string">                    &#123;&#123;/if&#125;&#125;</span></div><div class="line"><span class="string">                &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;p class="</span>tips<span class="string">"&gt;</span></div><div class="line"><span class="string">                    可上传jpg, gif, png格式文件, 图片建议尺寸大于300x150，文件大小不能超过2M。</span></div><div class="line"><span class="string">                &lt;/p&gt;</span></div><div class="line"><span class="string">                &lt;div class="</span>col-md<span class="number">-2</span><span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;button id="</span>upload<span class="string">" class="</span>btn btn-success btn-sm<span class="string">"&gt;选择图片&lt;/button&gt;</span></div><div class="line"><span class="string">                &lt;/div&gt;</span></div><div class="line"><span class="string">                &lt;div class="</span>col-md<span class="number">-2</span><span class="string">"&gt;</span></div><div class="line"><span class="string">                    &lt;button id="</span>cropBtn<span class="string">" class="</span>btn btn-warning btn-sm<span class="string">" disabled&gt;裁切图片&lt;/button&gt;</span></div><div class="line"><span class="string">                &lt;/div&gt;</span></div><div class="line"><span class="string">            &lt;/div&gt;</span></div><div class="line"><span class="string">        &lt;/div&gt;</span></div><div class="line"><span class="string">&lt;/script&gt;</span></div></pre></td></tr></table></figure>
+<p>4.在pic.html页面中，调用定义好的模块</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">        <span class="built_in">require</span>([<span class="string">'js/course/pic'</span>]);</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="5-图片上传插件的改造及使用"><a href="#5-图片上传插件的改造及使用" class="headerlink" title="5.图片上传插件的改造及使用"></a>5.图片上传插件的改造及使用</h1><p>1.在pic.html文件中把选择图片按钮改造一下，改成button并添加id为upload</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;button id=&quot;upload&quot; class=&quot;btn btn-success btn-sm&quot;&gt;选择图片&lt;/button&gt;</div></pre></td></tr></table></figure>
+<p>2.在pic.js模块中，书写代码，当单击上传图片的按钮的时候，可以使用插件上传图片：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//单击按钮的时候，图片是可以选择后被上传的，这是原图，并能够显示出来</span></div><div class="line">           $(<span class="string">"#upload"</span>).uploadify(&#123;</div><div class="line">             swf:<span class="string">'/views/public/assets/uploadify/uploadify.swf'</span>,</div><div class="line">             uploader:<span class="string">'/api/uploader/cover'</span>,</div><div class="line">             width:<span class="number">85</span>,</div><div class="line">             height:<span class="string">'auto'</span>,</div><div class="line">             buttonText:<span class="string">'请选择图片'</span>,</div><div class="line">             formData:&#123;<span class="attr">cs_id</span>:cs_id&#125;,</div><div class="line">             fileObjName:<span class="string">'cs_cover_original'</span>,</div><div class="line">             buttonClass:<span class="string">'btn btn-success btn-sm'</span>,</div><div class="line">             itemTemplate:<span class="string">'&lt;span&gt;&lt;/span&gt;'</span>,</div><div class="line">             onUploadSuccess:<span class="function"><span class="keyword">function</span>(<span class="params">file, data, response</span>)</span>&#123;</div><div class="line">               <span class="comment">// console.log(data); 如果图片上传成功的话，要将图片显示出来</span></div><div class="line">               $(<span class="string">".preview img"</span>).attr(<span class="string">'src'</span>,<span class="built_in">JSON</span>.parse(data).result.path);</div><div class="line">               $(<span class="string">'#cropBtn'</span>).prop(<span class="string">'disabled'</span>,<span class="literal">false</span>);<span class="comment">// selected  checked  disabled 这三个比较特殊，不能用attr，只能用prop</span></div><div class="line">             &#125;</div><div class="line">           &#125;);</div></pre></td></tr></table></figure>
+<p>2.在pic.html页面中调用模块</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>([<span class="string">'js/course/pic'</span>]);</div></pre></td></tr></table></figure>
+<p>6.在pic.html中修改图片的路径，给它一个默认的图片</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/views/public/images/course.png"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>7.在页面一开始跳转过来的时候，就要显示图片，因此需要发送ajax请求</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">    url:<span class="string">'/api/course/picture'</span>,</div><div class="line">    type:<span class="string">'get'</span>,</div><div class="line">    data:&#123;<span class="attr">cs_id</span>:cs_id&#125;,</div><div class="line">    success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>)</span>&#123;</div><div class="line">      <span class="keyword">if</span>(data.code==<span class="number">200</span>)&#123;</div><div class="line">        $(<span class="string">'.preview img'</span>).attr(<span class="string">'src'</span>,data.result.cs_cover_original);<span class="comment">//将原图渲染出来</span></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<h1 id="6-图片裁切小demo"><a href="#6-图片裁切小demo" class="headerlink" title="6.图片裁切小demo"></a>6.图片裁切小demo</h1><p>1.到jcrop.org网站下载插件，是基于jquery的一个插件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http://jcrop.org/download</div></pre></td></tr></table></figure>
+<p>2.小demo的使用，先引入css，jquery， 及jcrop.js文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/Jcrop.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-1.12.2.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/Jcrop.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>3.在页面中写js代码调用即可，参数为对象：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>图片裁切<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"css/Jcrop.css"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-1.12.2.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"js/Jcrop.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">   <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    .box &#123;</span></div><div class="line"><span class="undefined">      width: 240px;</span></div><div class="line"><span class="undefined">      height: 120px;</span></div><div class="line"><span class="undefined">      border: 1px solid red;</span></div><div class="line"><span class="undefined">      position: absolute;</span></div><div class="line"><span class="undefined">      top: 0;</span></div><div class="line"><span class="undefined">      left: 900px;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"pool.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span> <span class="attr">id</span>=<span class="string">"pic"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  $(<span class="string">"#pic"</span>).Jcrop();</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>4.常用参数介绍：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">aspectRatio:2,               //宽高比例</div><div class="line">  bgColor: &apos;hotpink&apos;,          //背景图片</div><div class="line">  bgOpacity:0.3,               //背景透明度</div><div class="line">  maxSize: [200,300],          //裁切范围区的最大值</div><div class="line">  minSize:[100,80] ,           //裁切范围区的最小值</div><div class="line">  canSelect:false,             //为false时无法更改，默认值是true</div><div class="line">  canDelete:true,              //用键盘可以删除选区，但是好像不好用</div><div class="line">  canDrag:false,               //能否拖拽选区，默认是true</div><div class="line">  canResize:false              //可以调整大小，默认是true</div></pre></td></tr></table></figure>
+<p>5.如果在想在任意位置显示的话，得使用如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  $(<span class="string">"#pic"</span>).Jcrop(&#123;</div><div class="line">    aspectRatio: <span class="number">2</span>,</div><div class="line">    N: <span class="string">"#ccc"</span>,</div><div class="line">    bgOpacity: <span class="number">0.3</span>,</div><div class="line">    container: <span class="string">".div"</span></div><div class="line">    <span class="comment">// maxSize: [100, 100],</span></div><div class="line">  &#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    jcrop_api = <span class="keyword">this</span>;</div><div class="line">    thumbnail = <span class="keyword">this</span>.initComponent(<span class="string">'Thumbnailer'</span>, &#123;</div><div class="line">      width: <span class="number">240</span>,</div><div class="line">      height: <span class="number">120</span></div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line">  $(<span class="string">"#box"</span>).on(<span class="string">"cropmove cropend"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e, s, c</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(c.x, c.y, c.w, c.h);</div><div class="line">  &#125;);</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p>6.要想在任意位置显示的话，可以让生成的图片追加到对应的位置上</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.jcrop-thumb'</span>).appendTo($(<span class="string">'.box'</span>));</div></pre></td></tr></table></figure>
+<h1 id="7-图片裁切功能的使用"><a href="#7-图片裁切功能的使用" class="headerlink" title="7.图片裁切功能的使用"></a>7.图片裁切功能的使用</h1><p>1.在public/assets文件夹下面，添加jquery-jcrop文件夹</p>
+<p>2.在libs的config.js文件中，配置路径，并在下面设置依赖项，因为它不支持模块化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="string">'jcrop'</span>:<span class="string">'assets/jquery-jcrop/js/jcrop'</span></div><div class="line"></div><div class="line"><span class="string">'jcrop'</span>:&#123;</div><div class="line">      deps:[<span class="string">'jquery'</span>]</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>3.在pic.html页面中把裁切图片的a标签修改成按钮，并添加一个类名</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"cropBtn"</span> <span class="attr">class</span>=<span class="string">"btn btn-warning btn-sm"</span> <span class="attr">disabled</span>&gt;</span>裁切图片<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>4.在pic.html页面中引入jcrop的css文件，以方便裁切</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"/views/public/assets/jquery-jcrop/css/Jcrop.min.css"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>5.在pic.js中单击按钮的时候，调用Jcrop()，并将按钮的状态修改为保存，并设置一个自定义属性来存储状态</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".steps"</span>).on(<span class="string">"click"</span>,<span class="string">'#cropBtn'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>($(<span class="keyword">this</span>).attr(<span class="string">'data-status'</span>)!=<span class="string">'save'</span>)&#123;</div><div class="line">      $(<span class="keyword">this</span>).attr(<span class="string">'data-status'</span>,<span class="string">'save'</span>).text(<span class="string">'保  存'</span>);</div><div class="line">      </div><div class="line">     &#125;<span class="keyword">else</span>&#123;</div><div class="line">       </div><div class="line">       <span class="comment">//选择完了之后就可以进行保存了</span></div><div class="line">     &#125;</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<p>6.当第一次点击按钮的时候，完整的代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * Created by Administrator on 2017/6/25.</span></div><div class="line"><span class="comment"> */</span></div><div class="line">define([<span class="string">'jquery'</span>, <span class="string">'js/util'</span>, <span class="string">'template'</span>, <span class="string">'uploadify'</span>,<span class="string">'jcrop'</span>,<span class="string">'form'</span>], <span class="function"><span class="keyword">function</span> (<span class="params">$, util, template, uploadify</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> cs_id = util.queryString().cs_id;</div><div class="line">  $.ajax(&#123;</div><div class="line">    url: <span class="string">'/api/course/picture'</span>,</div><div class="line">    type: <span class="string">'get'</span>,</div><div class="line">    data: &#123;<span class="attr">cs_id</span>: cs_id&#125;,</div><div class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</div><div class="line">      <span class="keyword">if</span> (data.code == <span class="number">200</span>) &#123;</div><div class="line">        <span class="comment">// alert('成功了...');</span></div><div class="line">        <span class="comment">// 把图片渲染一下</span></div><div class="line">        <span class="keyword">var</span> htmlStr = template(<span class="string">'cs_pic_tpl'</span>, data.result);</div><div class="line">        $(<span class="string">'.steps'</span>).html(htmlStr);</div><div class="line"></div><div class="line">        <span class="comment">//单击按钮的时候，图片是可以选择后被上传的，这是原图，并能够显示出来</span></div><div class="line">        $(<span class="string">"#upload"</span>).uploadify(&#123;</div><div class="line">          swf: <span class="string">'/views/public/assets/uploadify/uploadify.swf'</span>,</div><div class="line">          uploader: <span class="string">'/api/uploader/cover'</span>,</div><div class="line">          width: <span class="number">85</span>,</div><div class="line">          height: <span class="string">'auto'</span>,</div><div class="line">          buttonText: <span class="string">'请选择图片'</span>,</div><div class="line">          formData: &#123;<span class="attr">cs_id</span>: cs_id&#125;,</div><div class="line">          fileObjName: <span class="string">'cs_cover_original'</span>,</div><div class="line">          buttonClass: <span class="string">'btn btn-success btn-sm'</span>,</div><div class="line">          itemTemplate: <span class="string">'&lt;span&gt;&lt;/span&gt;'</span>,</div><div class="line">          onUploadSuccess: <span class="function"><span class="keyword">function</span> (<span class="params">file, data, response</span>) </span>&#123;</div><div class="line">            <span class="comment">// console.log(data); 如果图片上传成功的话，要将图片显示出来</span></div><div class="line">            $(<span class="string">".preview img"</span>).attr(<span class="string">'src'</span>, <span class="built_in">JSON</span>.parse(data).result.path);</div><div class="line">            $(<span class="string">'#cropBtn'</span>).prop(<span class="string">'disabled'</span>, <span class="literal">false</span>);<span class="comment">// selected  checked  disabled 这三个比较特殊，不能用attr，只能用prop</span></div><div class="line">          &#125;</div><div class="line">        &#125;);<span class="comment">//uploadify</span></div><div class="line">      &#125;<span class="comment">//data.code</span></div><div class="line">    &#125;<span class="comment">//success</span></div><div class="line">  &#125;);<span class="comment">//ajax</span></div><div class="line"></div><div class="line">  <span class="comment">//当单击按钮的时候，要进行判断，如果是第一次单击按钮的话，就需要裁切并将按钮的值改为保存</span></div><div class="line"> </div><div class="line">   $(<span class="string">'.steps'</span>).on(<span class="string">'click'</span>,<span class="string">'#cropBtn'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="keyword">if</span>($(<span class="keyword">this</span>).attr(<span class="string">'data-status'</span>)!=<span class="string">'save'</span>)&#123;</div><div class="line">              <span class="comment">//说明此时是第一次单击按钮</span></div><div class="line">              $(<span class="keyword">this</span>).attr(<span class="string">'data-status'</span>,<span class="string">'save'</span>).text(<span class="string">'保存'</span>);</div><div class="line">              $(<span class="string">'.preview img'</span>).Jcrop(&#123;</div><div class="line">                aspectRatio: <span class="number">2</span>,</div><div class="line">                setSelect: [<span class="number">20</span>,<span class="number">20</span>,<span class="number">300</span>,<span class="number">150</span>]</div><div class="line">              &#125;,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">                <span class="comment">// 这里面的这些数据是用来设置缩略图的</span></div><div class="line">                jcrop_obj = <span class="keyword">this</span>;  <span class="comment">//this就是当前的缩略图对象</span></div><div class="line">                jcrop_obj.initComponent(<span class="string">'Thumbnailer'</span>, &#123; <span class="attr">width</span>: <span class="number">240</span>, <span class="attr">height</span>: <span class="number">120</span> &#125;);</div><div class="line">                $(<span class="string">'.thumb'</span>).append($(<span class="string">'.jcrop-thumb'</span>));</div><div class="line">              &#125;);</div><div class="line">      &#125;<span class="keyword">else</span> &#123;</div><div class="line">              <span class="comment">// 说明需要保存图片了  // 往服务器发送ajax请求</span></div><div class="line">           alert(<span class="number">123</span>);</div><div class="line">          <span class="keyword">var</span> result = jcrop_obj.getSelection();</div><div class="line">          $.ajax(&#123;</div><div class="line">             url:<span class="string">'/api/course/update/picture'</span>,</div><div class="line">             type:<span class="string">'post'</span>,</div><div class="line">             data:&#123;</div><div class="line">               cs_id:id,</div><div class="line">               x:result.x,</div><div class="line">               y:result.y,</div><div class="line">               w:result.w,</div><div class="line">               h:result.h</div><div class="line">                &#125;,</div><div class="line">             success:<span class="function"><span class="keyword">function</span> (<span class="params">info</span>)</span>&#123;</div><div class="line">                 <span class="keyword">if</span>(info.code==<span class="number">200</span>)&#123;</div><div class="line">                    <span class="comment">//进行页面的跳转</span></div><div class="line">                 location.href=<span class="string">'/course/lesson?cs_id='</span>+info.result.cs_id;</div><div class="line">                  &#125;</div><div class="line">                &#125;</div><div class="line">              &#125;)</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">          &#125;)</div><div class="line"></div><div class="line"></div><div class="line">  &#125;)</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="8-课时管理功能"><a href="#8-课时管理功能" class="headerlink" title="8.课时管理功能"></a>8.课时管理功能</h1><p>1.修改lesson.html页面中文件路径的引用</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/css.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/aside.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/head.html'</span><span class="meta">?&gt;</span></div><div class="line"><span class="meta">&lt;?php</span> <span class="keyword">include</span> <span class="string">'/views/common/script.html'</span><span class="meta">?&gt;</span></div></pre></td></tr></table></figure>
+<p>2.在course中新建一个lesson.js的文件，定义模块，一打开这个页面的时候，要显示信息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">define([<span class="string">'jquery'</span>,<span class="string">'js/util'</span>,<span class="string">'template'</span>,<span class="string">'bootstrap'</span>],<span class="function"><span class="keyword">function</span> (<span class="params">$,util,template,bt</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> cs_id = util.queryString().cs_id;</div><div class="line"></div><div class="line">  <span class="comment">//  发送请求来渲染当前的页面  当前的课时的页面</span></div><div class="line">    $.ajax(&#123;</div><div class="line">      url:<span class="string">'/api/course/lesson'</span>,</div><div class="line">      type:<span class="string">'GET'</span>,</div><div class="line">      data:&#123;<span class="attr">cs_id</span>:cs_id&#125;,</div><div class="line">      success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>)</span>&#123;</div><div class="line">         <span class="keyword">if</span>(data.code==<span class="number">200</span>)&#123;</div><div class="line">           <span class="comment">//渲染模板</span></div><div class="line">           <span class="keyword">var</span> htmlStr = template(<span class="string">'cs_lesson_tpl'</span>,data.result);</div><div class="line">           $(<span class="string">'.steps'</span>).html(htmlStr);</div><div class="line">         &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;);</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<p>3.lesson.html页面中的模块代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/tempalte"</span> id=<span class="string">"cs_lesson_tpl"</span>&gt;</div><div class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"brief"</span>&gt;</div><div class="line">                        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"thumb"</span>&gt;</div><div class="line">                            &lt;img src=<span class="string">"./uploads/course_1.jpg"</span> alt=<span class="string">""</span>&gt;</div><div class="line">                        &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">                        &lt;dl class="info"&gt;</span></div><div class="line"><span class="regexp">                            &lt;dt&gt;&#123;&#123;cs_name&#125;&#125;&lt;/</span>dt&gt;</div><div class="line">                            &lt;dd&gt;&#123;&#123;tc_name&#125;&#125;&lt;<span class="regexp">/dd&gt;</span></div><div class="line"><span class="regexp">                            &lt;dd&gt;课时：&#123;&#123;lessons.length&#125;&#125;&lt;/</span>dd&gt;</div><div class="line">                        &lt;<span class="regexp">/dl&gt;</span></div><div class="line"><span class="regexp">                    &lt;/</span>div&gt;</div><div class="line">                    &lt;!-- 步聚 --&gt;</div><div class="line">                    &lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"forwards list-unstyled"</span>&gt;</div><div class="line">                        &lt;li&gt;</div><div class="line">                            &lt;a href=<span class="string">"/course/basic?cs_id=&#123;&#123;cs_id&#125;&#125;"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"done"</span>&gt;</div><div class="line">                            &lt;b <span class="class"><span class="keyword">class</span></span>=<span class="string">"fa fa-check"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">b</span>&gt;</span></span></div><div class="line">                            基本信息</div><div class="line">                            &lt;<span class="regexp">/a&gt;</span></div><div class="line"><span class="regexp">                        &lt;/</span>li&gt;</div><div class="line">                        &lt;li&gt;</div><div class="line">                            &lt;a href=<span class="string">"/course/pic?cs_id=&#123;&#123;cs_id&#125;&#125;"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"done"</span>&gt;</div><div class="line">                            &lt;b <span class="class"><span class="keyword">class</span></span>=<span class="string">"fa fa-check"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">b</span>&gt;</span></span></div><div class="line">                            课程图片</div><div class="line">                            &lt;<span class="regexp">/a&gt;</span></div><div class="line"><span class="regexp">                        &lt;/</span>li&gt;</div><div class="line">                        &lt;li&gt;</div><div class="line">                            &lt;a href=<span class="string">"/course/lesson?cs_id=&#123;&#123;cs_id&#125;&#125;"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"active"</span>&gt;</div><div class="line">                            &lt;b&gt;<span class="number">3</span>&lt;<span class="regexp">/b&gt;</span></div><div class="line"><span class="regexp">                            课时管理</span></div><div class="line"><span class="regexp">                            &lt;/</span>a&gt;</div><div class="line">                        &lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">                    &lt;/u</span>l&gt;</div><div class="line">                    &lt;!-- 课时管理 --&gt;</div><div class="line">                    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"content"</span>&gt;</div><div class="line">                        &lt;!-- 标题 --&gt;</div><div class="line">                        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"title"</span>&gt;</div><div class="line">                            &lt;h5&gt;课时管理 &lt;small&gt;LESSON MANAGE&lt;<span class="regexp">/small&gt;&lt;/</span>h5&gt;</div><div class="line">                            &lt;a src=<span class="string">"javascript:;"</span> id=<span class="string">'addLesson'</span>  data-target=<span class="string">"#lesson"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-success btn-sm pull-right"</span>&gt;</div><div class="line">                                &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">"fa fa-plus"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></div><div class="line">                                课时</div><div class="line">                            &lt;<span class="regexp">/a&gt;</span></div><div class="line"><span class="regexp">                        &lt;/</span>div&gt;</div><div class="line">                        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"lessons"</span>&gt;</div><div class="line">                            &lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"list-unstyled"</span>&gt;</div><div class="line">                                &#123;&#123;each lessons <span class="keyword">as</span> v i&#125;&#125;</div><div class="line">                                &lt;li&gt;</div><div class="line">                                    &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">"fa fa-file-video-o"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span></div><div class="line">                                    &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"order"</span>&gt;课时：&#123;&#123;i+<span class="number">1</span>&#125;&#125;&lt;<span class="regexp">/span&gt;</span></div><div class="line"><span class="regexp">                                    &lt;span class="name"&gt;&#123;&#123;v.ct_name&#125;&#125;&lt;/</span>span&gt;</div><div class="line">                                    &lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"duration"</span>&gt;&#123;&#123;v.ct_video_duration&#125;&#125;&lt;<span class="regexp">/span&gt;</span></div><div class="line"><span class="regexp">                                    &lt;!-- 操作 --&gt;</span></div><div class="line"><span class="regexp">                                    &lt;div class="action pull-right"&gt;</span></div><div class="line"><span class="regexp">                                        &lt;a href="javascript:;" class="btn btn-info btn-xs" data-toggle="modal" data-target="#lesson"&gt;编辑&lt;/</span>a&gt;</div><div class="line">                                        &lt;a href=<span class="string">"javascript:;"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-info btn-xs"</span>&gt;预览&lt;<span class="regexp">/a&gt;</span></div><div class="line"><span class="regexp">                                        &lt;a href="javascript:;" class="btn btn-danger btn-xs"&gt;删除&lt;/</span>a&gt;</div><div class="line">                                    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">                                &lt;/</span>li&gt;</div><div class="line">                                &#123;&#123;/each&#125;&#125;</div><div class="line">                            &lt;<span class="regexp">/ul&gt;</span></div><div class="line"><span class="regexp">                        &lt;/</span>div&gt;</div><div class="line">                    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>script&gt;</div></pre></td></tr></table></figure>
+<h1 id="9-课时管理之添加按钮"><a href="#9-课时管理之添加按钮" class="headerlink" title="9.课时管理之添加按钮"></a>9.课时管理之添加按钮</h1><ul>
+<li>1.添加按钮的时候，当点击添加按钮的时候，要显示模态框</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//当单击课时按钮的时候，要显示模态框来添加课时</span></div><div class="line">$(<span class="string">".steps"</span>).on(<span class="string">"click"</span>,<span class="string">'#addLesson'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="comment">//chepter  章节</span></div><div class="line">     $(<span class="string">"#lesson"</span>).modal();  <span class="comment">//显示模态框   这是检测好不好用</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>2.单击添加按钮，要渲染模板(因为添加和编辑是一个模态框)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".steps"</span>).on(<span class="string">"click"</span>, <span class="string">"#addLesson"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> html = template(<span class="string">"cs_lesson_tpl"</span>, &#123;</div><div class="line">			title: <span class="string">"添加课时"</span>,</div><div class="line">			saveBtnText: <span class="string">"添加"</span>,</div><div class="line">			actionUrl: <span class="string">"/api/course/chapter/add"</span>   <span class="comment">//这是后来添加的内容 </span></div><div class="line">		&#125;);</div><div class="line"></div><div class="line">		$(<span class="string">"#editPanel"</span>).html(html);</div><div class="line">		$(<span class="string">"#chapterModal"</span>).modal();	</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>3.此时的模板数据是这样的：这里面的模板中的input标签是没有value值的。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/template"</span> id=<span class="string">"cs_modal_tpl"</span>&gt;</div><div class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"modal-header"</span>&gt;</div><div class="line">           &lt;button type=<span class="string">"button"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"close"</span> data-dismiss=<span class="string">"modal"</span>&gt;&amp;times;<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></div><div class="line">           &lt;h4 <span class="class"><span class="keyword">class</span></span>=<span class="string">"modal-title"</span>&gt;&#123;&#123;title&#125;&#125;&lt;<span class="regexp">/h4&gt;</span></div><div class="line"><span class="regexp">       &lt;/</span>div&gt;</div><div class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"modal-body"</span>&gt;</div><div class="line">           &lt;form action=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-horizontal"</span>&gt;</div><div class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</div><div class="line">                   &lt;label <span class="keyword">for</span>=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2 control-label"</span>&gt;标题&lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                   &lt;div class="col-md-6"&gt;</span></div><div class="line"><span class="regexp">                       &lt;input type="text" name="ct_name"  class="form-control input-sm"&gt;</span></div><div class="line"><span class="regexp">                   &lt;/</span>div&gt;</div><div class="line">                   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2"</span>&gt;</div><div class="line">                       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"checkbox"</span>&gt;</div><div class="line">                           &lt;label&gt;</div><div class="line">                               &lt;input type=<span class="string">"checkbox"</span> id=<span class="string">"ct_is_free"</span> name=<span class="string">"ct_is_free"</span> &gt; 免费课时</div><div class="line">                           &lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                       &lt;/</span>div&gt;</div><div class="line">                   &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">               &lt;/</span>div&gt;</div><div class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</div><div class="line">                   &lt;label <span class="keyword">for</span>=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2 control-label"</span>&gt;简介&lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                   &lt;div class="col-md-8"&gt;</span></div><div class="line"><span class="regexp">                       &lt;textarea name="ct_brief" rows="5" id="ct_brief" class="form-control input-sm"&gt;&lt;/</span>textarea&gt;</div><div class="line">                   &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">               &lt;/</span>div&gt;</div><div class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</div><div class="line">                   &lt;label <span class="keyword">for</span>=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2 control-label"</span>&gt;视频&lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                   &lt;div class="col-md-8"&gt;</span></div><div class="line"><span class="regexp">                       &lt;div class="input-group"&gt;</span></div><div class="line"><span class="regexp">                           &lt;input type="text" class="form-control input-sm" name="ct_video" placeholder="支持优酷、土豆、腾讯、网易公开课的视频页面地址导入"&gt;</span></div><div class="line"><span class="regexp">                           &lt;span class="input-group-btn"&gt;</span></div><div class="line"><span class="regexp">                                       &lt;button class="btn btn-success btn-sm"&gt;获取&lt;/</span>button&gt;</div><div class="line">                                   &lt;<span class="regexp">/span&gt;</span></div><div class="line"><span class="regexp">                       &lt;/</span>div&gt;</div><div class="line">                   &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">               &lt;/</span>div&gt;</div><div class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group form-inline"</span>&gt;</div><div class="line">                   &lt;label <span class="keyword">for</span>=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2 control-label"</span>&gt;时长&lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                   &lt;div class="col-md-8"&gt;</span></div><div class="line"><span class="regexp">                       &lt;input type="text" name="ct_minutes" class="form-control input-sm small"&gt;</span></div><div class="line"><span class="regexp">                       分</span></div><div class="line"><span class="regexp">                       &lt;input type="text" name="ct_seconds" class="form-control input-sm small"&gt;</span></div><div class="line"><span class="regexp">                       秒</span></div><div class="line"><span class="regexp">                       &lt;p class="help-block"&gt;时长必须为整数。&lt;/</span>p&gt;</div><div class="line">                   &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">               &lt;/</span>div&gt;</div><div class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group form-inline"</span>&gt;</div><div class="line">                   &lt;label <span class="keyword">for</span>=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2 control-label"</span>&gt;建议学习时长&lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                   &lt;div class="col-md-8"&gt;</span></div><div class="line"><span class="regexp">                       &lt;input type="text" name="ct_recommend_duration" class="form-control input-sm small"&gt;</span></div><div class="line"><span class="regexp">                       小时</span></div><div class="line"><span class="regexp">                       &lt;p class="help-block"&gt;（如未设置，则默认学习时长为视频时长3倍取整。）&lt;/</span>p&gt;</div><div class="line">                   &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">               &lt;/</span>div&gt;</div><div class="line">           &lt;<span class="regexp">/form&gt;</span></div><div class="line"><span class="regexp">       &lt;/</span>div&gt;</div><div class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"modal-footer"</span>&gt;</div><div class="line">           &lt;button type=<span class="string">"button"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-link btn-sm"</span> data-dismiss=<span class="string">"modal"</span>&gt;取消&lt;<span class="regexp">/button&gt;</span></div><div class="line"><span class="regexp">           &lt;button type="button" id="saveBtn" class="btn btn-success btn-sm"&gt; &#123;&#123;savaBtnText&#125;&#125; &lt;/</span>button&gt;</div><div class="line">       &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">   &lt;/</span>script&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>3.当单击按钮 的时候，要向服务器提交数据，代码如下</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#editPanel'</span>).on(<span class="string">'click'</span>,<span class="string">'#saveBtn'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">         <span class="comment">// alert(123);</span></div><div class="line">    <span class="keyword">var</span> ct_is_free = <span class="built_in">Number</span>($(<span class="string">'#ct_is_free'</span>).prop(<span class="string">'checked'</span>));</div><div class="line">         <span class="comment">// ct  chapter 章节</span></div><div class="line">    $(<span class="string">'form'</span>).ajaxSubmit(&#123;</div><div class="line">      url:<span class="string">'/api/course/chapter/add'</span>,</div><div class="line">      type:<span class="string">'post'</span>,</div><div class="line">      data:&#123;</div><div class="line">        ct_cs_id:id,</div><div class="line">        ct_is_free: ct_is_free</div><div class="line">      &#125;,</div><div class="line">      success:<span class="function"><span class="keyword">function</span> (<span class="params">info</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(info.code==<span class="number">200</span>)&#123;</div><div class="line">          alert(<span class="string">'课程添加成功'</span>);</div><div class="line">          renderLesson();</div><div class="line">          $(<span class="string">'#lesson'</span>).modal(<span class="string">'hide'</span>);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  &#125;);<span class="comment">// on</span></div></pre></td></tr></table></figure>
+<ul>
+<li>4.添加成功之后，刷新当前页面，也就是相当于再次打开当前页面，因此需要 将之前的代码 进行封装：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">  * 封装了一个刷新 当前页面的函数</span></div><div class="line"><span class="comment">  */</span></div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">renderLesson</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   $.ajax(&#123;</div><div class="line">     url:<span class="string">'/api/course/lesson'</span>,</div><div class="line">     type:<span class="string">'get'</span>,</div><div class="line">     data:&#123;</div><div class="line">       cs_id:id</div><div class="line">     &#125;,</div><div class="line">     success:<span class="function"><span class="keyword">function</span> (<span class="params">info</span>)</span>&#123;</div><div class="line">       <span class="comment">// 渲染模板</span></div><div class="line">       <span class="keyword">var</span> htmlStr = template(<span class="string">'cs_lesson_tpl'</span>,info.result);</div><div class="line">       $(<span class="string">'.steps'</span>).html(htmlStr);</div><div class="line">     &#125;</div><div class="line">   &#125;)</div><div class="line"></div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>5.上面的代码都需要改变一下，如上</li>
+</ul>
+<h1 id="10-课时管理之编辑按钮"><a href="#10-课时管理之编辑按钮" class="headerlink" title="10.课时管理之编辑按钮"></a>10.课时管理之编辑按钮</h1><ul>
+<li>1.当单击编辑按钮的时候，要弹出模态框并将当前课时的数据显示在页面上</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.steps'</span>).on(<span class="string">'click'</span>,<span class="string">'#editBtn'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">         <span class="comment">//要发送数据，显示模态框</span></div><div class="line">    <span class="keyword">var</span> ct_id = $(<span class="keyword">this</span>).parent().attr(<span class="string">'data-id'</span>);</div><div class="line">          $.ajax(&#123;</div><div class="line">            url:<span class="string">'/api/course/chapter/edit'</span>,</div><div class="line">            type:<span class="string">'get'</span>,</div><div class="line">            data:&#123;</div><div class="line">              ct_id:ct_id</div><div class="line">            &#125;,</div><div class="line">            success:<span class="function"><span class="keyword">function</span> (<span class="params">info</span>)</span>&#123;</div><div class="line">              <span class="keyword">if</span>(info.code==<span class="number">200</span>)&#123;</div><div class="line">                <span class="comment">//渲染模板</span></div><div class="line">                <span class="keyword">var</span> htmlStr = template(<span class="string">'cs_modal_tpl'</span>,info.result);</div><div class="line">                $(<span class="string">'#editPanel'</span>).html(htmlStr);</div><div class="line">                $(<span class="string">'#lesson'</span>).modal();</div><div class="line">              &#125;</div><div class="line">            &#125;</div><div class="line">       &#125;)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>2.此时的模板中的数据，如下所示： 也是给之前的文本框添加了value属性</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/template"</span> id=<span class="string">"cs_modal_tpl"</span>&gt;</div><div class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"modal-header"</span>&gt;</div><div class="line">            &lt;button type=<span class="string">"button"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"close"</span> data-dismiss=<span class="string">"modal"</span>&gt;&amp;times;<span class="xml"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></div><div class="line">            &lt;h4 <span class="class"><span class="keyword">class</span></span>=<span class="string">"modal-title"</span>&gt;&#123;&#123;title&#125;&#125;&lt;<span class="regexp">/h4&gt;</span></div><div class="line"><span class="regexp">        &lt;/</span>div&gt;</div><div class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"modal-body"</span>&gt;</div><div class="line">            &lt;form action=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-horizontal"</span>&gt;</div><div class="line">                &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</div><div class="line">                    &lt;label <span class="keyword">for</span>=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2 control-label"</span>&gt;标题&lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                    &lt;div class="col-md-6"&gt;</span></div><div class="line"><span class="regexp">                        &lt;input type="text" name="ct_name" value="&#123;&#123;ct_name&#125;&#125;"  class="form-control input-sm"&gt;</span></div><div class="line"><span class="regexp">                    &lt;/</span>div&gt;</div><div class="line">                    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2"</span>&gt;</div><div class="line">                        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"checkbox"</span>&gt;</div><div class="line">                            &lt;label&gt;</div><div class="line">                                &lt;input type=<span class="string">"checkbox"</span> id=<span class="string">"ct_is_free"</span> &#123;&#123;<span class="keyword">if</span> ct_is_free==<span class="number">1</span>&#125;&#125;checked&#123;&#123;/<span class="keyword">if</span>&#125;&#125; name=<span class="string">"ct_is_free"</span> &gt; 免费课时</div><div class="line">                            &lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                        &lt;/</span>div&gt;</div><div class="line">                    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">                &lt;/</span>div&gt;</div><div class="line">                &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</div><div class="line">                    &lt;label <span class="keyword">for</span>=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2 control-label"</span>&gt;简介&lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                    &lt;div class="col-md-8"&gt;</span></div><div class="line"><span class="regexp">                        &lt;textarea name="ct_brief" rows="5" id="ct_brief" class="form-control input-sm"&gt;&#123;&#123;ct_brief&#125;&#125;&lt;/</span>textarea&gt;</div><div class="line">                    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">                &lt;/</span>div&gt;</div><div class="line">                &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group"</span>&gt;</div><div class="line">                    &lt;label <span class="keyword">for</span>=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2 control-label"</span>&gt;视频&lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                    &lt;div class="col-md-8"&gt;</span></div><div class="line"><span class="regexp">                        &lt;div class="input-group"&gt;</span></div><div class="line"><span class="regexp">                            &lt;input type="text" class="form-control input-sm" name="ct_video"  value="&#123;&#123;ct_video&#125;&#125;" placeholder="支持优酷、土豆、腾讯、网易公开课的视频页面地址导入"&gt;</span></div><div class="line"><span class="regexp">                            &lt;span class="input-group-btn"&gt;</span></div><div class="line"><span class="regexp">                                        &lt;button class="btn btn-success btn-sm"&gt;获取&lt;/</span>button&gt;</div><div class="line">                                    &lt;<span class="regexp">/span&gt;</span></div><div class="line"><span class="regexp">                        &lt;/</span>div&gt;</div><div class="line">                    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">                &lt;/</span>div&gt;</div><div class="line">                &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group form-inline"</span>&gt;</div><div class="line">                    &lt;label <span class="keyword">for</span>=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2 control-label"</span>&gt;时长&lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                    &lt;div class="col-md-8"&gt;</span></div><div class="line"><span class="regexp">                        &lt;input type="text" name="ct_minutes" value="&#123;&#123;ct_minutes&#125;&#125;" class="form-control input-sm small"&gt;</span></div><div class="line"><span class="regexp">                        分</span></div><div class="line"><span class="regexp">                        &lt;input type="text" name="ct_seconds" value="&#123;&#123;ct_seconds&#125;&#125;" class="form-control input-sm small"&gt;</span></div><div class="line"><span class="regexp">                        秒</span></div><div class="line"><span class="regexp">                        &lt;p class="help-block"&gt;时长必须为整数。&lt;/</span>p&gt;</div><div class="line">                    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">                &lt;/</span>div&gt;</div><div class="line">                &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-group form-inline"</span>&gt;</div><div class="line">                    &lt;label <span class="keyword">for</span>=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"col-md-2 control-label"</span>&gt;建议学习时长&lt;<span class="regexp">/label&gt;</span></div><div class="line"><span class="regexp">                    &lt;div class="col-md-8"&gt;</span></div><div class="line"><span class="regexp">                        &lt;input type="text" name="ct_recommend_duration" value="&#123;&#123;ct_recommend_duration&#125;&#125;" class="form-control input-sm small"&gt;</span></div><div class="line"><span class="regexp">                        小时</span></div><div class="line"><span class="regexp">                        &lt;p class="help-block"&gt;（如未设置，则默认学习时长为视频时长3倍取整。）&lt;/</span>p&gt;</div><div class="line">                    &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">                &lt;/</span>div&gt;</div><div class="line">            &lt;<span class="regexp">/form&gt;</span></div><div class="line"><span class="regexp">        &lt;/</span>div&gt;</div><div class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"modal-footer"</span>&gt;</div><div class="line">            &lt;button type=<span class="string">"button"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-link btn-sm"</span> data-dismiss=<span class="string">"modal"</span>&gt;取消&lt;<span class="regexp">/button&gt;</span></div><div class="line"><span class="regexp">            &lt;button type="button" id="saveBtn" class="btn btn-success btn-sm"&gt; &#123;&#123;savaBtnText&#125;&#125; &lt;/</span>button&gt;</div><div class="line">        &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">    &lt;/</span>script&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>3.此时你会发现，课程编辑的按钮和右下角保存的按钮不存在了，需要 我们自己添加对应的属性，来渲染在当前的模板上，完整的代码如下所示：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'.steps'</span>).on(<span class="string">'click'</span>,<span class="string">'#editBtn'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//要发送数据，显示模态框</span></div><div class="line">   <span class="keyword">var</span> ct_id = $(<span class="keyword">this</span>).parent().attr(<span class="string">'data-id'</span>);</div><div class="line">         $.ajax(&#123;</div><div class="line">           url:<span class="string">'/api/course/chapter/edit'</span>,</div><div class="line">           type:<span class="string">'get'</span>,</div><div class="line">           data:&#123;</div><div class="line">             ct_id:ct_id</div><div class="line">           &#125;,</div><div class="line">           success:<span class="function"><span class="keyword">function</span> (<span class="params">info</span>)</span>&#123;</div><div class="line">             info.result.title = <span class="string">'课时编辑'</span>;  <span class="comment">//实际上就是多了这两行代码</span></div><div class="line">             info.result.savaBtnText = <span class="string">'保存'</span>; <span class="comment">//实际上是多了这两行代码 </span></div><div class="line">             <span class="keyword">if</span>(info.code==<span class="number">200</span>)&#123;</div><div class="line">               <span class="comment">//渲染模板</span></div><div class="line">               <span class="keyword">var</span> htmlStr = template(<span class="string">'cs_modal_tpl'</span>,info.result);</div><div class="line">               $(<span class="string">'#editPanel'</span>).html(htmlStr);</div><div class="line">               $(<span class="string">'#lesson'</span>).modal();</div><div class="line">             &#125;</div><div class="line"></div><div class="line">           &#125;</div><div class="line">      &#125;)</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>4.当单击保存按钮 的时候，你会发现，虽然你是重新编辑的内容，但是却当成了添加，因为课时添加和课时编辑是同一个模板，同一个按钮 ，此时需要 进行区分，如何让一个按钮根据不同的功能，分别提交到不同的接口呢，此时就不能用按钮提交数据了，得用表单提交数据，因此给表单添加一个属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;&#123;&#123;actionUrl&#125;&#125;&quot; class=&quot;form-horizontal&quot;&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>5.那么课程添加的按钮中的代码如下：  其实只增加了一行代码 ，就是第6行</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//2. 当我们单击添加按钮的时候，要显示模态框</span></div><div class="line"> $(<span class="string">'.steps'</span>).on(<span class="string">'click'</span>,<span class="string">'#addLesson'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">     <span class="keyword">var</span> htmlStr = template(<span class="string">'cs_modal_tpl'</span>,&#123;</div><div class="line">       title:<span class="string">'课时添加'</span>,</div><div class="line">       savaBtnText:<span class="string">'添加'</span>,</div><div class="line">       actionUrl:<span class="string">'/api/course/chapter/add'</span>   <span class="comment">//实际上就是在原来的代码基础上增加了这行代码 </span></div><div class="line">     &#125;);</div><div class="line">     $(<span class="string">'#editPanel'</span>).html(htmlStr);</div><div class="line">        $(<span class="string">'#lesson'</span>).modal();</div><div class="line"> &#125;);</div></pre></td></tr></table></figure>
+<ul>
+<li>6.那么编辑代码中的代码如下：  其实只增加了一行代码 ，就是第14行</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//3. 当我们单击编辑按钮的时候，要显示当前课程的所有信息在模态框上</span></div><div class="line">  $(<span class="string">'.steps'</span>).on(<span class="string">'click'</span>,<span class="string">'#editBtn'</span>,<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">         <span class="comment">//要发送数据，显示模态框</span></div><div class="line">    <span class="keyword">var</span> ct_id = $(<span class="keyword">this</span>).parent().attr(<span class="string">'data-id'</span>);</div><div class="line">          $.ajax(&#123;</div><div class="line">            url:<span class="string">'/api/course/chapter/edit'</span>,</div><div class="line">            type:<span class="string">'get'</span>,</div><div class="line">            data:&#123;</div><div class="line">              ct_id:ct_id</div><div class="line">            &#125;,</div><div class="line">            success:<span class="function"><span class="keyword">function</span> (<span class="params">info</span>)</span>&#123;</div><div class="line">              info.result.title = <span class="string">'课时编辑'</span>;</div><div class="line">              info.result.savaBtnText = <span class="string">'保存'</span>;</div><div class="line">              info.result.actionUrl = <span class="string">'/api/course/chapter/modify'</span>  <span class="comment">// 实际上就是增加了这一行的代码 </span></div><div class="line">              <span class="keyword">if</span>(info.code==<span class="number">200</span>)&#123;</div><div class="line">                <span class="comment">//渲染模板</span></div><div class="line">                <span class="keyword">var</span> htmlStr = template(<span class="string">'cs_modal_tpl'</span>,info.result);</div><div class="line">                $(<span class="string">'#editPanel'</span>).html(htmlStr);</div><div class="line">                $(<span class="string">'#lesson'</span>).modal();</div><div class="line">              &#125;</div><div class="line"></div><div class="line">            &#125;</div><div class="line">       &#125;)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<p>要当单击编辑按钮的时候，也要显示当前的模态框，而且还要把数据渲染在上面</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".steps"</span>).on(<span class="string">"click"</span>, <span class="string">".editBtn"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> ct_id = $(<span class="keyword">this</span>).parent().attr(<span class="string">"data-id"</span>);</div><div class="line">		$.ajax(&#123;</div><div class="line">			type: <span class="string">"get"</span>,</div><div class="line">			data: &#123;<span class="attr">ct_id</span>: ct_id&#125;,</div><div class="line">			success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">				data.result.title=<span class="string">"编辑课时"</span>;</div><div class="line">				data.result.saveBtnText= <span class="string">"保存"</span>;</div><div class="line">				data.result.actionUrl = <span class="string">"/api/course/chapter/modify"</span>;</div><div class="line">				<span class="keyword">var</span> html = template(<span class="string">"lesson_info_tpl"</span>, data.result);</div><div class="line">				$(<span class="string">"#editPanel"</span>).html(html);</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">		$(<span class="string">"#lesson"</span>).modal();	</div><div class="line">	&#125;)</div></pre></td></tr></table></figure>
+<p>3.由于是添加和编辑的按钮，都是同一个模态框，此时编辑按钮功能，再把添加按钮修改一下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<p>4.当我们单击保存按钮的时候，就是下面的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">"#editPanel"</span>).on(<span class="string">"click"</span>, <span class="string">"#saveBtn"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> is_free = <span class="built_in">Number</span>($(<span class="string">"#free"</span>).prop(<span class="string">"checked"</span>));</div><div class="line">		$(<span class="string">"form"</span>).ajaxSubmit(&#123;</div><div class="line">			type: <span class="string">"post"</span>,</div><div class="line">			data: &#123;<span class="attr">ct_is_free</span>: is_free, <span class="attr">ct_cs_id</span>: cs_id&#125;, <span class="comment">//要跟课程的id连接起来</span></div><div class="line">			success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">				<span class="keyword">if</span>(data.code == <span class="number">200</span>)&#123;</div><div class="line">					$(<span class="string">"#lesson"</span>).modal(<span class="string">"hide"</span>);	</div><div class="line">					renderLessons();</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;)</div><div class="line"></div><div class="line">	<span class="comment">//封装一个ajax渲染的方法</span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">renderLessons</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		$.ajax(&#123;</div><div class="line">			url: <span class="string">"/api/course/lesson"</span>,</div><div class="line">			type: <span class="string">"get"</span>,</div><div class="line">			data: &#123;<span class="attr">cs_id</span>: cs_id&#125;,</div><div class="line">			success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">				<span class="keyword">if</span>(data.code == <span class="number">200</span>)&#123;</div><div class="line">					<span class="keyword">var</span> html = template(<span class="string">"lesson_tpl"</span>, data.result);</div><div class="line">					$(<span class="string">".steps"</span>).html(html);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<h1 id="11-课程列表实现"><a href="#11-课程列表实现" class="headerlink" title="11.课程列表实现"></a>11.课程列表实现</h1><p>1.在js/course文件夹下面，新建list.js文件，并定义模块</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">define([<span class="string">'jquery'</span>,<span class="string">'template'</span>],<span class="function"><span class="keyword">function</span> (<span class="params">$,template</span>)</span>&#123;</div><div class="line">    $.ajax(&#123;</div><div class="line">      url:<span class="string">'/api/course'</span>,</div><div class="line">      type:<span class="string">'get'</span>,</div><div class="line">      success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(data.code==<span class="number">200</span>)&#123;</div><div class="line">          <span class="keyword">var</span> htmlStr =template(<span class="string">'cs_list_tpl'</span>,data);</div><div class="line">          $(<span class="string">'.courses'</span>).html(htmlStr);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>2.list.html模板的拼接(下面的很多course是重复的，在模板里面，只需要一个即可)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/template"</span> id=<span class="string">"cs_list_tpl"</span>&gt;</div><div class="line">   &lt;!-- 搜索 --&gt;</div><div class="line">   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"search"</span>&gt;</div><div class="line">     &lt;form action=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-inline"</span>&gt;</div><div class="line">       &lt;select name=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control input-sm"</span>&gt;</div><div class="line">         &lt;option value=<span class="string">""</span>&gt;按年龄&lt;<span class="regexp">/option&gt;</span></div><div class="line"><span class="regexp">       &lt;/</span>select&gt;</div><div class="line">       &lt;select name=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control input-sm"</span>&gt;</div><div class="line">         &lt;option value=<span class="string">""</span>&gt;按性别&lt;<span class="regexp">/option&gt;</span></div><div class="line"><span class="regexp">       &lt;/</span>select&gt;</div><div class="line">       &lt;select name=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control input-sm"</span>&gt;</div><div class="line">         &lt;option value=<span class="string">""</span>&gt;按地区&lt;<span class="regexp">/option&gt;</span></div><div class="line"><span class="regexp">       &lt;/</span>select&gt;</div><div class="line">       &lt;select name=<span class="string">""</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"form-control input-sm"</span>&gt;</div><div class="line">         &lt;option value=<span class="string">""</span>&gt;按日期&lt;<span class="regexp">/option&gt;</span></div><div class="line"><span class="regexp">       &lt;/</span>select&gt;</div><div class="line">       &lt;button <span class="class"><span class="keyword">class</span></span>=<span class="string">"btn btn-success btn-sm"</span>&gt;筛选&lt;<span class="regexp">/button&gt;</span></div><div class="line"><span class="regexp">       &lt;div class="input-group pull-right"&gt;</span></div><div class="line"><span class="regexp">         &lt;input type="text" class="form-control input-sm"&gt;</span></div><div class="line"><span class="regexp">         &lt;span class="input-group-btn"&gt;</span></div><div class="line"><span class="regexp">                       &lt;button class="btn btn-success btn-sm"&gt;搜索&lt;/</span>button&gt;</div><div class="line">                   &lt;<span class="regexp">/span&gt;</span></div><div class="line"><span class="regexp">       &lt;/</span>div&gt;</div><div class="line">     &lt;<span class="regexp">/form&gt;</span></div><div class="line"><span class="regexp">   &lt;/</span>div&gt;</div><div class="line">   &#123;&#123;each result <span class="keyword">as</span> v i&#125;&#125;</div><div class="line">   &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"course"</span>&gt;</div><div class="line">     &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"pic"</span>&gt;</div><div class="line">       &lt;img src=<span class="string">"&#123;&#123;v.cs_cover&#125;&#125;"</span> alt=<span class="string">""</span>&gt;</div><div class="line">     &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">     &lt;div class="info"&gt;</span></div><div class="line"><span class="regexp">       &lt;a href="javascript:;"&gt;&#123;&#123;v.cs_name&#125;&#125;&lt;/</span>a&gt;</div><div class="line">       &lt;ul <span class="class"><span class="keyword">class</span></span>=<span class="string">"list-unstyled"</span>&gt;</div><div class="line">         &lt;li&gt;</div><div class="line">           &lt;span&gt;讲师：&#123;&#123;v.tc_name&#125;&#125;&lt;<span class="regexp">/span&gt;</span></div><div class="line"><span class="regexp">           &lt;span&gt;类别：&#123;&#123;v.cg_name&#125;&#125;&lt;/</span>span&gt;</div><div class="line">         &lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">         &lt;li&gt;</span></div><div class="line"><span class="regexp">           &lt;span&gt;课时：32&lt;/</span>span&gt;</div><div class="line">           &lt;span&gt;学员：<span class="number">9823</span>&lt;<span class="regexp">/span&gt;</span></div><div class="line"><span class="regexp">         &lt;/</span>li&gt;</div><div class="line">         &lt;li&gt;</div><div class="line">           &lt;span&gt;浏览：<span class="number">11313</span>&lt;<span class="regexp">/span&gt;</span></div><div class="line"><span class="regexp">           &lt;span&gt;&lt;/</span>span&gt;</div><div class="line">         &lt;<span class="regexp">/li&gt;</span></div><div class="line"><span class="regexp">       &lt;/u</span>l&gt;</div><div class="line">     &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">   &lt;/</span>div&gt;</div><div class="line">   &#123;&#123;/each&#125;&#125;</div><div class="line"> &lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p>3.在list.html页面中调用模板</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  <span class="built_in">require</span>([<span class="string">'js/course/list'</span>]);  <span class="comment">//数据很多，需要等待一会儿</span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="12-Echarts"><a href="#12-Echarts" class="headerlink" title="12.Echarts"></a>12.Echarts</h1><ul>
+<li>1.在js/dashboard下面新建一个index.js文件，新粘进如下代码：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">define([<span class="string">'echarts'</span>],<span class="function"><span class="keyword">function</span> (<span class="params">echarts</span>)</span>&#123;</div><div class="line">  <span class="comment">// 基于准备好的dom，初始化echarts实例</span></div><div class="line">  <span class="keyword">var</span> myChart = echarts.init(<span class="built_in">document</span>.getElementById(<span class="string">'main'</span>));</div><div class="line"></div><div class="line">  <span class="comment">// 指定图表的配置项和数据</span></div><div class="line">  <span class="keyword">var</span> option = &#123;</div><div class="line">    title: &#123;</div><div class="line">      text: <span class="string">'ECharts 入门示例'</span></div><div class="line">    &#125;,</div><div class="line">    tooltip: &#123;&#125;,</div><div class="line">    legend: &#123;</div><div class="line">      data:[<span class="string">'销量'</span>]</div><div class="line">    &#125;,</div><div class="line">    xAxis: &#123;</div><div class="line">      data: [<span class="string">"衬衫"</span>,<span class="string">"羊毛衫"</span>,<span class="string">"雪纺衫"</span>,<span class="string">"裤子"</span>,<span class="string">"高跟鞋"</span>,<span class="string">"袜子"</span>]</div><div class="line">    &#125;,</div><div class="line">    yAxis: &#123;&#125;,</div><div class="line">    series: [&#123;</div><div class="line">      name: <span class="string">'销量'</span>,</div><div class="line">      type: <span class="string">'bar'</span>,</div><div class="line">      data: [<span class="number">5</span>, <span class="number">20</span>, <span class="number">36</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">20</span>]</div><div class="line">    &#125;]</div><div class="line">  &#125;;</div><div class="line"></div><div class="line">  <span class="comment">// 使用刚指定的配置项和数据显示图表。</span></div><div class="line">  myChart.setOption(option);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>2.在js/libs/config.js文件中添加依赖，代码如下：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'echarts'</span>:<span class="string">'assets/echarts/echarts.min'</span></div></pre></td></tr></table></figure>
+<ul>
+<li>3.在页面中调用代码</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">        <span class="built_in">require</span>([<span class="string">'js/dashboard/index'</span>]);</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="13-NProgress-的用法"><a href="#13-NProgress-的用法" class="headerlink" title="13.NProgress 的用法"></a>13.NProgress 的用法</h1><ul>
+<li><h1 id="1-在common-js中，添加下面的代码-："><a href="#1-在common-js中，添加下面的代码-：" class="headerlink" title="1.在common.js中，添加下面的代码 ："></a>1.在common.js中，添加下面的代码 ：</h1></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 这两行代码是每个页面加载或是切换的时候，都会执行的，每个页面都会有一个进度条的效果</div><div class="line">    NProgress.start();</div><div class="line">    NProgress.done();</div></pre></td></tr></table></figure>
+<ul>
+<li>2.如果想让每一个ajax也有如此的效果的话，则需要 再添加两行代码 ：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 全局ajax事件监视，是整个页面中</span></div><div class="line">    <span class="comment">// 每一次ajax请求的时候，都会有的一个进度条的效果</span></div><div class="line">    $(<span class="built_in">document</span>).ajaxStart(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">      NProgress.start();</div><div class="line">    &#125;);</div><div class="line">    $(<span class="built_in">document</span>).ajaxStop(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">      NProgress.done();</div><div class="line">    &#125;)</div></pre></td></tr></table></figure>
+<ul>
+<li>3.注意一定要添加模块引入，或是清一下缓存，看一下效果</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+     
+     <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+     
+    </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/后台管理系统项目/" <i class="fa fa-tag"></i> 后台管理系统项目</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/05/后台管理系统项目(2)/" rel="next" title="后台管理系统项目总结(2)">
+                <i class="fa fa-chevron-left"></i> 后台管理系统项目总结(2)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/05/后台管理系统项目(4)/" rel="prev" title="后台管理系统项目总结(4)">
+                后台管理系统项目总结(4) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.png"
+              alt="光明" />
+          
+            <p class="site-author-name" itemprop="name">光明</p>
+            <p class="site-description motion-element" itemprop="description">激进小IT</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              推荐阅读
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/pgm0908/" title="博客园" target="_blank">博客园</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="简书" target="_blank">简书</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.jianshu.com/" title="掘金" target="_blank">掘金</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#后台管理系统项目总结-3"><span class="nav-number">1.</span> <span class="nav-text">后台管理系统项目总结(3)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-课程管理之添加功能"><span class="nav-number">2.</span> <span class="nav-text">1.课程管理之添加功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-课程管理之显示课程基本信息"><span class="nav-number">3.</span> <span class="nav-text">2.课程管理之显示课程基本信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-提取复用性的代码，封装成工具模块"><span class="nav-number">4.</span> <span class="nav-text">3.提取复用性的代码，封装成工具模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-课程图片"><span class="nav-number">5.</span> <span class="nav-text">4.课程图片</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-图片上传插件的改造及使用"><span class="nav-number">6.</span> <span class="nav-text">5.图片上传插件的改造及使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-图片裁切小demo"><span class="nav-number">7.</span> <span class="nav-text">6.图片裁切小demo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-图片裁切功能的使用"><span class="nav-number">8.</span> <span class="nav-text">7.图片裁切功能的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-课时管理功能"><span class="nav-number">9.</span> <span class="nav-text">8.课时管理功能</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-课时管理之添加按钮"><span class="nav-number">10.</span> <span class="nav-text">9.课时管理之添加按钮</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-课时管理之编辑按钮"><span class="nav-number">11.</span> <span class="nav-text">10.课时管理之编辑按钮</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-课程列表实现"><span class="nav-number">12.</span> <span class="nav-text">11.课程列表实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-Echarts"><span class="nav-number">13.</span> <span class="nav-text">12.Echarts</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-NProgress-的用法"><span class="nav-number">14.</span> <span class="nav-text">13.NProgress 的用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-在common-js中，添加下面的代码-："><span class="nav-number">15.</span> <span class="nav-text">1.在common.js中，添加下面的代码 ：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">光明</span>
+
+  
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共70.8k字</span>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+ 
+</body>
+</html>
